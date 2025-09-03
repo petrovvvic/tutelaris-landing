@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6AA6FF"/>
+      <stop offset="1" stop-color="#7DF6D9"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0b0c0f"/>
+  <g transform="translate(8 8)">
+    <path d="M24 0l16 9v14c0 16-8.5 26-16 29C16.5 49 8 39 8 23V9L24 0z" fill="url(#g)" opacity="0.35"/>
+    <path d="M24 1l15 8.4v13.3c0 15.3-8.1 24.7-15 27.6-6.9-2.9-15-12.3-15-27.6V9.4L24 1z" stroke="url(#g)" stroke-width="1.5" fill="none"/>
+    <path d="M16 21h16" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M24 13v24" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <title>Tutelaris</title>
+</svg>
+
