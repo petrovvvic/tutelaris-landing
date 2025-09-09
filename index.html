@@ -1,22 +1,54 @@
+<!--
+  TODOs before going live:
+  - Replace Calendly URL (search for YOUR_HANDLE)
+  - Update Plausible data-domain to your domain
+  - Swap stock images under /assets/... with your own
+  - Wire Privacy and Imprint links to real pages
+-->
 <!doctype html>
 <html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tutelaris | Automatisierte KI‑Vorfallsberichte für EHS‑Teams</title>
-    <meta name="description" content="Sparen Sie Zeit und bleiben Sie compliant: Tutelaris erzeugt mit KI aus kurzen Notizen professionelle, DSGVO‑konforme Einseiter für Vorfallsberichte – entwickelt für europäische EHS‑Teams." />
+    <title>Tutelaris — 5‑Minuten‑Vorfallsberichte für EHS‑Teams</title>
+    <meta name="description" content="Erzeugen Sie standardisierte, DSGVO‑bewusste Vorfalls‑Einseiter in Minuten. Entwickelt für EHS‑Manager und Vorgesetzte." />
 
-    <!-- Open Graph / SEO -->
-    <meta property="og:title" content="Tutelaris — Schnellere, sicherere KI‑Vorfallsberichte" />
-    <meta property="og:description" content="In Minuten zu DSGVO‑konformen Einseitern. Tutelaris nutzt KI, um EHS‑Teams Zeit zu sparen, Fehler zu reduzieren und sich nahtlos in bestehende Workflows zu integrieren." />
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Tutelaris — 5‑Minuten‑Vorfallsberichte für EHS‑Teams" />
+    <meta property="og:description" content="Erzeugen Sie standardisierte, DSGVO‑bewusste Vorfalls‑Einseiter in Minuten. Entwickelt für EHS‑Manager und Vorgesetzte." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tutelaris.app" />
-    <meta property="og:image" content="/assets/og-image.png" />
+    <meta property="og:image" content="/assets/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tutelaris — 5‑Minuten‑Vorfallsberichte für EHS‑Teams" />
+    <meta name="twitter:description" content="Erzeugen Sie standardisierte, DSGVO‑bewusste Vorfalls‑Einseiter in Minuten. Entwickelt für EHS‑Manager und Vorgesetzte." />
+    <meta name="twitter:image" content="/assets/og.png" />
 
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <!-- Preload hero image for performance -->
+    <link rel="preload" as="image" href="/assets/hero-industrial.jpg" />
+
+    <!-- Site styles and script (keep current colors/style) -->
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
+
+    <!-- Plausible analytics (placeholder) -->
+    <!-- Replace data-domain with your production domain -->
+    <script defer data-domain="tutelaris.de" src="https://plausible.io/js/script.js"></script>
+
+    <!-- Calendly embed assets -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <style>
+      /* Utility for framed screenshots: subtle border + shadow */
+      .screenshot-frame {
+        border-radius: 12px;
+        border: 1px solid rgba(15, 23, 42, 0.12);
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      }
+    </style>
   </head>
   <body>
     <header class="site-header" role="banner">
@@ -32,135 +64,191 @@
           </svg>
         </button>
         <nav id="primary-nav" class="nav-links" aria-label="Hauptnavigation">
-          <a href="#features">Funktionen</a>
+          <a href="#how">So funktioniert’s</a>
+          <a href="#why">Warum es wichtig ist</a>
+          <a href="#screens">Screenshots</a>
           <a href="#about">Über</a>
-          <a href="#contact">Kontakt</a>
-          <a class="btn btn-primary" href="#contact">Jetzt starten</a>
+          <a class="btn btn-primary" href="#cta">Pilotgespräch buchen</a>
         </nav>
       </div>
     </header>
 
     <main id="home">
-      <section class="section hero">
+      <!-- Hero -->
+      <section class="section hero" aria-labelledby="hero-title">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <div class="pill pill-ai" aria-label="KI‑gestützt">KI‑gestützt</div>
-            <h1>Schnell zu sicheren Vorfallsberichten – mit KI</h1>
-            <p class="lede">Tutelaris verwandelt eine kurze Notiz per KI in einen professionellen, DSGVO‑konformen Bericht. Sparen Sie Stunden, reduzieren Sie Fehler und halten Sie Ihr EHS‑Team frei für Prävention – nicht für Papierkram.</p>
+            <h1 id="hero-title">Vorfallsmeldungen dauern Stunden. Wir machen daraus 5 Minuten.</h1>
+            <p class="lede">Standardisierte Einseiter sofort generieren—DSGVO‑bewusst, audit‑freundlich, neutraler Ton.</p>
             <div class="hero-ctas">
-              <a class="btn btn-primary" href="#contact">Jetzt starten</a>
-              <a class="btn btn-ghost" href="#features">Funktionen ansehen</a>
+              <a class="btn btn-primary" href="#cta" aria-label="Pilotgespräch buchen">Pilotgespräch buchen</a>
+              <a class="btn btn-ghost" href="#early-access" aria-label="Frühen Zugang anfragen">Frühen Zugang anfragen</a>
             </div>
-            <ul class="bullets">
-              <li>Bis zu 40% weniger Erfassungszeit dank automatischer KI‑Einseiter.</li>
-              <li>DSGVO zuerst – Anonymisierung und Sicherheit standardmäßig integriert.</li>
-              <li>Integration in Enablon, Quentic und bestehende EHS‑Workflows.</li>
-            </ul>
           </div>
           <div class="hero-media">
-            <img src="assets/image.png" alt="Illustration der Tutelaris‑App, die einen klaren Vorfallsbericht erzeugt" />
+            <img src="/assets/hero-industrial.jpg" alt="Fabrikhalle mit Sicherheitsschildern" />
           </div>
         </div>
       </section>
 
-      <section id="features" class="section features">
+      <!-- How It Works -->
+      <section id="how" class="section features" aria-labelledby="how-title">
         <div class="container">
-          <h2 class="section-title">Warum Tutelaris</h2>
+          <h2 id="how-title" class="section-title">So funktioniert’s</h2>
           <div class="feature-grid">
             <article class="card">
               <div class="icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                <img src="/assets/step1-notes.png" alt="Kurze Vorfallbeschreibung tippen" loading="lazy" width="64" height="64" />
               </div>
-              <h3>Standardmäßig sicher</h3>
-              <p>Jeder Bericht wird KI‑gestützt anonymisiert, versioniert und prüfbar erzeugt. DSGVO‑konzipiert – sensible Daten werden nicht offengelegt.</p>
+              <h3>Schritt 1 — Beschreiben</h3>
+              <p>Schildern Sie in Alltagssprache, was passiert ist (Datum, Ort, kurze Notizen).</p>
             </article>
             <article class="card">
               <div class="icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16M12 4v16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <img src="/assets/step2-report.png" alt="Vorschau des Einseiters" loading="lazy" width="64" height="64" />
               </div>
-              <h3>Schnell einsatzbereit</h3>
-              <p>KI erzeugt Einseiter in Minuten – spart EHS‑Verantwortlichen Zeit und beschleunigt Antworten an Behörden.</p>
+              <h3>Schritt 2 — Einseiter</h3>
+              <p>Erhalten Sie einen sauberen Markdown → PDF/Docx‑Einseiter + einen strukturierten JSON‑Datensatz.</p>
             </article>
             <article class="card">
               <div class="icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 7h12M6 12h12M6 17h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <img src="/assets/step3-analytics.png" alt="Einfache Diagramme: Torte, Trendlinie" loading="lazy" width="64" height="64" />
               </div>
-              <h3>Leicht zu erweitern</h3>
-              <p>Export als PDF, Markdown oder JSON. Nahtlose Integration in Enablon, Intelex oder bestehende Compliance‑Systeme.</p>
+              <h3>Schritt 3 — Analysen</h3>
+              <p>Erkennen Sie Trends nach Schweregrad, Zeit und Ort – mit schlanken KPIs.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="about" class="section about">
-        <div class="container narrow">
-          <h2 class="section-title">Über das Produkt</h2>
-          <p>Tutelaris ist eine schlanke, lokal‑erste Lösung für Vorfallsberichte – entwickelt für europäische EHS‑Teams. Statt wochenlanger Schulungen oder großer IT‑Rollouts funktioniert es sofort. Aus natürlicher Sprache erzeugt unsere KI standardisierte Einseiter, damit Vorfälle schnell erfasst, EU‑Sicherheitsvorgaben eingehalten und standortübergreifend konsistente Daten geteilt werden.</p>
-        </div>
-        <div class="container flow-wrap" aria-labelledby="flowTitle flowDesc">
-          <svg class="flow-diagram" viewBox="0 0 1100 320" role="img" aria-labelledby="flowTitle flowDesc">
-            <title id="flowTitle">So funktioniert Tutelaris</title>
-            <desc id="flowDesc">Von einer kurzen Notiz zum anonymisierten, validierten, DSGVO‑konformen Einseiter – exportierbar und integrierbar.</desc>
-            <defs>
-              <linearGradient id="flowStroke" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#6AA6FF" />
-                <stop offset="100%" stop-color="#7DF6D9" />
-              </linearGradient>
-              <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-              <marker id="arrow" viewBox="0 0 16 16" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto" markerUnits="strokeWidth">
-                <path d="M3 3 L13 8 L3 13 Z" fill="url(#flowStroke)" stroke="none" />
-              </marker>
-            </defs>
-
-            <!-- Links (connect edges of nodes, end slightly before border so arrow tip sits flush) -->
-            <path class="flow-link" d="M270 145 C 300 130, 300 160, 328 145" marker-end="url(#arrow)" />
-            <path class="flow-link" d="M530 145 C 560 130, 560 160, 588 145" marker-end="url(#arrow)" />
-            <path class="flow-link" d="M790 145 C 820 130, 820 160, 848 145" marker-end="url(#arrow)" />
-
-            <!-- Nodes -->
-            <g class="flow-node" style="animation-delay: .0s">
-              <rect x="70" y="100" width="200" height="90" rx="16"/>
-              <text x="170" y="135" class="flow-node-title" text-anchor="middle">Kurznotiz zum Vorfall</text>
-              <text x="170" y="160" class="flow-node-sub" text-anchor="middle">Kurzer Freitext in Alltagssprache</text>
-            </g>
-            <g class="flow-node" style="animation-delay: .2s">
-              <rect x="330" y="100" width="200" height="90" rx="16"/>
-              <text x="430" y="128" class="flow-node-title" text-anchor="middle">
-                <tspan x="430" dy="0">KI‑Anonymisierung</tspan>
-                <tspan x="430" dy="16">&amp; Validierung</tspan>
-              </text>
-              <text x="430" y="162" class="flow-node-sub" text-anchor="middle">DSGVO‑Checks zuerst</text>
-            </g>
-            <g class="flow-node" style="animation-delay: .4s">
-              <rect x="590" y="100" width="200" height="90" rx="16"/>
-              <text x="690" y="135" class="flow-node-title" text-anchor="middle">Einseiter generieren</text>
-              <text x="690" y="160" class="flow-node-sub" text-anchor="middle">Standardisiert, audit‑bereit</text>
-            </g>
-            <g class="flow-node" style="animation-delay: .6s">
-              <rect x="850" y="100" width="200" height="90" rx="16"/>
-              <text x="950" y="130" class="flow-node-title" text-anchor="middle">Export &amp; Integration</text>
-              <text x="950" y="152" class="flow-node-sub" text-anchor="middle">PDF • Markdown • JSON</text>
-              <text x="950" y="172" class="flow-node-sub" text-anchor="middle">Enablon • Intelex • E‑Mail</text>
-            </g>
-          </svg>
+      <!-- Why It Matters -->
+      <section id="why" class="section" aria-labelledby="why-title">
+        <div class="container">
+          <h2 id="why-title" class="section-title">Warum es wichtig ist</h2>
+          <ul class="bullets">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 0 1 0 1.414l-7.25 7.25a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414l2.293 2.293 6.543-6.543a1 1 0 0 1 1.414 0Z" clip-rule="evenodd"/></svg>
+              Zeit sparen: Berichtsvorbereitung von ~20 Min. auf ~3 Min. reduzieren.
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 0 1 0 1.414l-7.25 7.25a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414l2.293 2.293 6.543-6.543a1 1 0 0 1 1.414 0Z" clip-rule="evenodd"/></svg>
+              Konsistenz: Neutrale, standardisierte Sprache; keine Schuldzuweisungen.
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 0 1 0 1.414l-7.25 7.25a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414l2.293 2.293 6.543-6.543a1 1 0 0 1 1.414 0Z" clip-rule="evenodd"/></svg>
+              Compliance‑bewusst: EU (DSGVO)‑ und OSHA‑ähnliche Vorlagen verfügbar.
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 0 1 0 1.414l-7.25 7.25a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414l2.293 2.293 6.543-6.543a1 1 0 0 1 1.414 0Z" clip-rule="evenodd"/></svg>
+              Datenschutz zuerst: Keine personenbezogenen Daten standardmäßig; Schwärzung von Haus aus.
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section id="contact" class="section contact">
+      <!-- Screenshots -->
+      <section id="screens" class="section" aria-labelledby="screens-title">
+        <div class="container">
+          <h2 id="screens-title" class="section-title">Screenshots</h2>
+          <div class="feature-grid">
+            <figure class="card" style="padding: 0.75rem;">
+              <img src="/assets/screenshot-dashboard.png" alt="Analysen – letzte 30 Tage" class="screenshot-frame" loading="lazy" />
+              <figcaption class="caption">Analysen – letzte 30 Tage</figcaption>
+            </figure>
+            <figure class="card" style="padding: 0.75rem;">
+              <img src="/assets/screenshot-onepager.png" alt="Vorläufiger interner Bericht" class="screenshot-frame" loading="lazy" />
+              <figcaption class="caption">Vorläufiger interner Bericht</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Block (Calendly) -->
+      <section id="cta" class="section contact" aria-labelledby="cta-title">
         <div class="container">
           <div class="contact-card">
-            <h2 class="section-title">Kontakt aufnehmen</h2>
-            <p>Sie möchten Tutelaris in Ihrer Organisation pilotieren? Wir entwickeln gemeinsam mit Sicherheitsbeauftragten, Vorgesetzten und EHS‑Leitungen in ganz Europa. Melden Sie sich – gemeinsam gestalten wir die Zukunft der Vorfallserfassung.</p>
+            <h2 id="cta-title" class="section-title">Pilotpartner werden?</h2>
+            <p>Wir onboarden 3–5 EHS‑Teams für unser MVP. 15‑minütiges Kennenlerngespräch, ohne Verpflichtungen.</p>
             <div class="contact-actions">
-              <a class="btn btn-primary" href="mailto:hello@tutelaris.app">E‑Mail schreiben</a>
-              <a class="btn btn-ghost" href="#home">Nach oben</a>
+              <a class="btn btn-primary" href="https://calendly.com/YOUR_HANDLE/15min" target="_blank" rel="noopener">Pilotgespräch buchen</a>
             </div>
+            <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_HANDLE/15min" style="min-width:320px;height:700px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About / Trust -->
+      <section id="about" class="section about" aria-labelledby="about-title">
+        <div class="container about-grid">
+          <div>
+            <h2 id="about-title" class="section-title">Von Praktikern für Praktiker gebaut</h2>
+            <p>Wir sind ein kleines Team mit Erfahrung in der industriellen Digitalisierung (Siemens Energy). Wir bauen Tools, die Reibung reduzieren, Compliance verständlicher machen und Privatsphäre respektieren. Unterstützung aus dem Enactus‑Alumni‑Netzwerk.</p>
+          </div>
+          <div class="logo-row">
+            <!-- Optional logos row placeholder -->
+            <div class="logo-placeholder" aria-hidden="true"></div>
+            <div class="logo-placeholder" aria-hidden="true"></div>
+            <div class="logo-placeholder" aria-hidden="true"></div>
+            <div class="logo-placeholder" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Early Access Form -->
+      <section id="early-access" class="section contact" aria-labelledby="ea-title">
+        <div class="container">
+          <div class="contact-card">
+            <h2 id="ea-title" class="section-title">Frühen Zugang anfragen</h2>
+            <p>Lieber ein Formular? Teilen Sie uns unten Ihre Details mit. Wir melden uns zeitnah.</p>
+            <form class="form-grid" action="#" method="post">
+              <label>
+                <span>Arbeits‑E‑Mail (erforderlich)</span>
+                <input type="email" name="email" required placeholder="sie@unternehmen.com" />
+              </label>
+              <div class="form-row">
+                <label>
+                  <span>Name (erforderlich)</span>
+                  <input type="text" name="name" required />
+                </label>
+                <label>
+                  <span>Rolle/Titel (erforderlich)</span>
+                  <input type="text" name="role" required />
+                </label>
+              </div>
+              <label>
+                <span>Unternehmen (erforderlich)</span>
+                <input type="text" name="company" required />
+              </label>
+              <div class="form-row">
+                <label>
+                  <span>Teamgröße</span>
+                  <select name="team">
+                    <option value="">Bitte wählen…</option>
+                    <option>&lt; 10</option>
+                    <option>10–49</option>
+                    <option>50–199</option>
+                    <option>200–999</option>
+                    <option>1000+</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Primäre Vorfallssoftware heute</span>
+                  <input type="text" name="software" />
+                </label>
+              </div>
+              <label>
+                <span>Größter Schmerzpunkt bei der Berichterstellung</span>
+                <input type="text" name="pain" />
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="consent" required />
+                <span>Einwilligung zur Kontaktaufnahme</span>
+              </label>
+              <div class="contact-actions">
+                <button class="btn btn-primary" type="submit">Absenden</button>
+                <a class="btn btn-ghost" href="https://calendly.com/YOUR_HANDLE/15min" target="_blank" rel="noopener">oder 15‑Minuten‑Gespräch buchen</a>
+              </div>
+            </form>
           </div>
         </div>
       </section>
@@ -172,14 +260,13 @@
           <img src="assets/favicon.svg" alt="" width="24" height="24" />
           <span>Tutelaris</span>
         </div>
+        <div class="footer-copy">© <span id="year"></span> Tutelaris — Interne Vorversion, keine rechtliche Bewertung.</div>
         <nav class="footer-links" aria-label="Fußzeile">
-          <a href="#features">Funktionen</a>
-          <a href="#about">Über</a>
-          <a href="#contact">Kontakt</a>
+          <span>Hinweis zum Datenschutz: Wir priorisieren Datenminimierung und Schwärzung. Kontaktieren Sie uns für DPA‑Details.</span>
           <a href="#" aria-disabled="true">Datenschutz</a>
-          <a href="#" aria-disabled="true">Nutzungsbedingungen</a>
+          <a href="#" aria-disabled="true">Impressum</a>
+          <a href="mailto:contact@tutelaris.de">Kontakt</a>
         </nav>
-        <div class="footer-copy">© <span id="year"></span> Tutelaris — Alle Rechte vorbehalten.</div>
       </div>
     </footer>
 
