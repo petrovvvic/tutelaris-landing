@@ -15,7 +15,10 @@
       toggle.setAttribute('aria-expanded', String(!collapsed));
     };
     setCollapsed(true);
-    toggle.addEventListener('click', () => setCollapsed(nav.dataset.collapsed !== 'false'));
+    toggle.addEventListener('click', () => {
+      const next = nav.dataset.collapsed === 'true' ? false : true;
+      setCollapsed(next);
+    });
     nav.addEventListener('click', (e) => {
       const target = e.target;
       if (target && target.matches('a[href^="#"]')) setCollapsed(true);
@@ -34,5 +37,18 @@
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     history.pushState(null, '', id);
   });
-})();
 
+  // Make header sticky after scrolling past hero
+  const header = document.querySelector('.site-header');
+  const hero = document.querySelector('.hero');
+  if (header && hero && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        header.classList.remove('is-sticky');
+      } else {
+        header.classList.add('is-sticky');
+      }
+    }, { threshold: 0 });
+    io.observe(hero);
+  }
+})();
