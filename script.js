@@ -51,4 +51,58 @@
     }, { threshold: 0 });
     io.observe(hero);
   }
+
+  // Seamless marquee: duplicate badges so there is no gap
+  function buildMarquee() {
+    const marquee = document.querySelector('.marquee');
+    const track = marquee && marquee.querySelector('.marquee-track');
+    if (!marquee || !track) return;
+
+    // Collect original visible items (role=listitem)
+    const originals = Array.from(track.children).filter(
+      (n) => n.nodeType === 1 && n.getAttribute('role') === 'listitem'
+    );
+    if (originals.length === 0) return;
+
+    // Rebuild the track: first, one accessible set that fills at least the viewport width
+    track.innerHTML = '';
+    const unit = [];
+    let unitWidth = 0;
+    const targetWidth = marquee.offsetWidth; // fill at least container width
+
+    // Helper to append a clone and update width measurement
+    const appendClone = (el, hidden) => {
+      const c = el.cloneNode(true);
+      if (hidden) c.setAttribute('aria-hidden', 'true');
+      track.appendChild(c);
+      unit.push(c);
+    };
+
+    // Append originals until we cover the container width
+    // Measure after each append because inline sizes vary by viewport
+    while (unitWidth < targetWidth) {
+      for (let i = 0; i < originals.length && unitWidth < targetWidth; i++) {
+        appendClone(originals[i], false);
+        unitWidth = track.scrollWidth;
+      }
+      // Safety to avoid infinite loop in extreme cases
+      if (unit.length > 200) break;
+    }
+
+    // Append a hidden duplicate of the built unit to enable seamless loop
+    // We clone the nodes we just appended so widths match exactly
+    unit.forEach((n) => {
+      const c = n.cloneNode(true);
+      c.setAttribute('aria-hidden', 'true');
+      track.appendChild(c);
+    });
+  }
+
+  // Initialize on load and re-run on significant resizes
+  let resizeTimer = null;
+  buildMarquee();
+  window.addEventListener('resize', () => {
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(buildMarquee, 150);
+  });
 })();
