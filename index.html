@@ -79,7 +79,7 @@
           <a href="#features">Vorteile</a>
           <a href="#about">Über</a>
           <a href="#early-access">Kontakt</a>
-          <a class="btn btn-primary" href="https://calendly.com/andr-petr050/30min" style="color:#fff">Pilotgespräch buchen</a>
+          <a id="cta-nav-pilot" class="btn btn-primary" href="https://calendly.com/andr-petr050/30min" style="color:#fff">Pilotgespräch buchen</a>
         </nav>
       </div>
     </header>
@@ -225,7 +225,7 @@
                 <li>Hohes Risiko, DSGVO‑ oder regulatorische Details zu übersehen.</li>
               </ul>
               <div class="hero-ctas cta-left">
-                <a class="btn btn-primary" href="https://calendly.com/andr-petr050/30min" aria-label="Pilotgespräch buchen">Pilotgespräch buchen</a>
+                <a id="cta-why-pilot" class="btn btn-primary" href="https://calendly.com/andr-petr050/30min" aria-label="Pilotgespräch buchen">Pilotgespräch buchen</a>
               </div>
             </div>
             <figure class="card" style="padding: 12px;">
@@ -294,7 +294,7 @@
               <h2 id="cta-title" class="section-title" style="width: 100%; max-width: 100%;border-radius: 0px;">Seien Sie eines der ersten 10 Pilotunternehmen</h2>
               <p>Wir arbeiten mit vorausschauenden EHS‑Verantwortlichen, um Tutelaris im realen Betrieb zu testen. Erhalten Sie frühen Zugang, beeinflussen Sie die Roadmap und sparen Sie wöchentlich Stunden.</p>
               <div class="contact-actions">
-                <a class="btn btn-primary" href="#early-access" target="_blank" rel="noopener" aria-label="Für Pilotzugang bewerben">Für Pilotzugang bewerben</a>
+                <a id="cta-cta-apply" class="btn btn-primary" href="#early-access" target="_blank" rel="noopener" aria-label="Für Pilotzugang bewerben">Für Pilotzugang bewerben</a>
               </div>
             </div>
           </div>
@@ -341,9 +341,9 @@
             <!-- Typeform embed -->
             <div class="typeform-embed" data-tf-widget="o7RlLwx8" data-tf-opacity="100" data-tf-iframe-props="title=Tutelaris — Kontakt / Anmeldung" data-tf-transitive-search-params data-tf-medium="snippet" style="width:100%;height:360px;"></div>
             <div class="contact-actions">
-              <a class="btn btn-primary" href="https://calendly.com/andr-petr050/30min" target="_blank" rel="noopener" aria-label="Pilotgespräch buchen">Pilotgespräch buchen</a>
-              <a class="btn btn-ghost" href="https://form.typeform.com/to/o7RlLwx8" target="_blank" rel="noopener" aria-label="Formular in neuem Tab öffnen">Formular in neuem Tab öffnen</a>
-              <a class="btn btn-ghost" href="mailto:contact@tutelaris.de" aria-label="E‑Mail senden">E‑Mail senden</a>
+              <a id="cta-early-pilot" class="btn btn-primary" href="https://calendly.com/andr-petr050/30min" target="_blank" rel="noopener" aria-label="Pilotgespräch buchen">Pilotgespräch buchen</a>
+              <a id="cta-open-form" class="btn btn-ghost" href="https://form.typeform.com/to/o7RlLwx8" target="_blank" rel="noopener" aria-label="Formular in neuem Tab öffnen">Formular in neuem Tab öffnen</a>
+              <a id="cta-email" class="btn btn-ghost" href="mailto:contact@tutelaris.de" aria-label="E‑Mail senden">E‑Mail senden</a>
             </div>
           </div>
         </div>
@@ -355,9 +355,11 @@
     (function () {
       function ready(fn){ if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
       ready(function(){
-        ['cta-pilot','cta-contact'].forEach(function(id){
-          var el = document.getElementById(id);
-          if(!el) return;
+        // Attach to every CTA button (ids starting with cta-)
+        var nodes = document.querySelectorAll('[id^="cta-"]');
+        nodes.forEach(function(el){
+          var id = el.id;
+          if(!id) return;
           el.addEventListener('click', function(){
             if (typeof window.gtag === 'function') {
               window.gtag('event', 'cta_click', { cta_id: id });
