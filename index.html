@@ -93,8 +93,8 @@
             <h1 id="hero-title">KI‑Assistent für Vorfallsmeldungen:<br class="hero-title-break"> 5‑Minuten‑Einseiter.</h1>
             <p class="lede">Digitalisieren Sie Ihr EHS: Einseiter in 5 Minuten. Für EHS‑Teams: Von 30 auf 5 Minuten pro Vorfall – standardisiert, prüfbar, DSGVO‑konform.</p>
             <div class="hero-ctas">
-              <a class="btn btn-primary" href="https://calendly.com/andr-petr050/30min" aria-label="Pilotgespräch buchen">Pilotgespräch buchen</a>
-              <a class="btn btn-ghost" href="#early-access" aria-label="Frühen Zugang anfragen">Frühen Zugang anfragen</a>
+              <a id="cta-pilot" class="btn btn-primary" href="https://calendly.com/andr-petr050/30min" aria-label="Pilotgespräch buchen">Pilotgespräch buchen</a>
+              <a id="cta-contact" class="btn btn-ghost" href="#early-access" aria-label="Frühen Zugang anfragen">Frühen Zugang anfragen</a>
             </div>
             <div class="cred-row" aria-label="Glaubwürdigkeitsmerkmale">
               <div class="cred-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z"/></svg><span>DSGVO‑bewusst</span></div>
@@ -348,9 +348,27 @@
           </div>
         </div>
       </section>
-    </main>
+  </main>
 
-    <footer class="site-footer" role="contentinfo">
+  <!-- GA4 CTA click tracking -->
+  <script>
+    (function () {
+      function ready(fn){ if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
+      ready(function(){
+        ['cta-pilot','cta-contact'].forEach(function(id){
+          var el = document.getElementById(id);
+          if(!el) return;
+          el.addEventListener('click', function(){
+            if (typeof window.gtag === 'function') {
+              window.gtag('event', 'cta_click', { cta_id: id });
+            }
+          });
+        });
+      });
+    })();
+  </script>
+
+  <footer class="site-footer" role="contentinfo">
       <div class="container footer-grid">
         <div class="footer-brand">
           <span class="brand-name">Tutelaris</span>
