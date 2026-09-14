@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K18Q80GHW0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K18Q80GHW0');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontakt — Tutelaris</title>
+    <meta name="description" content="Sprechen Sie mit Tutelaris über einen Near-Miss-Piloten für Ihr Sicherheits- oder EHS-Team." />
+    <link rel="icon" type="image/svg+xml" href="assets/tutelaris_t_logo_white_blue_dot.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <script defer data-domain="tutelaris.de" src="https://plausible.io/js/script.js"></script>
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Tutelaris Startseite">
+          <img src="assets/tutelaris_logo_white.svg" alt="Tutelaris" width="100" height="20" />
+        </a>
+        <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+          <span class="sr-only">Navigation umschalten</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <nav id="primary-nav" class="nav-links" aria-label="Hauptnavigation" data-collapsed="true">
+          <a href="produkt.html">Produkt</a>
+          <a href="unternehmen.html">Unternehmen</a>
+          <a href="presse.html">Presse</a>
+          <a href="kontakt.html" class="is-active">Kontakt</a>
+          <a id="cta-nav-pilot" class="btn btn-primary" href="https://calendly.com/tutelaris/30min">Pilotgespräch buchen</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Kontakt</span>
+          <h1>Sprechen Sie mit uns über Ihren Near-Miss-Piloten</h1>
+          <p class="lede">Ein paar Fragen beantworten – wir melden uns mit einer Near-Miss-Demo und Pilotempfehlung.</p>
+        </div>
+      </section>
+
+      <section id="early-access" class="section contact" aria-labelledby="ea-title">
+        <div class="container">
+          <div class="contact-card">
+            <h2 id="ea-title" class="section-title">Kontakt / Anmeldung</h2>
+            <p>Ein paar Fragen beantworten – wir melden uns mit einer Near-Miss-Demo und Pilotempfehlung.</p>
+            <div class="typeform-embed" data-tf-widget="o7RlLwx8" data-tf-opacity="100" data-tf-iframe-props="title=Tutelaris — Near-Miss Kontakt / Anmeldung" data-tf-transitive-search-params data-tf-medium="snippet" style="width:100%;height:360px;"></div>
+            <div class="contact-actions">
+              <a id="cta-early-pilot" class="btn btn-primary" href="https://calendly.com/tutelaris/30min" target="_blank" rel="noopener" aria-label="Pilotgespräch buchen">Pilotgespräch buchen</a>
+              <a id="cta-open-form" class="btn btn-ghost" href="https://form.typeform.com/to/o7RlLwx8" target="_blank" rel="noopener" aria-label="Formular in neuem Tab öffnen">Formular in neuem Tab öffnen</a>
+              <a id="cta-email" class="btn btn-ghost" href="mailto:team@tutelaris.de" aria-label="E‑Mail senden">E‑Mail senden</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        function ready(fn){ if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
+        ready(function(){
+          var nodes = document.querySelectorAll('[id^="cta-"]');
+          nodes.forEach(function(el){
+            var id = el.id;
+            if(!id) return;
+            el.addEventListener('click', function(){
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'cta_click', { cta_id: id });
+              }
+            });
+          });
+        });
+      })();
+    </script>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-grid">
+        <div class="footer-brand"><span class="brand-name">Tutelaris</span></div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/company/tutelaris" target="_blank" rel="noopener" aria-label="Tutelaris auf LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22.225 0H1.771C.792 0 0 .77 0 1.723v20.547C0 23.23.792 24 1.771 24h20.451C23.2 24 24 23.23 24 22.27V1.723C24 .77 23.2 0 22.222 0h.003zM6.905 20.452H3.77V9h3.135v11.452zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.368-1.852 3.6 0 4.266 2.37 4.266 5.456v6.287z" />
+            </svg>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+        </div>
+        <div class="footer-copy">© <span id="year"></span> Tutelaris<br><a href="mailto:info@tutelaris.de" aria-label="E‑Mail an info@tutelaris.de">info@tutelaris.de</a></div>
+      </div>
+    </footer>
+
+    <div id="portal-root" hidden></div>
+    <script src="https://embed.typeform.com/next/embed.js"></script>
+  </body>
+</html>
