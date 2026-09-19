@@ -2,6 +2,34 @@
 
 A minimal, fast, and responsive landing page starter. No dependencies — just HTML, CSS, and a tiny bit of JavaScript.
 
+## Neues Design ansehen (Branch `feature/new-design`)
+
+Auf dem Branch `feature/new-design` liegt die Landingpage im neuen Design (Tailwind über CDN,
+helles Layout, Vorlage: `NEW_DESIGN/index.html`). Die Inhalte sind identisch mit der Live-Seite.
+`main` bleibt unverändert — der Branch ist **nicht** veröffentlicht.
+
+So schaust du dir die neue Version an:
+
+1. **Lokal (empfohlen, alles funktioniert inkl. Bilder, Video und Typeform):**
+
+   ```bash
+   git fetch origin
+   git checkout feature/new-design
+   python3 -m http.server 5173
+   ```
+
+   Dann http://localhost:5173 im Browser öffnen.
+   Zurück zur alten Version: `git checkout main`.
+
+2. **Direkt auf GitHub, ohne etwas herunterzuladen:**
+   https://htmlpreview.github.io/?https://github.com/petrovvvic/tutelaris-landing/blob/feature/new-design/index.html
+   Hinweis: Die Vorschau rendert nur eingeschränkt — Bilder mit absoluten Pfaden
+   (`/assets/...`) und das Typeform-Embed können fehlen. Für eine verlässliche
+   Beurteilung Variante 1 nutzen.
+
+Wenn das Design übernommen werden soll: Pull Request von `feature/new-design` nach `main`
+öffnen oder `git merge feature/new-design` auf `main`.
+
 ## Quick Start
 
 - Open `index.html` directly in your browser, or run a simple local server:

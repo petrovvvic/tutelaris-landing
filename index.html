@@ -1,22 +1,14 @@
-<!--
-  TODOs before going live:
-  - Replace Calendly URL (search for YOUR_HANDLE)
-  - Update Plausible data-domain to your domain
-  - Swap stock images under /assets/... with your own
-  - Wire Privacy and Imprint links to real pages
--->
 <!doctype html>
 <html lang="de">
   <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K18Q80GHW0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-K18Q80GHW0');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K18Q80GHW0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K18Q80GHW0');
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tutelaris — Near-Miss-Intelligence für EHS-Teams</title>
@@ -35,389 +27,467 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/tutelaris_t_logo_white_blue_dot.svg" />
 
-    <!-- Preload hero image for performance -->
-    <link rel="preload" as="image" href="/img/factory-safety.jpg" />
-
-    <!-- Site styles and script (keep current colors/style) -->
-    <!-- Brand font: Orbitron + Roboto for wordmark -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Roboto:wght@700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=2" />
-    <script defer src="script.js"></script>
-
-    <!-- Plausible analytics (placeholder) -->
-    <!-- Replace data-domain with your production domain -->
-    <script defer data-domain="tutelaris.de" src="https://plausible.io/js/script.js"></script>
-
-    <!-- Calendly embed assets removed (using button only) -->
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@600;700;800;900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..24,400..600,0..1,0" rel="stylesheet" />
 
     <style>
-      /* Utility for framed screenshots: subtle border + shadow */
-      .screenshot-frame {
-        border-radius: 12px;
-        border: 1px solid rgba(15, 23, 42, 0.12);
-        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-      }
+      @layer base { html, body { margin:0; padding:0; } body { overscroll-behavior:none; } }
+      .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+      html { scroll-behavior: smooth; }
+      section[id] { scroll-margin-top: 6rem; }
     </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              surface: "#FAFAFD",
+              "surface-container": "#F6F8FC",
+              primary: "#2563eb",
+              ink: "#0b0f19",
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", "2xl": "1rem", "3xl": "1.5rem", full: "9999px" },
+            fontFamily: { body: ["Inter", "sans-serif"], headline: ["Plus Jakarta Sans", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+
+    <!-- Plausible analytics -->
+    <script defer data-domain="tutelaris.de" src="https://plausible.io/js/script.js"></script>
   </head>
-  <body>
-    <header class="site-header" role="banner">
-      <div class="container nav">
-        <a class="brand" href="#home" aria-label="Tutelaris Startseite">
-          <img src="assets/tutelaris_logo_white.svg" alt="Tutelaris" width="100" height="20" />
+
+  <body class="bg-[#FAFAFD] font-body text-[#101828] antialiased selection:bg-blue-100 selection:text-blue-900">
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+      <div class="h-20 max-w-[80rem] mx-auto px-6 sm:px-8 flex items-center justify-between gap-4">
+        <a class="flex items-center gap-2.5 focus:outline-none" href="#home" aria-label="Tutelaris Startseite">
+          <img src="assets/img/logo_text_blue_trim.png" alt="Tutelaris" class="h-6 w-auto object-contain" />
         </a>
-        <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
-          <span class="sr-only">Navigation umschalten</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-        <nav id="primary-nav" class="nav-links" aria-label="Hauptnavigation" data-collapsed="true">
-          <a href="#how">So funktioniert’s</a>
-          <a href="#why">Warum Near-Misses zählen</a>
-          <a href="#features">Near-Miss-Vorteile</a>
-          <a href="#about">Über</a>
-          <a href="#team">Team</a>
-          <a href="#early-access">Kontakt</a>
-          <a id="cta-nav-pilot" class="btn btn-primary" href="https://calendly.com/tutelaris/30min" style="color:#fff">Pilotgespräch buchen</a>
+
+        <nav class="hidden lg:flex items-center gap-7" aria-label="Hauptnavigation">
+          <a class="text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" href="#how">So funktioniert’s</a>
+          <a class="text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" href="#why">Warum Near-Misses zählen</a>
+          <a class="text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" href="#features">Near-Miss-Vorteile</a>
+          <a class="text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" href="#about">Über</a>
+          <a class="text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" href="#team">Team</a>
+          <a class="text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" href="#early-access">Kontakt</a>
         </nav>
+
+        <div class="flex items-center gap-3">
+          <a id="cta-nav-pilot" class="hidden sm:inline-flex items-center justify-center bg-[#0b0f19] hover:bg-slate-800 text-white font-semibold text-[14.5px] px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all h-10" href="https://calendly.com/tutelaris/30min" target="_blank" rel="noopener">Pilotgespräch buchen</a>
+          <button id="nav-toggle" class="lg:hidden w-10 h-10 rounded-lg flex items-center justify-center text-slate-700 hover:bg-slate-100" aria-controls="mobile-nav" aria-expanded="false" type="button">
+            <span class="sr-only">Navigation umschalten</span>
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
       </div>
+
+      <!-- Mobile navigation -->
+      <nav id="mobile-nav" class="lg:hidden hidden border-t border-slate-100 bg-white px-6 py-4" aria-label="Mobile Navigation">
+        <div class="flex flex-col gap-1">
+          <a class="py-2.5 text-[15px] font-medium text-slate-700" href="#how">So funktioniert’s</a>
+          <a class="py-2.5 text-[15px] font-medium text-slate-700" href="#why">Warum Near-Misses zählen</a>
+          <a class="py-2.5 text-[15px] font-medium text-slate-700" href="#features">Near-Miss-Vorteile</a>
+          <a class="py-2.5 text-[15px] font-medium text-slate-700" href="#about">Über</a>
+          <a class="py-2.5 text-[15px] font-medium text-slate-700" href="#team">Team</a>
+          <a class="py-2.5 text-[15px] font-medium text-slate-700" href="#early-access">Kontakt</a>
+          <a id="cta-mobile-pilot" class="mt-3 inline-flex items-center justify-center bg-[#0b0f19] text-white font-semibold text-[15px] px-5 py-3 rounded-full" href="https://calendly.com/tutelaris/30min" target="_blank" rel="noopener">Pilotgespräch buchen</a>
+        </div>
+      </nav>
     </header>
 
-    <main id="home">
-      <!-- Hero -->
-      <section class="section hero" aria-labelledby="hero-title">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <div class="pill pill-ai" aria-label="Near-Miss-Fokus">Near-Miss Fokus</div>
-            <h1 id="hero-title">KI‑Assistent für Near-Miss-Meldungen:<br class="hero-title-break"> Sicherere Schichten in Minuten.</h1>
-            <p class="lede">Wir machen Beinaheunfälle sichtbar: mehr Meldungen, spielerische Motivation und datengestützte Prävention – in 5 Minuten pro Near-Miss, DSGVO‑konform.</p>
-            <div class="hero-ctas">
-              <a id="cta-pilot" class="btn btn-primary" href="https://calendly.com/tutelaris/30min" aria-label="Pilotgespräch buchen">Pilotgespräch buchen</a>
-              <a id="cta-contact" class="btn btn-ghost" href="#early-access" aria-label="Frühen Zugang anfragen">Frühen Zugang anfragen</a>
-            </div>
-            <div class="cred-row" aria-label="Glaubwürdigkeitsmerkmale">
-              <div class="cred-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z"/></svg><span>DSGVO‑bewusst</span></div>
-              <div class="cred-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Audit‑freundlich</span></div>
-              <div class="cred-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 118 0v4"/></svg><span>Ohne PII</span></div>
-            </div>
-          </div>
-          <div class="hero-media">
-            <div class="hero-illustration" role="img" aria-label="Fabrikhalle mit Sicherheitsschildern">
-              <img src="/assets/img/onepager example.jpg" alt="Fabrikhalle mit Sicherheitsschildern" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </section>
-            <!-- Social Proof / Credibility -->
-      <section id="credibility" class="section strip" aria-labelledby="cred-title">
-        <div class="container" style="max-width: 100%; width: 100%; padding-left: 0px; padding-right: 0px;">
-          <h2 id="cred-title" class="sr-only">Vertrauen & Konformität</h2>
-          <div class="marquee" role="list" aria-label="Standards und Ausrichtung">
-            <div class="marquee-track">
-              <div class="badge" role="listitem" aria-label="DSGVO / GDPR">
-                <span class="badge-dot" aria-hidden="true"></span>
-                <span>DSGVO / GDPR</span>
-              </div>
-              <div class="badge" role="listitem" aria-label="ISO 45001 (Ausrichtung)">
-                <span class="badge-dot" aria-hidden="true"></span>
-                <span>ISO 45001 (Ausrichtung)</span>
-              </div>
-              <div class="badge" role="listitem" aria-label="Seveso III (Ausrichtung)">
-                <span class="badge-dot" aria-hidden="true"></span>
-                <span>Seveso III (Ausrichtung)</span>
-              </div>
-              <div class="badge" role="listitem" aria-label="Für EU‑Compliance‑First‑Organisationen gebaut">
-                <span class="badge-dot" aria-hidden="true"></span>
-                <span>Für EU‑Compliance‑First‑Organisationen gebaut</span>
-              </div>
-              <!-- Duplicates for seamless loop -->
-              <div class="badge" aria-hidden="true">
-                <span class="badge-dot"></span>
-                <span>DSGVO / GDPR</span>
-              </div>
-              <div class="badge" aria-hidden="true">
-                <span class="badge-dot"></span>
-                <span>ISO 45001 (Ausrichtung)</span>
-              </div>
-              <div class="badge" aria-hidden="true">
-                <span class="badge-dot"></span>
-                <span>Seveso III (Ausrichtung)</span>
-              </div>
-              <div class="badge" aria-hidden="true">
-                <span class="badge-dot"></span>
-                <span>Für EU‑Compliance‑First‑Organisationen gebaut</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <main id="home" class="w-full pt-20 bg-[#FAFAFD] min-h-screen overflow-x-hidden">
+      <div class="flex flex-col w-full">
+        <!-- 1. HERO -->
+        <section class="relative pt-12 pb-14 sm:pt-16 sm:pb-20 max-w-[80rem] mx-auto px-6 sm:px-8 w-full" aria-labelledby="hero-title">
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[850px] lg:w-[1000px] h-[450px] sm:h-[600px] bg-gradient-to-tr from-[#2563eb]/15 via-[#60a5fa]/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
 
-      <!-- How It Works -->
-      <section id="how" class="section features" aria-labelledby="how-title">
-        <div class="container">
-          <h2 id="how-title" class="section-title">So funktioniert’s</h2>
-          <div class="how-steps" aria-label="Drei Schritte">
-            <article class="card step">
-              <div class="icon icon-lg" aria-hidden="true">
-                <!-- Prompt / Eingabefeld Icon -->
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                  <path d="M7 9h10M7 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M16.5 16.5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M17 12.25a2.75 2.75 0 1 0 0 5.5 2.75 2.75 0 0 0 0-5.5Z" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-              </div>
-              <h3>Schritt 1 — Near-Miss schildern</h3>
-              <p>Beschreiben Sie in Alltagssprache, welcher Beinaheunfall fast eingetreten wäre (Datum, Ort, Beobachtungen).</p>
-            </article>
-            <div class="step-arrow" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+          <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] mb-8">
+              <span class="w-2 h-2 rounded-full bg-[#2563eb]"></span>
+              <span class="text-[13px] font-semibold text-slate-800">Near-Miss Fokus</span>
             </div>
-            <article class="card step">
-              <div class="icon icon-lg" aria-hidden="true">
-                <!-- One-Pager / Dokument Icon -->
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 3h7l4 4v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5"/>
-                  <path d="M14 3v4h4" stroke="currentColor" stroke-width="1.5"/>
-                  <path d="M8.5 12h7M8.5 15h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M9 18l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3>Schritt 2 — Digitaler Report</h3>
-              <p>Sie erhalten einen standardisierten Near-Miss-Report mit Scorecard plus strukturierte JSON‑Daten für Ihre Systeme.</p>
-            </article>
-            <div class="step-arrow" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+
+            <h1 id="hero-title" class="font-headline text-[38px] sm:text-[56px] lg:text-[66px] font-[900] tracking-[-0.035em] text-[#0b0f19] leading-[1.06] max-w-4xl">
+              KI‑Assistent für Near-Miss-Meldungen: Sicherere Schichten in Minuten.
+            </h1>
+
+            <p class="font-body text-[18px] sm:text-[21px] text-slate-600 mt-6 max-w-2xl leading-relaxed">
+              Wir machen Beinaheunfälle sichtbar: mehr Meldungen, spielerische Motivation und datengestützte Prävention – in 5 Minuten pro Near-Miss, DSGVO‑konform.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center gap-3 mt-9 w-full sm:w-auto">
+              <a id="cta-pilot" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0b0f19] hover:bg-slate-800 text-white font-semibold text-[15px] px-6 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all" href="https://calendly.com/tutelaris/30min" target="_blank" rel="noopener" aria-label="Pilotgespräch buchen">
+                <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                Pilotgespräch buchen
+              </a>
+              <a id="cta-contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 font-semibold text-[15px] px-6 py-3.5 rounded-full border border-slate-200 shadow-sm hover:shadow-md transition-all" href="#early-access" aria-label="Frühen Zugang anfragen">
+                Frühen Zugang anfragen
+              </a>
             </div>
-            <article class="card step">
-              <div class="icon icon-lg" aria-hidden="true">
-                <!-- Analytics Icon -->
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 20h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                  <rect x="6" y="12" width="3" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
-                  <rect x="11" y="10" width="3" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/>
-                  <rect x="16" y="7" width="3" height="11" rx="1" stroke="currentColor" stroke-width="1.5"/>
-                  <path d="M6 9l3 2 3-3 3 2 3-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+
+            <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mt-8 text-slate-700 text-[14px]" aria-label="Glaubwürdigkeitsmerkmale">
+              <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>DSGVO‑bewusst</span>
+              <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>Audit‑freundlich</span>
+              <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>Ohne PII</span>
+            </div>
+          </div>
+
+          <!-- Hero visual -->
+          <div class="mt-14 max-w-5xl mx-auto">
+            <div class="rounded-[32px] p-3 sm:p-5 bg-gradient-to-b from-[#f8fafc] via-[#f1f5f9] to-[#eff6ff] border border-slate-200/80 shadow-lg">
+              <div class="rounded-[24px] overflow-hidden border border-slate-200/70 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)]">
+                <img src="/assets/img/onepager example.jpg" alt="Fabrikhalle mit Sicherheitsschildern" class="w-full h-auto block" loading="lazy" />
               </div>
-              <h3>Schritt 3 — Analysen & Gamification</h3>
-              <p>Erkennen Sie Muster, Heatmaps und Team-Challenges, die Melderaten erhöhen und Risiken schließen.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. CREDIBILITY STRIP -->
+        <section id="credibility" class="w-full border-y border-slate-200/60 bg-white/60 py-8" aria-labelledby="cred-title">
+          <h2 id="cred-title" class="sr-only">Vertrauen &amp; Konformität</h2>
+          <div class="max-w-[80rem] mx-auto px-6 sm:px-8 flex flex-wrap items-center justify-center gap-3">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-[13.5px] font-semibold text-slate-700 shadow-xs">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#2563eb]"></span>DSGVO / GDPR
+            </span>
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-[13.5px] font-semibold text-slate-700 shadow-xs">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#2563eb]"></span>ISO 45001 (Ausrichtung)
+            </span>
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-[13.5px] font-semibold text-slate-700 shadow-xs">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#2563eb]"></span>Seveso III (Ausrichtung)
+            </span>
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-[13.5px] font-semibold text-slate-700 shadow-xs">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#2563eb]"></span>Für EU‑Compliance‑First‑Organisationen gebaut
+            </span>
+          </div>
+        </section>
+
+        <!-- 3. HOW IT WORKS -->
+        <section id="how" class="max-w-[80rem] mx-auto px-6 sm:px-8 py-24 w-full" aria-labelledby="how-title">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-[12.5px] font-bold uppercase tracking-wider text-[#2563eb] block mb-2.5">In drei Schritten</span>
+            <h2 id="how-title" class="font-headline text-[34px] sm:text-[44px] font-extrabold text-[#0b0f19] tracking-tight leading-tight">So funktioniert’s</h2>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] gap-6 items-stretch">
+            <article class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col">
+              <div class="w-12 h-12 rounded-xl bg-[#0b0f19] text-[#3b82f6] flex items-center justify-center shadow-xs border border-slate-800 mb-5">
+                <span class="material-symbols-outlined text-[24px]">edit_note</span>
+              </div>
+              <span class="text-[12px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Schritt 1</span>
+              <h3 class="font-headline text-[20px] font-bold text-slate-900 tracking-tight mb-2">Near-Miss schildern</h3>
+              <p class="text-[15px] text-slate-600 leading-relaxed">Beschreiben Sie in Alltagssprache, welcher Beinaheunfall fast eingetreten wäre (Datum, Ort, Beobachtungen).</p>
+            </article>
+
+            <div class="hidden lg:flex items-center justify-center text-slate-300" aria-hidden="true">
+              <span class="material-symbols-outlined text-[32px]">arrow_forward</span>
+            </div>
+
+            <article class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col">
+              <div class="w-12 h-12 rounded-xl bg-[#0b0f19] text-[#3b82f6] flex items-center justify-center shadow-xs border border-slate-800 mb-5">
+                <span class="material-symbols-outlined text-[24px]">description</span>
+              </div>
+              <span class="text-[12px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Schritt 2</span>
+              <h3 class="font-headline text-[20px] font-bold text-slate-900 tracking-tight mb-2">Digitaler Report</h3>
+              <p class="text-[15px] text-slate-600 leading-relaxed">Sie erhalten einen standardisierten Near-Miss-Report mit Scorecard plus strukturierte JSON‑Daten für Ihre Systeme.</p>
+            </article>
+
+            <div class="hidden lg:flex items-center justify-center text-slate-300" aria-hidden="true">
+              <span class="material-symbols-outlined text-[32px]">arrow_forward</span>
+            </div>
+
+            <article class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col">
+              <div class="w-12 h-12 rounded-xl bg-[#0b0f19] text-[#3b82f6] flex items-center justify-center shadow-xs border border-slate-800 mb-5">
+                <span class="material-symbols-outlined text-[24px]">bar_chart</span>
+              </div>
+              <span class="text-[12px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Schritt 3</span>
+              <h3 class="font-headline text-[20px] font-bold text-slate-900 tracking-tight mb-2">Analysen &amp; Gamification</h3>
+              <p class="text-[15px] text-slate-600 leading-relaxed">Erkennen Sie Muster, Heatmaps und Team-Challenges, die Melderaten erhöhen und Risiken schließen.</p>
             </article>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Why It Matters -->
-      <!-- Pain → Solution -->
-      <section id="why" class="section" aria-labelledby="why-title">
-        <div class="container">
-          <div class="split">
-            <div>
-              <h2 id="why-title" class="section-title">Warum Near-Misses zählen</h2>
-              <ul class="bullets">
-                <li>Beinaheunfälle bleiben oft ungemeldet – Frühwarnsignale gehen verloren.</li>
-                <li>Teams fehlt ein schneller, DSGVO‑konformer Prozess für Near-Miss-Dokumentation.</li>
-                <li>Ohne Gamification und Feedback sinkt die Motivation zu melden.</li>
-              </ul>
-              <div class="hero-ctas cta-left">
-                <a id="cta-why-pilot" class="btn btn-primary" href="https://calendly.com/tutelaris/30min" aria-label="Pilotgespräch buchen">Pilotgespräch buchen</a>
+        <!-- 4. WHY IT MATTERS -->
+        <section id="why" class="w-full bg-[#F6F8FC] py-24 border-y border-slate-200/60" aria-labelledby="why-title">
+          <div class="max-w-[80rem] mx-auto px-6 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-white p-8 sm:p-12 rounded-[28px] border border-slate-200/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
+              <div class="lg:col-span-6">
+                <span class="text-[12.5px] font-bold uppercase tracking-wider text-[#2563eb] block mb-2.5">Frühwarnsignale nutzen</span>
+                <h2 id="why-title" class="font-headline text-[32px] sm:text-[40px] font-extrabold text-[#0b0f19] tracking-tight leading-tight">Warum Near-Misses zählen</h2>
+                <ul class="mt-7 flex flex-col gap-4">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[#2563eb] text-[22px] shrink-0">check_circle</span>
+                    <span class="text-[15.5px] text-slate-600 leading-relaxed">Beinaheunfälle bleiben oft ungemeldet – Frühwarnsignale gehen verloren.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[#2563eb] text-[22px] shrink-0">check_circle</span>
+                    <span class="text-[15.5px] text-slate-600 leading-relaxed">Teams fehlt ein schneller, DSGVO‑konformer Prozess für Near-Miss-Dokumentation.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[#2563eb] text-[22px] shrink-0">check_circle</span>
+                    <span class="text-[15.5px] text-slate-600 leading-relaxed">Ohne Gamification und Feedback sinkt die Motivation zu melden.</span>
+                  </li>
+                </ul>
+                <a id="cta-why-pilot" class="mt-8 inline-flex items-center justify-center gap-2 bg-[#0b0f19] hover:bg-slate-800 text-white font-semibold text-[15px] px-6 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all" href="https://calendly.com/tutelaris/30min" target="_blank" rel="noopener" aria-label="Pilotgespräch buchen">
+                  <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                  Pilotgespräch buchen
+                </a>
               </div>
-            </div>
-            <figure class="card" style="padding: 12px;">
-              <video
-                class="screenshot-frame"
-                src="assets/img/usage%20video/usage.mp4"
-                autoplay
-                loop
-                muted
-                playsinline
-                preload="auto"
-                style="display:block; width:100%; height:300px; object-fit:cover;"
-                aria-label="Kurzes Demo‑Video: Near-Miss melden → Scorecard → Gamification"
-              ></video>
-              <figcaption class="caption">Near-Miss melden → Scorecard → Gamification</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
 
-      <!-- Key Features / Value Blocks -->
-      <section id="features" class="section features" aria-labelledby="features-title">
-        <div class="container">
-          <h2 id="features-title" class="section-title">Ihre Near-Miss-Vorteile</h2>
-          <div class="pros-wrap">
-            <div class="feature-grid">
-              <article class="card">
-                <div class="icon" aria-hidden="true">
-                  <!-- Stopwatch -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 2h6M12 8v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="14" r="7" stroke="currentColor" stroke-width="1.5"/></svg>
+              <figure class="lg:col-span-6 m-0">
+                <div class="bg-[#F8F9FA] p-3 rounded-2xl border border-slate-100">
+                  <video
+                    class="block w-full rounded-xl border border-slate-200/70 shadow-sm"
+                    src="assets/img/usage%20video/usage.mp4"
+                    autoplay loop muted playsinline preload="auto"
+                    style="height:320px; object-fit:cover;"
+                    aria-label="Kurzes Demo‑Video: Near-Miss melden → Scorecard → Gamification"
+                  ></video>
                 </div>
-                <h3>Mehr Near-Miss-Meldungen</h3>
-                <p>Near-Miss-Kampagnen, Nudges und mobile Formulare erhöhen Meldequoten.</p>
-                <p class="muted">Spielerische Badges, Erinnerungen und KI-Hilfen senken Barrieren und liefern belastbare Frühindikatoren.</p>
-              </article>
-              <article class="card">
-                <div class="icon" aria-hidden="true">
-                  <!-- Shield -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.5"/><path d="M9 13l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <h3>Gamifizierte Sicherheitskultur</h3>
-                <p>Leaderboards, Challenges und sofortiges Feedback motivieren Teams nachhaltig.</p>
-                <p class="muted">Individuelle Ziele, Team-Rankings und Micro-Learnings verankern Sicherheitsverhalten im Alltag.</p>
-              </article>
-              <article class="card">
-                <div class="icon" aria-hidden="true">
-                  <!-- Plug -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 7v6M15 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 13h10v3a5 5 0 01-5 5 5 5 0 01-5-5v-3z" stroke="currentColor" stroke-width="1.5"/></svg>
-                </div>
-                <h3>Datenhub für Near-Misses</h3>
-                <p>Echtzeit-Analysen, Heatmaps und strukturierte Daten für Ihre Systeme.</p>
-                <p class="muted">PDF, JSON oder API – integrierbar in Enablon, Quentic, Intelex & Co., ohne Ihre Landschaft zu ersetzen.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Screenshots -->
-
-      <!-- Pilot Call-to-Action (Conversion Block) -->
-      <section id="cta" class="section contact" aria-labelledby="cta-title" style="width: 100%;">
-        <div class="container" style="width: 100%; max-width: 100%;border-radius: 0px;padding: 0px 0px;">
-          <div class="contact-card" style="width: 100%; max-width: 100%;border-radius: 0px;padding:40px 0px">
-            <div class="container">
-              <h2 id="cta-title" class="section-title" style="width: 100%; max-width: 100%;border-radius: 0px;">Starten Sie Ihren Near-Miss-Pilot</h2>
-              <p>Wir arbeiten mit Sicherheits- und EHS‑Teams, die Near-Misses zur Priorität machen: Gemeinsam gamifizieren wir Meldungen, testen Datenflüsse und schließen Sicherheitslücken.</p>
-              <div class="contact-actions">
-                <a id="cta-cta-apply" class="btn btn-primary" href="#early-access" target="_blank" rel="noopener" aria-label="Near-Miss-Pilot starten">Near-Miss-Pilot starten</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- About / Trust -->
-      <section id="about" class="section about" aria-labelledby="about-title">
-        <div class="container">
-          <div class="split">
-            <div style="    max-width: 515px;">
-              <h2 id="about-title" class="section-title">Über uns & Near-Miss-Expertise</h2>
-              <p>Gebaut von EHS‑, Daten‑ und Gamification-Expert:innen in Berlin. Entstanden, weil Near-Misses im Tagesgeschäft oft untergehen.</p>
-              <ul class="bullets">
-                <li>DSGVO-sicher: Datenminimierung, automatische Schwärzung und Hosting in der EU.</li>
-                <li>Near-Miss-Playbooks: Digitale Reports, Scorecards und Challenges ready to run.</li>
-                <li>Ergänzend statt ersetzend: Ihre großen EHS‑Systeme werden um Near-Miss-Intelligence erweitert.</li>
-              </ul>
-              <figure class="about-quote" style="    margin-left: 0px;">
-                <blockquote>
-                  „Wir helfen Sicherheitsverantwortlichen, aus Beinaheunfällen verwertbare Learnings zu ziehen – bevor etwas passiert.“
-                </blockquote>
-                <figcaption>
-                  <strong>Andrei Piatrouski</strong>, Co-Founder & CEO — Industrial Safety & Data (u. a. Siemens Energy)
-                </figcaption>
+                <figcaption class="text-[13px] text-slate-500 mt-3 text-center">Near-Miss melden → Scorecard → Gamification</figcaption>
               </figure>
             </div>
-            <div class="about-media" role="img" aria-label="Team mit Near-Miss-Dashboard">
-              <!-- Human photo or simple brand illustration (placeholder) -->
-              <img src="/assets/img/team working.png" alt="Illustration Team mit Near-Miss-Dashboard" loading="lazy" />
+          </div>
+        </section>
+
+        <!-- 5. FEATURES (BENTO) -->
+        <section id="features" class="max-w-[80rem] mx-auto px-6 sm:px-8 py-24 w-full" aria-labelledby="features-title">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-[12.5px] font-bold uppercase tracking-wider text-[#2563eb] block mb-2.5">Plattform-Module</span>
+            <h2 id="features-title" class="font-headline text-[34px] sm:text-[44px] font-extrabold text-[#0b0f19] tracking-tight leading-tight">Ihre Near-Miss-Vorteile</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col">
+              <div class="inline-flex self-start items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#2563eb] text-[12.5px] font-semibold mb-5 border border-blue-100">
+                <span class="material-symbols-outlined text-[16px]">timer</span> Melderaten
+              </div>
+              <h3 class="font-headline text-[22px] font-bold text-slate-900 mb-3 tracking-tight">Mehr Near-Miss-Meldungen</h3>
+              <p class="text-[15px] text-slate-600 leading-relaxed">Near-Miss-Kampagnen, Nudges und mobile Formulare erhöhen Meldequoten.</p>
+              <p class="text-[14px] text-slate-500 leading-relaxed mt-3 pt-4 border-t border-slate-100">Spielerische Badges, Erinnerungen und KI-Hilfen senken Barrieren und liefern belastbare Frühindikatoren.</p>
+            </article>
+
+            <article class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col">
+              <div class="inline-flex self-start items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-[12.5px] font-semibold mb-5">
+                <span class="material-symbols-outlined text-[16px]">shield</span> Sicherheitskultur
+              </div>
+              <h3 class="font-headline text-[22px] font-bold text-slate-900 mb-3 tracking-tight">Gamifizierte Sicherheitskultur</h3>
+              <p class="text-[15px] text-slate-600 leading-relaxed">Leaderboards, Challenges und sofortiges Feedback motivieren Teams nachhaltig.</p>
+              <p class="text-[14px] text-slate-500 leading-relaxed mt-3 pt-4 border-t border-slate-100">Individuelle Ziele, Team-Rankings und Micro-Learnings verankern Sicherheitsverhalten im Alltag.</p>
+            </article>
+
+            <article class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col">
+              <div class="inline-flex self-start items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#2563eb] text-[12.5px] font-semibold mb-5 border border-blue-100">
+                <span class="material-symbols-outlined text-[16px]">hub</span> Integrationen
+              </div>
+              <h3 class="font-headline text-[22px] font-bold text-slate-900 mb-3 tracking-tight">Datenhub für Near-Misses</h3>
+              <p class="text-[15px] text-slate-600 leading-relaxed">Echtzeit-Analysen, Heatmaps und strukturierte Daten für Ihre Systeme.</p>
+              <p class="text-[14px] text-slate-500 leading-relaxed mt-3 pt-4 border-t border-slate-100">PDF, JSON oder API – integrierbar in Enablon, Quentic, Intelex &amp; Co., ohne Ihre Landschaft zu ersetzen.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 6. PILOT CTA BANNER -->
+        <section id="cta" class="max-w-[80rem] mx-auto px-6 sm:px-8 pb-24 w-full" aria-labelledby="cta-title">
+          <div class="bg-[#0b0f19] text-white rounded-[32px] p-10 sm:p-16 lg:p-20 shadow-2xl flex flex-col items-center text-center relative overflow-hidden border border-slate-800">
+            <div class="absolute -top-32 -right-32 w-80 h-80 bg-[#2563eb]/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-[#3b82f6]/10 rounded-full blur-3xl pointer-events-none"></div>
+            <h2 id="cta-title" class="font-headline text-[34px] sm:text-[48px] font-black tracking-tight text-white max-w-3xl leading-tight">
+              Starten Sie Ihren Near-Miss-Pilot
+            </h2>
+            <p class="text-[17px] sm:text-[18px] text-slate-300 max-w-2xl mt-5 leading-relaxed">
+              Wir arbeiten mit Sicherheits- und EHS‑Teams, die Near-Misses zur Priorität machen: Gemeinsam gamifizieren wir Meldungen, testen Datenflüsse und schließen Sicherheitslücken.
+            </p>
+            <a id="cta-cta-apply" class="mt-9 inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-blue-700 text-white font-semibold text-[15px] px-7 py-3.5 rounded-full shadow-lg transition-colors" href="#early-access" aria-label="Near-Miss-Pilot starten">
+              Near-Miss-Pilot starten
+              <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- 7. ABOUT -->
+        <section id="about" class="w-full bg-[#F6F8FC] py-24 border-y border-slate-200/60" aria-labelledby="about-title">
+          <div class="max-w-[80rem] mx-auto px-6 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div class="lg:col-span-6">
+                <span class="text-[12.5px] font-bold uppercase tracking-wider text-[#2563eb] block mb-2.5">Über uns</span>
+                <h2 id="about-title" class="font-headline text-[32px] sm:text-[40px] font-extrabold text-[#0b0f19] tracking-tight leading-tight">Über uns &amp; Near-Miss-Expertise</h2>
+                <p class="text-[17px] text-slate-600 mt-4 leading-relaxed">Gebaut von EHS‑, Daten‑ und Gamification-Expert:innen in Berlin. Entstanden, weil Near-Misses im Tagesgeschäft oft untergehen.</p>
+
+                <ul class="mt-7 flex flex-col gap-4">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[#2563eb] text-[22px] shrink-0">lock</span>
+                    <span class="text-[15.5px] text-slate-600 leading-relaxed">DSGVO-sicher: Datenminimierung, automatische Schwärzung und Hosting in der EU.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[#2563eb] text-[22px] shrink-0">menu_book</span>
+                    <span class="text-[15.5px] text-slate-600 leading-relaxed">Near-Miss-Playbooks: Digitale Reports, Scorecards und Challenges ready to run.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[#2563eb] text-[22px] shrink-0">extension</span>
+                    <span class="text-[15.5px] text-slate-600 leading-relaxed">Ergänzend statt ersetzend: Ihre großen EHS‑Systeme werden um Near-Miss-Intelligence erweitert.</span>
+                  </li>
+                </ul>
+
+                <figure class="mt-8 bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] m-0">
+                  <blockquote class="font-headline text-[19px] sm:text-[21px] text-slate-900 font-bold leading-snug tracking-tight">
+                    „Wir helfen Sicherheitsverantwortlichen, aus Beinaheunfällen verwertbare Learnings zu ziehen – bevor etwas passiert.“
+                  </blockquote>
+                  <figcaption class="flex items-center gap-3 mt-5 pt-5 border-t border-slate-100">
+                    <img src="assets/img/a_piatrouski.jpeg" alt="Andrei Piatrouski" class="w-11 h-11 rounded-full object-cover border border-slate-200" loading="lazy" />
+                    <span class="text-[13.5px] text-slate-500 leading-snug">
+                      <strong class="block text-slate-900 text-[14.5px] font-bold">Andrei Piatrouski</strong>
+                      Co-Founder &amp; CEO — Industrial Safety &amp; Data (u.&nbsp;a. Siemens Energy)
+                    </span>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="lg:col-span-6">
+                <div class="rounded-[28px] overflow-hidden border border-slate-200/80 bg-white shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
+                  <img src="/assets/img/team working.png" alt="Illustration Team mit Near-Miss-Dashboard" class="w-full h-auto block" loading="lazy" />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Team -->
-      <section id="team" class="section team" aria-labelledby="team-title">
-        <div class="container">
-          <h2 id="team-title" class="section-title">Leadership</h2>
-          <div class="team-grid">
-            <article class="card team-card">
-              <div class="team-avatar">
-                <img src="assets/img/a_piatrouski.jpeg" alt="Andrei Piatrouski" loading="lazy" />
+        <!-- 8. LEADERSHIP -->
+        <section id="team" class="max-w-[80rem] mx-auto px-6 sm:px-8 py-24 w-full" aria-labelledby="team-title">
+          <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-[12.5px] font-bold uppercase tracking-wider text-[#2563eb] block mb-2.5">Team</span>
+            <h2 id="team-title" class="font-headline text-[34px] sm:text-[44px] font-extrabold text-[#0b0f19] tracking-tight leading-tight">Leadership</h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <article class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col items-center text-center">
+              <div class="w-28 h-28 rounded-full overflow-hidden border border-slate-200 shadow-sm">
+                <img src="assets/img/a_piatrouski.jpeg" alt="Andrei Piatrouski" class="w-full h-full object-cover" loading="lazy" />
               </div>
-              <h3>Andrei Piatrouski</h3>
-              <p class="team-role">Co-Founder &amp; CEO</p>
+              <h3 class="font-headline text-[19px] font-bold text-slate-900 mt-5 tracking-tight">Andrei Piatrouski</h3>
+              <p class="text-[14px] text-[#2563eb] font-semibold mt-1">Co-Founder &amp; CEO</p>
             </article>
-            <article class="card team-card">
-              <div class="team-avatar">
-                <img src="assets/img/y_prokhorenko.png" alt="Yehor Prokhorenko" loading="lazy" />
+
+            <article class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col items-center text-center">
+              <div class="w-28 h-28 rounded-full overflow-hidden border border-slate-200 shadow-sm">
+                <img src="assets/img/y_prokhorenko.png" alt="Yehor Prokhorenko" class="w-full h-full object-cover" loading="lazy" />
               </div>
-              <h3>Yehor Prokhorenko</h3>
-              <p class="team-role">Co-Founder &amp; CFO/COO</p>
+              <h3 class="font-headline text-[19px] font-bold text-slate-900 mt-5 tracking-tight">Yehor Prokhorenko</h3>
+              <p class="text-[14px] text-[#2563eb] font-semibold mt-1">Co-Founder &amp; CFO/COO</p>
             </article>
-            <article class="card team-card">
-              <div class="team-avatar">
-                <img src="assets/img/b_stoltzenburg.JPG" alt="Bryan Stoltzenburg" loading="lazy" style="object-position: center 25%;" />
+
+            <article class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col items-center text-center">
+              <div class="w-28 h-28 rounded-full overflow-hidden border border-slate-200 shadow-sm">
+                <img src="assets/img/b_stoltzenburg.JPG" alt="Bryan Stoltzenburg" class="w-full h-full object-cover" style="object-position: center 25%;" loading="lazy" />
               </div>
-              <h3>Bryan Stoltzenburg</h3>
-              <p class="team-role">Co-Founder &amp; CTO</p>
+              <h3 class="font-headline text-[19px] font-bold text-slate-900 mt-5 tracking-tight">Bryan Stoltzenburg</h3>
+              <p class="text-[14px] text-[#2563eb] font-semibold mt-1">Co-Founder &amp; CTO</p>
             </article>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Contact / Sign-up -->
-      <section id="early-access" class="section contact" aria-labelledby="ea-title">
-        <div class="container">
-          <div class="contact-card">
-            <h2 id="ea-title" class="section-title">Kontakt / Anmeldung</h2>
-            <p>Ein paar Fragen beantworten – wir melden uns mit einer Near-Miss-Demo und Pilotempfehlung.</p>
-            <!-- Typeform embed -->
-            <div class="typeform-embed" data-tf-widget="o7RlLwx8" data-tf-opacity="100" data-tf-iframe-props="title=Tutelaris — Near-Miss Kontakt / Anmeldung" data-tf-transitive-search-params data-tf-medium="snippet" style="width:100%;height:360px;"></div>
-            <div class="contact-actions">
-              <a id="cta-early-pilot" class="btn btn-primary" href="https://calendly.com/tutelaris/30min" target="_blank" rel="noopener" aria-label="Pilotgespräch buchen">Pilotgespräch buchen</a>
-              <a id="cta-open-form" class="btn btn-ghost" href="https://form.typeform.com/to/o7RlLwx8" target="_blank" rel="noopener" aria-label="Formular in neuem Tab öffnen">Formular in neuem Tab öffnen</a>
-              <a id="cta-email" class="btn btn-ghost" href="mailto:team@tutelaris.de" aria-label="E‑Mail senden">E‑Mail senden</a>
+        <!-- 9. CONTACT / SIGN-UP -->
+        <section id="early-access" class="w-full bg-[#F6F8FC] py-24 border-t border-slate-200/60" aria-labelledby="ea-title">
+          <div class="max-w-[64rem] mx-auto px-6 sm:px-8">
+            <div class="bg-white p-8 sm:p-12 rounded-[28px] border border-slate-200/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
+              <div class="text-center max-w-2xl mx-auto">
+                <h2 id="ea-title" class="font-headline text-[30px] sm:text-[38px] font-extrabold text-[#0b0f19] tracking-tight leading-tight">Kontakt / Anmeldung</h2>
+                <p class="text-[16.5px] text-slate-600 mt-3 leading-relaxed">Ein paar Fragen beantworten – wir melden uns mit einer Near-Miss-Demo und Pilotempfehlung.</p>
+              </div>
+
+              <!-- Typeform embed -->
+              <div class="typeform-embed mt-8 rounded-2xl overflow-hidden border border-slate-100" data-tf-widget="o7RlLwx8" data-tf-opacity="100" data-tf-iframe-props="title=Tutelaris — Near-Miss Kontakt / Anmeldung" data-tf-transitive-search-params data-tf-medium="snippet" style="width:100%;height:360px;"></div>
+
+              <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+                <a id="cta-early-pilot" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0b0f19] hover:bg-slate-800 text-white font-semibold text-[15px] px-6 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all" href="https://calendly.com/tutelaris/30min" target="_blank" rel="noopener" aria-label="Pilotgespräch buchen">
+                  <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                  Pilotgespräch buchen
+                </a>
+                <a id="cta-open-form" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 font-semibold text-[15px] px-6 py-3.5 rounded-full border border-slate-200 shadow-sm transition-all" href="https://form.typeform.com/to/o7RlLwx8" target="_blank" rel="noopener" aria-label="Formular in neuem Tab öffnen">
+                  Formular in neuem Tab öffnen
+                </a>
+                <a id="cta-email" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 font-semibold text-[15px] px-6 py-3.5 rounded-full border border-slate-200 shadow-sm transition-all" href="mailto:team@tutelaris.de" aria-label="E‑Mail senden">
+                  E‑Mail senden
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-  </main>
+        </section>
+      </div>
+    </main>
 
-  <!-- GA4 CTA click tracking -->
-  <script>
-    (function () {
-      function ready(fn){ if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
-      ready(function(){
-        // Attach to every CTA button (ids starting with cta-)
-        var nodes = document.querySelectorAll('[id^="cta-"]');
-        nodes.forEach(function(el){
-          var id = el.id;
-          if(!id) return;
-          el.addEventListener('click', function(){
-            if (typeof window.gtag === 'function') {
-              window.gtag('event', 'cta_click', { cta_id: id });
-            }
-          });
-        });
-      });
-    })();
-  </script>
-
-  <footer class="site-footer" role="contentinfo">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <span class="brand-name"></span>
-        </div>
-        <div class="footer-links">
-          <a href="https://www.linkedin.com/company/tutelaris" target="_blank" rel="noopener" aria-label="Tutelaris auf LinkedIn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M22.225 0H1.771C.792 0 0 .77 0 1.723v20.547C0 23.23.792 24 1.771 24h20.451C23.2 24 24 23.23 24 22.27V1.723C24 .77 23.2 0 22.222 0h.003zM6.905 20.452H3.77V9h3.135v11.452zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.368-1.852 3.6 0 4.266 2.37 4.266 5.456v6.287z" />
-            </svg>
-            <span class="sr-only">LinkedIn</span>
+    <!-- FOOTER -->
+    <footer class="w-full bg-white border-t border-slate-200/80 pt-14 pb-10" role="contentinfo">
+      <div class="max-w-[80rem] mx-auto px-6 sm:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-100">
+          <a class="flex items-center gap-2.5" href="#home" aria-label="Tutelaris Startseite">
+            <img src="assets/img/logo_text_blue_trim.png" alt="Tutelaris" class="h-6 w-auto object-contain" />
           </a>
+          <div class="flex items-center gap-4">
+            <a href="https://www.linkedin.com/company/tutelaris" target="_blank" rel="noopener" class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" aria-label="Tutelaris auf LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M22.225 0H1.771C.792 0 0 .77 0 1.723v20.547C0 23.23.792 24 1.771 24h20.451C23.2 24 24 23.23 24 22.27V1.723C24 .77 23.2 0 22.222 0h.003zM6.905 20.452H3.77V9h3.135v11.452zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.368-1.852 3.6 0 4.266 2.37 4.266 5.456v6.287z" />
+              </svg>
+              <span class="sr-only">LinkedIn</span>
+            </a>
+            <a class="text-[14px] font-medium text-slate-600 hover:text-slate-900 transition-colors" href="mailto:info@tutelaris.de">info@tutelaris.de</a>
+          </div>
         </div>
-        <div class="footer-copy">© <span id="year"></span> Tutelaris<br><a href="mailto:info@tutelaris.de" aria-label="E‑Mail an info@tutelaris.de">info@tutelaris.de</a></div>
+        <div class="pt-6 text-[13px] text-slate-500 text-center sm:text-left">© <span id="year"></span> Tutelaris</div>
       </div>
     </footer>
 
     <div id="portal-root" hidden></div>
+
+    <!-- Mobile nav, year, GA4 CTA click tracking -->
+    <script>
+      (function () {
+        function ready(fn){ if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
+        ready(function(){
+          // Current year in footer
+          var year = document.getElementById('year');
+          if (year) year.textContent = new Date().getFullYear();
+
+          // Mobile navigation toggle
+          var toggle = document.getElementById('nav-toggle');
+          var mobileNav = document.getElementById('mobile-nav');
+          if (toggle && mobileNav) {
+            toggle.addEventListener('click', function(){
+              var open = mobileNav.classList.toggle('hidden') === false;
+              toggle.setAttribute('aria-expanded', String(open));
+              toggle.querySelector('.material-symbols-outlined').textContent = open ? 'close' : 'menu';
+            });
+            mobileNav.querySelectorAll('a').forEach(function(link){
+              link.addEventListener('click', function(){
+                mobileNav.classList.add('hidden');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+              });
+            });
+          }
+
+          // Attach to every CTA button (ids starting with cta-)
+          var nodes = document.querySelectorAll('[id^="cta-"]');
+          nodes.forEach(function(el){
+            var id = el.id;
+            if(!id) return;
+            el.addEventListener('click', function(){
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'cta_click', { cta_id: id });
+              }
+            });
+          });
+        });
+      })();
+    </script>
+
     <!-- Typeform embed script -->
     <script src="https://embed.typeform.com/next/embed.js"></script>
   </body>
-  </html>
+</html>
