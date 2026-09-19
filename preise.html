@@ -62,14 +62,54 @@
       <span class="material-symbols-outlined text-[22px]">menu</span>
     </button>
   </div></div>
-  <div class="mobile-nav-panel hidden lg:hidden border-t border-slate-100 bg-white px-6 py-4">
+  <div class="mobile-nav-panel hidden lg:hidden border-t border-slate-100 bg-white px-6 py-4 max-h-[calc(100vh-5rem)] overflow-y-auto">
     <div class="flex flex-col gap-1">
-      <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="#" data-path="produkt">Funktionen</a>
-      <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="#" data-path="loesung-logistik">Lösungen</a>
+      <div class="mobile-accordion">
+        <button type="button" class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50">
+          <span>Funktionen</span>
+          <span class="material-symbols-outlined text-[20px] text-slate-400 transition-transform">expand_more</span>
+        </button>
+        <div class="mobile-accordion-panel hidden flex-col ml-2 pl-3 border-l border-slate-100">
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="index.html#produkt-showcase" data-path="beinaheunfall-management">Beinaheunfälle</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="index.html#verbandsbuch-modul" data-path="verbandsbuch">Verbandsbuch</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="index.html#vorteile" data-path="unfaelle-melden">Unfälle Melden</a>
+        </div>
+      </div>
+      <div class="mobile-accordion">
+        <button type="button" class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50">
+          <span>Lösungen</span>
+          <span class="material-symbols-outlined text-[20px] text-slate-400 transition-transform">expand_more</span>
+        </button>
+        <div class="mobile-accordion-panel hidden flex-col ml-2 pl-3 border-l border-slate-100">
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="loesung-logistik">Logistik</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="loesung-produktion">Produktion</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="loesung-bau">Baugewerbe</a>
+        </div>
+      </div>
       <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="preise.html" data-path="preise">Preise</a>
-      <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="#" data-path="ressourcen">Sicherheitswissen</a>
+      <div class="mobile-accordion">
+        <button type="button" class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50">
+          <span>Sicherheitswissen</span>
+          <span class="material-symbols-outlined text-[20px] text-slate-400 transition-transform">expand_more</span>
+        </button>
+        <div class="mobile-accordion-panel hidden flex-col ml-2 pl-3 border-l border-slate-100">
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen">EHS Leitfäden</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen">Checklisten Vorlagen</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen">Webinare</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen">Sicherheits-Blog</a>
+        </div>
+      </div>
       <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="ueber-uns.html" data-path="unternehmen">Über uns</a>
+      <div class="border-t border-slate-100 my-2"></div>
       <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="#" data-path="login">Login</a>
+      <div class="flex items-center justify-between px-2 py-2.5">
+        <span class="text-[14px] font-medium text-slate-700">Sprache</span>
+        <div class="flex items-center gap-1 bg-slate-100 rounded-full p-1">
+          <button type="button" class="lang-option px-3 py-1.5 rounded-full text-[13px] font-semibold text-slate-700 hover:bg-white" data-lang="DE">DE</button>
+          <button type="button" class="lang-option px-3 py-1.5 rounded-full text-[13px] font-semibold text-slate-700 hover:bg-white" data-lang="EN">EN</button>
+        </div>
+      </div>
+      <a class="demo-open-btn mt-2 inline-flex items-center justify-center bg-[#4f89fb] hover:bg-[#3d75e6] text-white font-medium text-[15px] px-5 py-3 rounded-full shadow-sm transition-all" data-path="demo-anfragen" href="#">Demo buchen</a>
     </div>
   </div>
     </header><main class="w-full pt-20 bg-[#FAFAFD] min-h-screen overflow-x-hidden"><div class="flex flex-col w-full">
@@ -279,12 +319,45 @@
   // ---- Mobile nav toggle ----
   var mobileToggle = document.querySelector('.mobile-nav-toggle');
   var mobilePanel = document.querySelector('.mobile-nav-panel');
+
+  function closeMobilePanel() {
+    if (!mobileToggle || !mobilePanel) return;
+    mobilePanel.classList.add('hidden');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    mobileToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+    mobilePanel.querySelectorAll('.mobile-accordion-panel').forEach(function (p) { p.classList.add('hidden'); p.classList.remove('flex'); });
+    mobilePanel.querySelectorAll('.mobile-accordion-btn .material-symbols-outlined').forEach(function (icon) { icon.classList.remove('rotate-180'); });
+  }
+
   if (mobileToggle && mobilePanel) {
     mobileToggle.addEventListener('click', function () {
       var isHidden = mobilePanel.classList.contains('hidden');
-      mobilePanel.classList.toggle('hidden');
-      mobileToggle.setAttribute('aria-expanded', String(isHidden));
-      mobileToggle.querySelector('.material-symbols-outlined').textContent = isHidden ? 'close' : 'menu';
+      if (isHidden) {
+        mobilePanel.classList.remove('hidden');
+        mobileToggle.setAttribute('aria-expanded', 'true');
+        mobileToggle.querySelector('.material-symbols-outlined').textContent = 'close';
+      } else {
+        closeMobilePanel();
+      }
+    });
+
+    // Accordion sections (Funktionen, Lösungen, Sicherheitswissen)
+    mobilePanel.querySelectorAll('.mobile-accordion-btn').forEach(function (btn) {
+      var panel = btn.nextElementSibling;
+      btn.addEventListener('click', function () {
+        var isHidden = panel.classList.contains('hidden');
+        panel.classList.toggle('hidden', !isHidden);
+        panel.classList.toggle('flex', isHidden);
+        var icon = btn.querySelector('.material-symbols-outlined');
+        if (icon) icon.classList.toggle('rotate-180', isHidden);
+      });
+    });
+
+    // Close the panel after following an actual link (not accordion toggles or the lang switch)
+    mobilePanel.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        closeMobilePanel();
+      });
     });
   }
 
