@@ -166,10 +166,11 @@
       </div>
       <h3 class="font-headline text-[24px] font-extrabold text-[#0b0f19] tracking-tight mb-1.5">Demo buchen</h3>
       <p class="text-[14px] text-slate-500 mb-6">Erzählen Sie uns kurz von sich – wir melden uns innerhalb eines Werktags.</p>
-      <form id="demo-modal-form" class="flex flex-col gap-4">
+      <form id="demo-modal-form" class="flex flex-col gap-4" novalidate>
         <div>
           <label for="demo-field-email" class="block text-[13px] font-semibold text-slate-700 mb-1.5">E-Mail (geschäftlich) *</label>
           <input id="demo-field-email" name="email" type="email" required placeholder="name@unternehmen.de" class="w-full px-4 py-2.75 text-[14.5px] text-slate-900 placeholder:text-slate-400 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4f89fb]/30 focus:border-[#4f89fb] transition-all">
+          <p id="demo-field-email-error" class="hidden mt-1.5 text-[12.5px] text-red-600 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">error</span><span>Bitte gib eine gültige E-Mail-Adresse ein.</span></p>
         </div>
         <div>
           <label for="demo-field-name" class="block text-[13px] font-semibold text-slate-700 mb-1.5">Name <span class="text-slate-400 font-normal">(optional)</span></label>
@@ -278,17 +279,52 @@
     });
   }
 
+  // ---- Email validation (replaces the browser's native validation bubble) ----
+  function showPillError(f) {
+    f.classList.remove(f.dataset.baseBorder);
+    f.classList.add('border-red-400');
+    var errorEl = f.parentElement.querySelector('.demo-email-error');
+    if (errorEl) errorEl.classList.remove('hidden');
+  }
+  function clearPillError(f) {
+    f.classList.remove('border-red-400');
+    f.classList.add(f.dataset.baseBorder);
+    var errorEl = f.parentElement.querySelector('.demo-email-error');
+    if (errorEl) errorEl.classList.add('hidden');
+  }
+
+  document.querySelectorAll('.demo-trigger-form').forEach(function (f) {
+    var input = f.querySelector('.demo-email-input');
+    if (!input) return;
+    f.dataset.baseBorder = f.classList.contains('border-slate-300') ? 'border-slate-300' : 'border-slate-200';
+    input.addEventListener('input', function () { clearPillError(f); });
+  });
+
   // ---- Demo modal ----
   var modal = document.getElementById('demo-modal');
   var form = document.getElementById('demo-modal-form');
   var success = document.getElementById('demo-modal-success');
   var emailField = document.getElementById('demo-field-email');
+  var emailFieldError = document.getElementById('demo-field-email-error');
+
+  function showModalEmailError() {
+    emailField.classList.remove('border-slate-200');
+    emailField.classList.add('border-red-400');
+    if (emailFieldError) emailFieldError.classList.remove('hidden');
+  }
+  function clearModalEmailError() {
+    emailField.classList.remove('border-red-400');
+    emailField.classList.add('border-slate-200');
+    if (emailFieldError) emailFieldError.classList.add('hidden');
+  }
+  if (emailField) emailField.addEventListener('input', clearModalEmailError);
 
   function openDemoModal(prefillEmail) {
     if (!modal) return;
     form.classList.remove('hidden');
     success.classList.add('hidden');
     form.reset();
+    clearModalEmailError();
     if (prefillEmail) emailField.value = prefillEmail;
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -313,6 +349,12 @@
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var input = f.querySelector('.demo-email-input');
+      if (input && !input.checkValidity()) {
+        showPillError(f);
+        input.focus();
+        return;
+      }
+      clearPillError(f);
       openDemoModal(input ? input.value.trim() : '');
     });
   });
@@ -328,6 +370,12 @@
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (emailField && !emailField.checkValidity()) {
+        showModalEmailError();
+        emailField.focus();
+        return;
+      }
+      clearModalEmailError();
       // No backend wired up yet — show a confirmation state.
       form.classList.add('hidden');
       success.classList.remove('hidden');
