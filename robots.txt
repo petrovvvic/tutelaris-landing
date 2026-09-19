@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 
-# Point to your sitemap when ready:
-# Sitemap: https://example.com/sitemap.xml
+Sitemap: https://tutelaris.de/sitemap.xml
 
