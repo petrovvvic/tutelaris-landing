@@ -57,7 +57,7 @@
       </div>
     </div>
     <a class="hidden sm:inline-flex text-[15px] font-medium text-slate-700 hover:text-slate-900 px-2 py-1" data-path="login" href="#">Login</a>
-    <a class="demo-open-btn inline-flex items-center justify-center bg-[#4f89fb] hover:bg-[#3d75e6] text-white font-medium text-[14.5px] px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all h-10" data-path="demo-anfragen" href="#">Demo buchen</a>
+    <a class="demo-open-btn inline-flex items-center justify-center bg-[#4f89fb] hover:bg-[#3d75e6] text-white font-medium text-[14.5px] px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all h-10" data-path="demo-anfragen" href="#">Demo anfragen</a>
     <button class="mobile-nav-toggle lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 text-slate-700" type="button" aria-expanded="false" aria-label="Menü öffnen">
       <span class="material-symbols-outlined text-[22px]">menu</span>
     </button>
@@ -109,7 +109,7 @@
           <button type="button" class="lang-option px-3 py-1.5 rounded-full text-[13px] font-semibold text-slate-700 hover:bg-white" data-lang="EN">EN</button>
         </div>
       </div>
-      <a class="demo-open-btn mt-2 inline-flex items-center justify-center bg-[#4f89fb] hover:bg-[#3d75e6] text-white font-medium text-[15px] px-5 py-3 rounded-full shadow-sm transition-all" data-path="demo-anfragen" href="#">Demo buchen</a>
+      <a class="demo-open-btn mt-2 inline-flex items-center justify-center bg-[#4f89fb] hover:bg-[#3d75e6] text-white font-medium text-[15px] px-5 py-3 rounded-full shadow-sm transition-all" data-path="demo-anfragen" href="#">Demo anfragen</a>
     </div>
   </div>
     </header><main class="w-full pt-20 bg-[#FAFAFD] min-h-screen overflow-x-hidden"><div class="flex flex-col w-full">
@@ -226,7 +226,7 @@
 <form class="demo-trigger-form flex items-center bg-white rounded-full p-1.5 shadow-lg border border-slate-200" novalidate>
 <input class="demo-email-input w-full px-5 py-3 text-[15px] text-slate-900 placeholder:text-slate-400 bg-transparent border-none focus:outline-none focus:ring-0 rounded-full font-normal" placeholder="Ihre geschäftliche E-Mail *" required="" type="email">
 <button class="shrink-0 bg-[#4f89fb] hover:bg-[#3d75e6] text-white font-semibold text-[14.5px] px-6 py-3 rounded-full transition-colors shadow-sm" type="submit">
-          Demo buchen
+          Demo anfragen
         </button>
 </form>
 <p class="demo-email-error hidden mt-2 pl-5 text-[13px] text-red-400 flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">error</span><span>Geben Sie eine gültige Adresse ein.</span></p>
@@ -247,7 +247,7 @@
       <div class="w-11 h-11 rounded-xl bg-[#4f89fb]/10 flex items-center justify-center mb-4">
         <span class="material-symbols-outlined text-[#4f89fb] text-[22px]">calendar_month</span>
       </div>
-      <h3 class="font-headline text-[24px] font-extrabold text-[#0b0f19] tracking-tight mb-1.5">Demo buchen</h3>
+      <h3 class="font-headline text-[24px] font-extrabold text-[#0b0f19] tracking-tight mb-1.5">Demo anfragen</h3>
       <p class="text-[14px] text-slate-500 mb-6">Erzählen Sie uns kurz von sich – wir melden uns innerhalb eines Werktags.</p>
       <form id="demo-modal-form" class="flex flex-col gap-4" novalidate>
         <div>
@@ -442,7 +442,7 @@
     document.body.style.overflow = '';
   }
 
-  // Plain "Demo buchen" buttons/links
+  // Plain "Demo anfragen" buttons/links
   document.querySelectorAll('.demo-open-btn').forEach(function (el) {
     el.addEventListener('click', function (e) {
       e.preventDefault();
@@ -450,7 +450,7 @@
     });
   });
 
-  // Email + "Demo buchen" pill forms: submit opens modal prefilled with typed email
+  // Email + "Demo anfragen" pill forms: submit opens modal prefilled with typed email
   document.querySelectorAll('.demo-trigger-form').forEach(function (f) {
     f.addEventListener('submit', function (e) {
       e.preventDefault();
