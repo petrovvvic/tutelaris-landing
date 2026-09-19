@@ -315,6 +315,11 @@
   }
 
   // ---- Email validation (replaces the browser's native validation bubble) ----
+  // Stricter than the native type="email" check, which accepts addresses
+  // without a top-level domain (e.g. "xx@yy") — require user@domain.tld.
+  function isValidEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((value || '').trim());
+  }
   function showPillError(f) {
     f.classList.remove(f.dataset.baseBorder);
     f.classList.add('border-red-400');
@@ -384,7 +389,7 @@
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var input = f.querySelector('.demo-email-input');
-      if (input && !input.checkValidity()) {
+      if (input && !isValidEmail(input.value)) {
         showPillError(f);
         input.focus();
         return;
@@ -405,7 +410,7 @@
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (emailField && !emailField.checkValidity()) {
+      if (emailField && !isValidEmail(emailField.value)) {
         showModalEmailError();
         emailField.focus();
         return;
