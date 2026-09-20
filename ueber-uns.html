@@ -357,7 +357,7 @@
 <script>
 (function () {
   // Höhe des festen Kopfs (Ankündigungsleiste + Navigation) an das CSS geben,
-  // damit der Hero-Verlauf exakt darunter anschließt — auch wenn die
+  // damit der Hero-Verlauf exakt darunter anschließt, auch wenn die
   // Ankündigungsleiste auf schmalen Geräten zweizeilig wird.
   var kopfEl = document.querySelector('header');
   function kopfHoehe() {
@@ -463,7 +463,7 @@
 
   // ---- Email validation (replaces the browser's native validation bubble) ----
   // Stricter than the native type="email" check, which accepts addresses
-  // without a top-level domain (e.g. "xx@yy") — require user@domain.tld.
+  // without a top-level domain (e.g. "xx@yy"), require user@domain.tld.
   function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((value || '').trim());
   }

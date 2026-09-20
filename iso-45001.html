@@ -375,7 +375,7 @@
 
   // ---- Email validation (replaces the browser's native validation bubble) ----
   // Stricter than the native type="email" check, which accepts addresses
-  // without a top-level domain (e.g. "xx@yy") — require user@domain.tld.
+  // without a top-level domain (e.g. "xx@yy"), require user@domain.tld.
   function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((value || '').trim());
   }
