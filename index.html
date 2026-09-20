@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="web_standard" name="shell-type">
-    <title data-i18n="meta.title">tutelaris - Beinaheunfälle erfassen, verstehen, vermeiden</title>
-    <meta name="description" content="Beinaheunfälle in unter zwei Minuten melden – gesprochen, anonym, ohne Formular. tutelaris macht daraus Muster und belegte Maßnahmen, samt digitalem Verbandsbuch.">
+    <title data-i18n="meta.title">tutelaris – Beinaheunfälle systematisch erfassen</title>
+    <meta name="description" content="Beinaheunfälle in dreißig Sekunden melden – gesprochen, anonym, ohne Formular. Die KI macht daraus auswertbare Daten: aus Meldungen werden Muster, aus Mustern Maßnahmen.">>
     <link rel="canonical" href="https://tutelaris.de/">
     <link rel="icon" type="image/svg+xml" href="tutelaris-logo.svg">
     <meta name="theme-color" content="#4f89fb">
@@ -13,8 +13,8 @@
     <meta property="og:site_name" content="tutelaris">
     <meta property="og:locale" content="de_DE">
     <meta property="og:url" content="https://tutelaris.de/">
-    <meta property="og:title" content="tutelaris - Beinaheunfälle erfassen, verstehen, vermeiden">
-    <meta property="og:description" content="Beinaheunfälle in unter zwei Minuten melden – gesprochen, anonym, ohne Formular. tutelaris macht daraus Muster und belegte Maßnahmen, samt digitalem Verbandsbuch.">
+    <meta property="og:title" content="tutelaris – Beinaheunfälle systematisch erfassen">>
+    <meta property="og:description" content="Beinaheunfälle in dreißig Sekunden melden – gesprochen, anonym, ohne Formular. Die KI macht daraus auswertbare Daten: aus Meldungen werden Muster, aus Mustern Maßnahmen.">>
     <meta property="og:image" content="https://tutelaris.de/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -40,37 +40,36 @@
 </head>
   <body class="bg-[#FAFAFD] font-body text-[#101828] antialiased selection:bg-blue-100 selection:text-blue-900">
     <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all">
+      <a href="https://etem.bgetem.de/3.2026/themen/hsi-tagung-smarter-schuetzen-mit-ki" target="_blank" rel="noopener" class="block w-full bg-[#EEF4FE] text-[#1c437f] text-[13px] text-center px-4 py-2.5 hover:bg-[#DBE8FD] transition-colors">Lesen Sie über uns im <strong class="font-semibold">BG ETEM Magazin</strong> <span aria-hidden="true">→</span></a>
       <div class="h-20 max-w-[80rem] mx-auto px-6 sm:px-8 flex items-center justify-between gap-4">
         <div class="flex items-center gap-10">
-          <a class="flex items-center gap-2.5 focus:outline-none" data-path="home" href="#">
+          <a class="flex items-center gap-2.5 focus:outline-none" data-path="home" href="index.html">
             <img alt="" aria-hidden="true" class="h-6 w-auto object-contain rounded-md" src="tutelaris-logo.svg"><img alt="tutelaris" class="h-5 w-auto object-contain" src="tutelaris-logo-black.png">
   </a>
   <nav class="hidden lg:flex items-center gap-7">
     <div class="relative nav-dropdown">
       <button class="nav-dropdown-btn flex items-center gap-1 text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" type="button"><span data-i18n="nav.funktionen">Funktionen</span> <span class="material-symbols-outlined text-[18px] text-slate-400 transition-transform">expand_more</span></button>
       <div class="nav-dropdown-panel absolute top-full left-0 mt-1 w-64 bg-white rounded-2xl border border-slate-200/80 shadow-lg p-2 z-50">
-        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#produkt-showcase" data-path="beinaheunfall-management" data-i18n="nav.beinaheunfaelle">Beinaheunfälle</a>
+        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#funktionen" data-path="beinaheunfall-management" data-i18n="nav.beinaheunfaelle">Beinaheunfälle</a>
         <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#verbandsbuch-modul" data-path="verbandsbuch" data-i18n="nav.verbandsbuch">Verbandsbuch</a>
-        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#vorteile" data-path="unfaelle-melden" data-i18n="nav.unfaelle_melden">Unfälle Melden</a>
+        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#vorteile" data-path="unfaelle-melden" data-i18n="nav.unfaelle_melden">Anonym melden</a>
       </div>
     </div>
     <div class="relative nav-dropdown">
       <button class="nav-dropdown-btn flex items-center gap-1 text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" type="button"><span data-i18n="nav.loesungen">Lösungen</span> <span class="material-symbols-outlined text-[18px] text-slate-400 transition-transform">expand_more</span></button>
       <div class="nav-dropdown-panel absolute top-full left-0 mt-1 w-64 bg-white rounded-2xl border border-slate-200/80 shadow-lg p-2 z-50">
-        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="loesung-logistik" data-i18n="nav.logistik">Logistik</a>
-        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="loesung-produktion" data-i18n="nav.produktion">Produktion</a>
-        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="loesung-bau" data-i18n="nav.baugewerbe">Baugewerbe</a>
+        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="logistik.html" data-path="loesung-logistik" data-i18n="nav.logistik">Logistik</a>
+        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="produktion.html" data-path="loesung-produktion" data-i18n="nav.produktion">Produktion</a>
+        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="baugewerbe.html" data-path="loesung-bau" data-i18n="nav.baugewerbe">Baugewerbe</a>
       </div>
     </div>
     <a class="text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" data-path="preise" href="preise.html" data-i18n="nav.preise">Pläne</a>
     <div class="relative nav-dropdown">
       <button class="nav-dropdown-btn flex items-center gap-1 text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" type="button"><span data-i18n="nav.sicherheitswissen">Sicherheitswissen</span> <span class="material-symbols-outlined text-[18px] text-slate-400 transition-transform">expand_more</span></button>
       <div class="nav-dropdown-panel absolute top-full left-0 mt-1 w-64 bg-white rounded-2xl border border-slate-200/80 shadow-lg p-2 z-50">
-        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen" data-i18n="nav.ehs_leitfaeden">EHS Leitfäden</a>
-        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen" data-i18n="nav.checklisten_vorlagen">Checklisten Vorlagen</a>
-        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen" data-i18n="nav.webinare">Webinare</a>
-        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen" data-i18n="nav.sicherheits_blog">Sicherheits-Blog</a>
-      </div>
+        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="ehs-leitfaeden.html" data-path="ressourcen" data-i18n="nav.ehs_leitfaeden">EHS Leitfäden</a>
+        <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="checklisten-vorlagen.html" data-path="ressourcen" data-i18n="nav.checklisten_vorlagen">Checklisten Vorlagen</a>
+        </div>
     </div>
     <a class="text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" data-path="unternehmen" href="ueber-uns.html" data-i18n="nav.ueber_uns">Über uns</a>
   </nav></div>
@@ -96,9 +95,9 @@
           <span class="material-symbols-outlined text-[20px] text-slate-400 transition-transform">expand_more</span>
         </button>
         <div class="mobile-accordion-panel hidden flex-col ml-2 pl-3 border-l border-slate-100">
-          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#produkt-showcase" data-path="beinaheunfall-management" data-i18n="nav.beinaheunfaelle">Beinaheunfälle</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#funktionen" data-path="beinaheunfall-management" data-i18n="nav.beinaheunfaelle">Beinaheunfälle</a>
           <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#verbandsbuch-modul" data-path="verbandsbuch" data-i18n="nav.verbandsbuch">Verbandsbuch</a>
-          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#vorteile" data-path="unfaelle-melden" data-i18n="nav.unfaelle_melden">Unfälle Melden</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#vorteile" data-path="unfaelle-melden" data-i18n="nav.unfaelle_melden">Anonym melden</a>
         </div>
       </div>
       <div class="mobile-accordion">
@@ -107,9 +106,9 @@
           <span class="material-symbols-outlined text-[20px] text-slate-400 transition-transform">expand_more</span>
         </button>
         <div class="mobile-accordion-panel hidden flex-col ml-2 pl-3 border-l border-slate-100">
-          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="loesung-logistik" data-i18n="nav.logistik">Logistik</a>
-          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="loesung-produktion" data-i18n="nav.produktion">Produktion</a>
-          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="loesung-bau" data-i18n="nav.baugewerbe">Baugewerbe</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="logistik.html" data-path="loesung-logistik" data-i18n="nav.logistik">Logistik</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="produktion.html" data-path="loesung-produktion" data-i18n="nav.produktion">Produktion</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="baugewerbe.html" data-path="loesung-bau" data-i18n="nav.baugewerbe">Baugewerbe</a>
         </div>
       </div>
       <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="preise.html" data-path="preise" data-i18n="nav.preise">Pläne</a>
@@ -119,11 +118,9 @@
           <span class="material-symbols-outlined text-[20px] text-slate-400 transition-transform">expand_more</span>
         </button>
         <div class="mobile-accordion-panel hidden flex-col ml-2 pl-3 border-l border-slate-100">
-          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen" data-i18n="nav.ehs_leitfaeden">EHS Leitfäden</a>
-          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen" data-i18n="nav.checklisten_vorlagen">Checklisten Vorlagen</a>
-          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen" data-i18n="nav.webinare">Webinare</a>
-          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="ressourcen" data-i18n="nav.sicherheits_blog">Sicherheits-Blog</a>
-        </div>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="ehs-leitfaeden.html" data-path="ressourcen" data-i18n="nav.ehs_leitfaeden">EHS Leitfäden</a>
+          <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="checklisten-vorlagen.html" data-path="ressourcen" data-i18n="nav.checklisten_vorlagen">Checklisten Vorlagen</a>
+          </div>
       </div>
       <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="ueber-uns.html" data-path="unternehmen" data-i18n="nav.ueber_uns">Über uns</a>
       <div class="border-t border-slate-100 my-2"></div>
@@ -138,7 +135,7 @@
       <a class="demo-open-btn mt-2 inline-flex items-center justify-center bg-[#4f89fb] hover:bg-[#3d75e6] text-white font-medium text-[15px] px-5 py-3 rounded-full shadow-sm transition-all" data-path="demo-anfragen" href="https://meetings-na2.hubspot.com/andrei-piatrouski" data-i18n="nav.demo_buchen" target="_blank" rel="noopener">Demo anfragen</a>
     </div>
   </div>
-    </header><main class="w-full pt-20 bg-[#FAFAFD] min-h-screen overflow-x-hidden"><div class="flex flex-col w-full">
+    </header><main class="w-full pt-[120px] bg-[#FAFAFD] min-h-screen overflow-x-hidden"><div class="flex flex-col w-full">
 <div class="relative bg-gradient-to-b from-white via-[#dbe6fd] to-[#a9c3f7]">
 <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1300px] h-[850px] bg-[radial-gradient(ellipse_at_top,rgba(79,137,251,0.38),rgba(79,137,251,0)_65%)] pointer-events-none -z-10"></div>
 <!-- 1. HERO SECTION (Personio style) -->
@@ -147,14 +144,13 @@
 <!-- Kleine Einordnungszeile über der Überschrift -->
 <p class="hero-eyebrow text-[13.5px] sm:text-[15px] font-semibold text-slate-500 tracking-tight" data-i18n="hero.badge">Beinaheunfälle als Teil Ihrer Präventionsstrategie</p>
 <!-- Extremely bold, tight Personio-style Hero Headline -->
-<h1 class="font-headline text-[42px] sm:text-[62px] lg:text-[76px] font-[900] tracking-[-0.035em] text-[#0b0f19] leading-[1.05] max-w-5xl text-center" data-i18n="hero.title">
-      Beinaheunfälle erfassen,<br>
-      verstehen und <br>
-      <span class="text-[#4f89fb] whitespace-nowrap text-center">Unfälle vermeiden.</span>
+<h1 class="font-headline text-[40px] sm:text-[56px] lg:text-[72px] font-[900] tracking-[-0.03em] text-[#0b0f19] leading-[1.05] max-w-5xl text-center" data-i18n="hero.title">
+      Beinaheunfälle<br>
+      <span class="text-[#4f89fb]">systematisch erfassen.</span>
     </h1>
 <!-- Clean, reassuring Personio Subtitle -->
 <p class="font-body text-[18px] sm:text-[21px] text-slate-600 mt-6 max-w-2xl leading-relaxed font-normal" data-i18n="hero.subtitle">
-Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder getippt, anonym, ohne Formular. Aus den Meldungen werden Muster sichtbar, aus Mustern werden Maßnahmen.
+Beschäftigte erzählen in dreißig Sekunden, was passiert ist – gesprochen oder getippt, anonym, ohne Formular. Die KI macht daraus auswertbare Daten: aus Meldungen werden Muster, aus Mustern werden Maßnahmen.
     </p>
 <!-- Personio-style Combined Email + Demo Pill Input -->
 <div class="mt-9 w-full max-w-lg">
@@ -433,31 +429,31 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 flex flex-col">
 <div class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center mb-5">
-<span class="material-symbols-outlined text-white text-[22px]">qr_code_scanner</span>
+<span class="material-symbols-outlined text-white text-[22px]">mic</span>
 </div>
-<h3 class="font-headline text-[17px] font-bold text-white mb-2" data-i18n="ready.feature1_title">Melden ohne Anmeldung</h3>
-<p class="text-[14px] text-white/80 leading-relaxed" data-i18n="ready.feature1_desc">QR-Code ausdrucken, an Anlage oder Tor aufhängen, fertig. Wer ihn scannt, landet direkt in der Meldung – ohne Konto, ohne Passwort.</p>
+<h3 class="font-headline text-[17px] font-bold text-white mb-2" data-i18n="ready.feature1_title">In dreißig Sekunden gemeldet</h3>
+<p class="text-[14px] text-white/80 leading-relaxed" data-i18n="ready.feature1_desc">Eine Sprachnachricht oder ein paar Sätze, in eigenen Worten. Kein Formular, kein Konto – den QR-Code an Anlage oder Tor scannen und melden.</p>
 </div>
 <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 flex flex-col">
 <div class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center mb-5">
-<span class="material-symbols-outlined text-white text-[22px]">visibility_off</span>
+<span class="material-symbols-outlined text-white text-[22px]">auto_awesome</span>
 </div>
-<h3 class="font-headline text-[17px] font-bold text-white mb-2" data-i18n="ready.feature2_title">Anonym ab der Erfassung</h3>
-<p class="text-[14px] text-white/80 leading-relaxed" data-i18n="ready.feature2_desc">Namen werden automatisch aus allen Feldern entfernt. Gespeichert wird ein Pseudonym – auch die Fachkraft sieht nicht, wer gemeldet hat.</p>
+<h3 class="font-headline text-[17px] font-bold text-white mb-2" data-i18n="ready.feature2_title">Die KI macht auswertbare Daten daraus</h3>
+<p class="text-[14px] text-white/80 leading-relaxed" data-i18n="ready.feature2_desc">Betriebsteil, Tätigkeit, Ursache und Risikopotenzial werden aus dem Erzählten erkannt, dazu höchstens zwei Rückfragen. Aus Freitext wird eine Meldung, die sich auswerten lässt.</p>
 </div>
 <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 flex flex-col">
 <div class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center mb-5">
 <span class="material-symbols-outlined text-white text-[22px]">timeline</span>
 </div>
-<h3 class="font-headline text-[17px] font-bold text-white mb-2" data-i18n="ready.feature3_title">Sichtbare Wirkung</h3>
-<p class="text-[14px] text-white/80 leading-relaxed" data-i18n="ready.feature3_desc">Nach dem Absenden zeigt die Anwendung, was die Meldung bewirkt hat, und verfolgt sie über sechs Stationen bis zur geprüften Wirksamkeit.</p>
+<h3 class="font-headline text-[17px] font-bold text-white mb-2" data-i18n="ready.feature3_title">Wirkung wird sichtbar</h3>
+<p class="text-[14px] text-white/80 leading-relaxed" data-i18n="ready.feature3_desc">Nach dem Absenden sieht der Melder, ob sein Hinweis zu einem Muster gehört, und verfolgt ihn über sechs Stationen bis zur geprüften Wirksamkeit. Keine Punkte, keine Rangliste.</p>
 </div>
 <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 flex flex-col">
 <div class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center mb-5">
-<span class="material-symbols-outlined text-white text-[22px]">medical_services</span>
+<span class="material-symbols-outlined text-white text-[22px]">visibility_off</span>
 </div>
-<h3 class="font-headline text-[17px] font-bold text-white mb-2" data-i18n="ready.feature4_title">Verbandsbuch inklusive</h3>
-<p class="text-[14px] text-white/80 leading-relaxed" data-i18n="ready.feature4_desc">Erste-Hilfe-Dokumentation nach DGUV Vorschrift 1 §24 im selben System: Bestätigung durch den Ersthelfer, Löschung nach fünf Jahren, PDF-Export.</p>
+<h3 class="font-headline text-[17px] font-bold text-white mb-2" data-i18n="ready.feature4_title">Anonym ab der Erfassung</h3>
+<p class="text-[14px] text-white/80 leading-relaxed" data-i18n="ready.feature4_desc">Namen werden automatisch aus allen Feldern entfernt. Gespeichert wird ein Pseudonym – auch die Fachkraft sieht nicht, wer gemeldet hat.</p>
 </div>
 </div>
 <div class="flex justify-center mt-12">
@@ -694,7 +690,7 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
 </div>
 </div>
 </section>
-</div></main><footer class="w-full bg-white border-t border-slate-200/80 pt-16 pb-12"><div class="max-w-[80rem] mx-auto px-6 sm:px-8"><div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 pb-14 border-b border-slate-100"><div class="col-span-2 md:col-span-3 lg:col-span-2 flex flex-col gap-4 pr-6"><div class="flex items-center gap-2.5"><img alt="tutelaris" class="h-5 w-auto object-contain" src="tutelaris-logo-black.png"></div><p class="text-[14px] text-slate-500 max-w-sm leading-relaxed" data-i18n="footer.tagline">Das intuitive Betriebssystem für EHS, Beinaheunfall-Meldungen und proaktiven Arbeitsschutz in modernen Unternehmen.</p><div class="flex flex-wrap items-center gap-2 pt-1"><a class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-50 text-slate-700 text-[12px] font-medium border border-slate-200/60 hover:bg-slate-100 transition-colors" href="https://www.linkedin.com/company/tutelaris/" target="_blank" rel="noopener" aria-label="tutelaris auf LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.225 0H1.771C.792 0 0 .77 0 1.723v20.547C0 23.23.792 24 1.771 24h20.451C23.2 24 24 23.23 24 22.27V1.723C24 .77 23.2 0 22.222 0h.003zM6.905 20.452H3.77V9h3.135v11.452zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.368-1.852 3.6 0 4.266 2.37 4.266 5.456v6.287z"/></svg>LinkedIn</a><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-50 text-slate-700 text-[12px] font-medium border border-slate-200/60"><span class="material-symbols-outlined text-[15px] text-emerald-600">lock</span><span data-i18n="footer.badge_dsgvo">DSGVO-konform</span></span></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_produkt">Produkt</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="beinaheunfall-management" href="#produkt-showcase" data-i18n="nav.beinaheunfaelle">Beinaheunfälle</a><a class="hover:text-slate-900 transition-colors" data-path="unfaelle-melden" href="#vorteile" data-i18n="nav.unfaelle_melden">Unfälle Melden</a><a class="hover:text-slate-900 transition-colors" data-path="verbandsbuch" href="#verbandsbuch-modul" data-i18n="nav.verbandsbuch">Verbandsbuch</a><a class="hover:text-slate-900 transition-colors" data-path="preise" href="preise.html" data-i18n="footer.preismodelle">Pläne</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_compliance">Compliance</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="compliance-iso-45001" href="iso-45001.html" data-i18n="footer.iso45001">ISO 45001 Audit-Ready</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-arbschg" href="arbeitsschutzgesetz.html" data-i18n="footer.arbschg">Arbeitsschutzgesetz (ArbSchG)</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-dguv" href="dguv-vorschriften.html" data-i18n="footer.dguv">DGUV Vorschriften</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-datenschutz" href="datenschutz.html" data-i18n="footer.datenschutz_dsgvo">Datenschutz &amp; DSGVO</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_unternehmen">Unternehmen</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="unternehmen" href="ueber-uns.html" data-i18n="nav.ueber_uns">Über uns</a><a class="hover:text-slate-900 transition-colors" data-path="impressum" href="impressum.html" data-i18n="footer.impressum">Impressum</a><a class="hover:text-slate-900 transition-colors" data-path="agb" href="agb.html" data-i18n="footer.agb">AGB</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_ressourcen">Ressourcen</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="ehs-leitfaeden" href="ehs-leitfaeden.html" data-i18n="nav.ehs_leitfaeden">EHS Leitfäden</a><a class="hover:text-slate-900 transition-colors" data-path="checklisten-vorlagen" href="checklisten-vorlagen.html" data-i18n="nav.checklisten_vorlagen">Checklisten Vorlagen</a></div></div></div><div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-slate-500"><div class="" data-i18n="footer.copyright">© 2026 tutelaris. Alle Rechte vorbehalten.</div><div class="flex items-center gap-5"><a class="hover:text-slate-900 transition-colors" href="impressum.html" data-i18n="footer.impressum">Impressum</a><a class="hover:text-slate-900 transition-colors" href="datenschutz.html" data-i18n="footer.datenschutz_link">Datenschutz</a><a class="hover:text-slate-900 transition-colors" href="agb.html" data-i18n="footer.agb">AGB</a><a class="hover:text-slate-900 transition-colors" href="sicherheit.html" data-i18n="footer.sicherheit">Sicherheit</a></div></div></div></footer>
+</div></main><footer class="w-full bg-white border-t border-slate-200/80 pt-16 pb-12"><div class="max-w-[80rem] mx-auto px-6 sm:px-8"><div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 pb-14 border-b border-slate-100"><div class="col-span-2 md:col-span-3 lg:col-span-2 flex flex-col gap-4 pr-6"><div class="flex items-center gap-2.5"><img alt="tutelaris" class="h-5 w-auto object-contain" src="tutelaris-logo-black.png"></div><p class="text-[14px] text-slate-500 max-w-sm leading-relaxed" data-i18n="footer.tagline">Das intuitive Betriebssystem für EHS, Beinaheunfall-Meldungen und proaktiven Arbeitsschutz in modernen Unternehmen.</p><div class="flex flex-wrap items-center gap-2 pt-1"><a class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-50 text-slate-700 text-[12px] font-medium border border-slate-200/60 hover:bg-slate-100 transition-colors" href="https://www.linkedin.com/company/tutelaris/" target="_blank" rel="noopener" aria-label="tutelaris auf LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.225 0H1.771C.792 0 0 .77 0 1.723v20.547C0 23.23.792 24 1.771 24h20.451C23.2 24 24 23.23 24 22.27V1.723C24 .77 23.2 0 22.222 0h.003zM6.905 20.452H3.77V9h3.135v11.452zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.368-1.852 3.6 0 4.266 2.37 4.266 5.456v6.287z"/></svg>LinkedIn</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_produkt">Produkt</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="beinaheunfall-management" href="#funktionen" data-i18n="nav.beinaheunfaelle">Beinaheunfälle</a><a class="hover:text-slate-900 transition-colors" data-path="unfaelle-melden" href="#vorteile" data-i18n="nav.unfaelle_melden">Anonym melden</a><a class="hover:text-slate-900 transition-colors" data-path="verbandsbuch" href="#verbandsbuch-modul" data-i18n="nav.verbandsbuch">Verbandsbuch</a><a class="hover:text-slate-900 transition-colors" data-path="preise" href="preise.html" data-i18n="footer.preismodelle">Pläne</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_compliance">Compliance</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="compliance-iso-45001" href="iso-45001.html" data-i18n="footer.iso45001">ISO 45001 Audit-Ready</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-arbschg" href="arbeitsschutzgesetz.html" data-i18n="footer.arbschg">Arbeitsschutzgesetz (ArbSchG)</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-dguv" href="dguv-vorschriften.html" data-i18n="footer.dguv">DGUV Vorschriften</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-datenschutz" href="datenschutz.html" data-i18n="footer.datenschutz_dsgvo">Datenschutz &amp; DSGVO</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_unternehmen">Unternehmen</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="unternehmen" href="ueber-uns.html" data-i18n="nav.ueber_uns">Über uns</a><a class="hover:text-slate-900 transition-colors" data-path="impressum" href="impressum.html" data-i18n="footer.impressum">Impressum</a><a class="hover:text-slate-900 transition-colors" data-path="agb" href="agb.html" data-i18n="footer.agb">AGB</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_ressourcen">Ressourcen</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="ehs-leitfaeden" href="ehs-leitfaeden.html" data-i18n="nav.ehs_leitfaeden">EHS Leitfäden</a><a class="hover:text-slate-900 transition-colors" data-path="checklisten-vorlagen" href="checklisten-vorlagen.html" data-i18n="nav.checklisten_vorlagen">Checklisten Vorlagen</a></div></div></div><div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-slate-500"><div class="" data-i18n="footer.copyright">© 2026 tutelaris. Alle Rechte vorbehalten.</div><div class="flex items-center gap-5"><a class="hover:text-slate-900 transition-colors" href="impressum.html" data-i18n="footer.impressum">Impressum</a><a class="hover:text-slate-900 transition-colors" href="datenschutz.html" data-i18n="footer.datenschutz_link">Datenschutz</a><a class="hover:text-slate-900 transition-colors" href="agb.html" data-i18n="footer.agb">AGB</a><a class="hover:text-slate-900 transition-colors" href="sicherheit.html" data-i18n="footer.sicherheit">Sicherheit</a></div></div></div></footer>
 
 <!-- DEMO BOOKING MODAL -->
 <div id="demo-modal" class="fixed inset-0 z-[100] hidden">
@@ -1030,10 +1026,6 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
     "de": "Arbeitsschutzgesetz (ArbSchG)",
     "en": "Occupational Safety Act (ArbSchG)"
   },
-  "footer.badge_dsgvo": {
-    "de": "DSGVO-konform",
-    "en": "GDPR Compliant"
-  },
   "footer.col_compliance": {
     "de": "Compliance",
     "en": "Compliance"
@@ -1107,16 +1099,16 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
     "en": "PRODUCTION"
   },
   "hero.subtitle": {
-    "de": "Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder getippt, anonym, ohne Formular. Aus den Meldungen werden Muster sichtbar, aus Mustern werden Maßnahmen.",
-    "en": "Employees report near misses in under two minutes – spoken or typed, anonymously, without a form. Reports turn into patterns, patterns turn into measures."
+    "de": "Beschäftigte erzählen in dreißig Sekunden, was passiert ist – gesprochen oder getippt, anonym, ohne Formular. Die KI macht daraus auswertbare Daten: aus Meldungen werden Muster, aus Mustern werden Maßnahmen.",
+    "en": "Employees describe what happened in thirty seconds – spoken or typed, anonymous, no form. The AI turns it into data you can analyse."
   },
   "hero.title": {
-    "de": "Unfälle verhindern, bevor<br>\n      sie passieren: Das intelligente <br>\n      <span class=\"text-[#4f89fb] whitespace-nowrap text-center\">Beinaheunfall-Management.</span>",
-    "en": "Capture and understand near misses – and prevent accidents."
+    "de": "Beinaheunfälle<br>\n      <span class=\"text-[#4f89fb]\">systematisch erfassen.</span>",
+    "en": "Capture near misses<br>\n      <span class=\"text-[#4f89fb]\">systematically.</span>"
   },
   "meta.title": {
-    "de": "tutelaris - Beinaheunfälle erfassen, verstehen, vermeiden",
-    "en": "tutelaris - Capture, understand and prevent near misses"
+    "de": "tutelaris – Beinaheunfälle systematisch erfassen",
+    "en": "tutelaris – Capture near misses systematically"
   },
   "modal.close_aria": {
     "de": "Schließen",
@@ -1279,8 +1271,8 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
     "en": "About Us"
   },
   "nav.unfaelle_melden": {
-    "de": "Unfälle Melden",
-    "en": "Report Accidents"
+    "de": "Anonym melden",
+    "en": "Report anonymously"
   },
   "nav.verbandsbuch": {
     "de": "Verbandsbuch",
@@ -1315,20 +1307,20 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
     "en": "Ready to Go Instantly"
   },
   "ready.feature1_title": {
-    "de": "Melden ohne Anmeldung",
-    "en": "Report without signing in"
+    "de": "In dreißig Sekunden gemeldet",
+    "en": "Reported in thirty seconds"
   },
   "ready.feature2_title": {
-    "de": "Anonym ab der Erfassung",
-    "en": "Anonymous from the start"
+    "de": "Die KI macht auswertbare Daten daraus",
+    "en": "The AI turns it into analysable data"
   },
   "ready.feature3_title": {
-    "de": "Sichtbare Wirkung",
-    "en": "Visible impact"
+    "de": "Wirkung wird sichtbar",
+    "en": "Impact becomes visible"
   },
   "ready.feature4_title": {
-    "de": "Verbandsbuch inklusive",
-    "en": "First-aid log included"
+    "de": "Anonym ab der Erfassung",
+    "en": "Anonymous from the start"
   },
   "ready.subtitle": {
     "de": "Kein IT-Projekt, keine Wochen an Einführung. tutelaris läuft ab Tag eins in Ihrem Werk – QR-Codes ausdrucken und loslegen.",
@@ -1559,20 +1551,20 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
     "en": "Sending failed. Please email team@tutelaris.de or pick a time directly."
   },
   "ready.feature1_desc": {
-    "de": "QR-Code ausdrucken, an Anlage oder Tor aufhängen, fertig. Wer ihn scannt, landet direkt in der Meldung – ohne Konto, ohne Passwort.",
-    "en": "Print the QR code, put it up at the machine or gate. Scanning it opens the report form directly – no account, no password."
+    "de": "Eine Sprachnachricht oder ein paar Sätze, in eigenen Worten. Kein Formular, kein Konto – den QR-Code an Anlage oder Tor scannen und melden.",
+    "en": "A voice message or a few sentences, in your own words. No form, no account – scan the QR code and report."
   },
   "ready.feature2_desc": {
-    "de": "Namen werden automatisch aus allen Feldern entfernt. Gespeichert wird ein Pseudonym – auch die Fachkraft sieht nicht, wer gemeldet hat.",
-    "en": "Names are removed from every field automatically. A pseudonym is stored – even the safety officer cannot see who reported."
+    "de": "Betriebsteil, Tätigkeit, Ursache und Risikopotenzial werden aus dem Erzählten erkannt, dazu höchstens zwei Rückfragen. Aus Freitext wird eine Meldung, die sich auswerten lässt.",
+    "en": "Area, activity, cause and risk are derived from what was said, plus at most two follow-up questions."
   },
   "ready.feature3_desc": {
-    "de": "Nach dem Absenden zeigt die Anwendung, was die Meldung bewirkt hat, und verfolgt sie über sechs Stationen bis zur geprüften Wirksamkeit.",
-    "en": "After submitting, the app shows what the report achieved and tracks it through six stages up to the verified effectiveness check."
+    "de": "Nach dem Absenden sieht der Melder, ob sein Hinweis zu einem Muster gehört, und verfolgt ihn über sechs Stationen bis zur geprüften Wirksamkeit. Keine Punkte, keine Rangliste.",
+    "en": "After submitting, the reporter sees whether the report belongs to a pattern and follows it across six stages. No points, no leaderboard."
   },
   "ready.feature4_desc": {
-    "de": "Erste-Hilfe-Dokumentation nach DGUV Vorschrift 1 §24 im selben System: Bestätigung durch den Ersthelfer, Löschung nach fünf Jahren, PDF-Export.",
-    "en": "First-aid documentation per DGUV rule 1 §24 in the same system: confirmation by the first aider, deletion after five years, PDF export."
+    "de": "Namen werden automatisch aus allen Feldern entfernt. Gespeichert wird ein Pseudonym – auch die Fachkraft sieht nicht, wer gemeldet hat.",
+    "en": "Names are removed from every field automatically. A pseudonym is stored instead."
   },
   "modal.email_error": {
     "de": "Geben Sie eine gültige Adresse ein.",
