@@ -26,7 +26,7 @@
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..24,400..600,0..1,0" rel="stylesheet">
-    <style>@layer base{html,body{margin:0;padding:0;}html{scroll-behavior:smooth;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}/* Einzeilige Formularfelder: feste Höhe 35px */.form-field{height:35px;padding-top:0;padding-bottom:0;line-height:35px;}.form-field:focus{box-shadow:0 0 0 3px rgba(79,137,251,.15);}.demo-booking-link:hover,.demo-success-booking:hover{color:#1e293b;}button[disabled]{opacity:.6;cursor:default;}/* Nav dropdowns: open on hover/focus with a short fade+slide; click still works on touch */.nav-dropdown-panel{opacity:0;visibility:hidden;transform:translateY(-6px);pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s;}.nav-dropdown-panel::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px;}.nav-dropdown:hover>.nav-dropdown-panel,.nav-dropdown:focus-within>.nav-dropdown-panel,.nav-dropdown.is-open>.nav-dropdown-panel{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}.nav-dropdown:hover>.nav-dropdown-btn .material-symbols-outlined,.nav-dropdown.is-open>.nav-dropdown-btn .material-symbols-outlined{transform:rotate(180deg);}@media (prefers-reduced-motion:reduce){.nav-dropdown-panel{transition:none;}}</style><link rel="stylesheet" href="styles-tailwind.css">
+    <style>@layer base{html,body{margin:0;padding:0;}html{scroll-behavior:smooth;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}/* Einzeilige Formularfelder: feste Höhe 35px *//* ── Produktansichten in den Tabs ─────────────────────────────   Eigenständiges CSS, weil die kompilierte Tailwind-Datei nur die   Klassen enthält, die beim Bauen vorkamen. */.tp-wrap{position:relative;}.tp-panel{display:none;}.tp-panel.is-active{display:block;animation:tp-in .22s ease-out both;}@keyframes tp-in{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}.tp-grid{display:grid;gap:40px;align-items:center;}@media(min-width:1024px){.tp-grid{grid-template-columns:5fr 7fr;gap:56px;}}.tp-eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#4f89fb;margin:0 0 10px;}.tp-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-.02em;color:#0b0f19;margin:0 0 14px;}@media(min-width:640px){.tp-title{font-size:36px;}}.tp-lead{font-size:16px;line-height:1.65;color:#475467;margin:0 0 20px;}.tp-points{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}.tp-points li{display:flex;gap:10px;font-size:14.5px;line-height:1.6;color:#475467;}.tp-points b{color:#0b0f19;font-weight:600;}.tp-dot{flex:0 0 auto;width:7px;height:7px;border-radius:999px;background:#4f89fb;margin-top:8px;}.tp-note{font-size:12.5px;color:#98a2b3;margin:18px 0 0;}/* Rahmen um die Nachbauten */.tp-stage{background:linear-gradient(180deg,#f8fafc,#eef3fe);border:1px solid rgba(148,163,184,.35);border-radius:24px;padding:20px;}@media(min-width:640px){.tp-stage{padding:28px;}}.tp-phone{max-width:340px;margin:0 auto;background:#fff;border:1px solid #e4e7ec;border-radius:26px;padding:18px;box-shadow:0 18px 40px rgba(15,23,42,.10);}.tp-app{background:#fff;border:1px solid #e4e7ec;border-radius:14px;padding:18px;box-shadow:0 12px 32px rgba(15,23,42,.07);}.tp-app+.tp-app{margin-top:12px;}.tp-scroll{max-height:440px;overflow:hidden;position:relative;}.tp-fade{position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff);}/* Bausteine aus dem Produkt */.tp-lbl{font-size:13px;font-weight:600;color:#344054;margin:0 0 6px;}.tp-field{border:1px solid #d0d5dd;border-radius:8px;padding:8px 12px;font-size:13.5px;color:#101828;background:#fff;min-height:35px;display:flex;align-items:center;}.tp-field.tp-multi{display:block;line-height:1.55;min-height:0;}.tp-select{display:flex;align-items:center;justify-content:space-between;gap:8px;}.tp-caret{color:#98a2b3;font-size:11px;}.tp-row{display:grid;gap:12px;}@media(min-width:640px){.tp-row.tp-2{grid-template-columns:1fr 1fr;}}.tp-btn{display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:9px 16px;font-size:13.5px;font-weight:600;border:1px solid transparent;}.tp-btn-primary{background:#2f6fd4;color:#fff;}.tp-btn-secondary{background:#fff;color:#344054;border-color:#d0d5dd;}.tp-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}.tp-h{font-size:15px;font-weight:600;color:#101828;margin:0;}.tp-sub{font-size:13px;color:#667085;margin:3px 0 0;}.tp-kicker{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#98a2b3;margin:0 0 6px;}.tp-soft{background:#f8f9fb;border-radius:8px;padding:12px 14px;}.tp-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid #e4e7ec;background:#f8f9fb;color:#475467;border-radius:999px;padding:4px 10px;font-size:11.5px;font-weight:500;}.tp-tag{display:inline-flex;border:1px solid #d0d5dd;background:#fff;color:#344054;border-radius:999px;padding:6px 13px;font-size:13px;}.tp-tag.is-on{background:#2f6fd4;border-color:#2f6fd4;color:#fff;font-weight:600;}.tp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}.tp-badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 9px;font-size:11.5px;font-weight:600;}.tp-badge .tp-bdot{width:7px;height:7px;border-radius:999px;}.tp-badge-high{background:#fef3f2;color:#912018;}.tp-num{font-variant-numeric:tabular-nums;}/* Ansicht 1: Aufnahme */.tp-steps{display:flex;align-items:baseline;justify-content:space-between;font-size:13px;}.tp-steps span:first-child{font-weight:500;color:#344054;}.tp-steps span:last-child{font-size:11.5px;color:#98a2b3;}.tp-progress{height:3px;border-radius:999px;background:#e4e7ec;margin-top:6px;overflow:hidden;}.tp-progress i{display:block;height:100%;width:33.3%;border-radius:999px;background:#4d8cf0;}.tp-switch{display:inline-flex;background:#f2f4f7;border-radius:8px;padding:4px;margin-bottom:14px;}.tp-switch span{padding:7px 15px;border-radius:6px;font-size:13px;font-weight:600;color:#475467;}.tp-switch span.is-on{background:#fff;color:#101828;box-shadow:0 1px 2px rgba(16,24,40,.08);}.tp-rec{display:flex;flex-direction:column;align-items:center;gap:16px;padding:18px 0;text-align:center;}.tp-mic{position:relative;display:grid;place-items:center;width:96px;height:96px;}.tp-mic .tp-ring{position:absolute;inset:0;border-radius:999px;background:rgba(239,68,68,.25);animation:tp-breathe 1.6s ease-in-out infinite;}@keyframes tp-breathe{0%,100%{transform:scale(1.05);}50%{transform:scale(1.4);}}.tp-mic .tp-core{position:relative;display:grid;place-items:center;width:96px;height:96px;border-radius:999px;background:#dc2626;color:#fff;}.tp-time{font-size:30px;font-weight:700;color:#101828;line-height:1;}.tp-bar{height:6px;width:100%;max-width:240px;border-radius:999px;background:#e4e7ec;overflow:hidden;}.tp-bar i{display:block;height:100%;width:26%;background:#dc2626;border-radius:999px;}/* Ansicht 4: Auswertung */.tp-tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.tp-tile{border:1px solid #e4e7ec;border-radius:12px;background:#fff;padding:12px 14px;}.tp-tile .tp-tl{font-size:12px;font-weight:500;color:#667085;}.tp-tile .tp-tv{font-size:26px;font-weight:700;color:#111827;margin-top:2px;line-height:1.1;}.tp-tile .tp-th{font-size:11px;color:#98a2b3;margin-top:2px;}.tp-rank{display:grid;place-items:center;width:22px;height:22px;border-radius:6px;background:#2f6fd4;color:#fff;font-size:11px;font-weight:700;flex:0 0 auto;}.tp-barrow{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;font-size:12.5px;color:#475467;margin-bottom:8px;}.tp-bartrack{grid-column:1 / -1;height:7px;border-radius:999px;background:#eef2f6;overflow:hidden;margin-top:-4px;}.tp-bartrack i{display:block;height:100%;border-radius:999px;}.tp-terms{display:flex;flex-wrap:wrap;gap:7px;}.tp-term{display:inline-flex;align-items:baseline;gap:5px;border-radius:8px;padding:4px 9px;background:#eef4fe;color:#2154a3;font-size:13px;}.tp-term b{font-weight:700;}.tp-term small{color:#6ba1f4;font-size:11px;}/* Ansicht 5: Rückmeldung */.tp-thanks{display:flex;gap:14px;align-items:flex-start;border:1px solid #bbf7d0;background:#f0fdf4;border-radius:14px;padding:16px;}.tp-thumb{flex:0 0 auto;display:grid;place-items:center;width:52px;height:52px;border-radius:999px;background:#0ca30c;color:#fff;}.tp-thanks h4{font-size:18px;font-weight:700;color:#14532d;margin:0;line-height:1.25;}.tp-pattern{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px;font-size:14px;color:#14532d;}.tp-pdots{display:flex;gap:4px;}.tp-pdots i{width:8px;height:8px;border-radius:999px;background:#0ca30c;display:block;}.tp-trail{list-style:none;margin:0;padding:0;}.tp-trail li{display:flex;gap:12px;}.tp-trail .tp-line{display:flex;flex-direction:column;align-items:center;}.tp-trail .tp-tdot{width:10px;height:10px;border-radius:999px;background:#d1d5db;margin-top:5px;flex:0 0 auto;}.tp-trail .tp-tdot.is-done{background:#0ca30c;}.tp-trail .tp-tdot.is-now{background:#4d8cf0;box-shadow:0 0 0 3px rgba(42,120,214,.18);}.tp-trail .tp-tline{width:1px;flex:1;background:#e5e7eb;}.tp-trail .tp-tline.is-done{background:#0ca30c;}.tp-trail .tp-tbody{padding-bottom:14px;}.tp-trail .tp-tbody.is-open{opacity:.55;}.tp-trail p{margin:0;font-size:13.5px;color:#1f2937;font-weight:500;}.tp-trail p.is-now{font-weight:600;color:#101828;}.tp-trail small{display:block;margin-top:2px;font-size:11.5px;color:#667085;}.tp-result{border:1px solid #bbf7d0;background:#f0fdf4;border-radius:12px;padding:14px 16px;margin-top:12px;}.tp-result .tp-kicker{color:rgba(20,83,45,.7);}.tp-result p{margin:6px 0 0;font-size:14px;color:#14532d;line-height:1.55;font-weight:500;}.tp-result small{display:block;margin-top:8px;font-size:11.5px;color:rgba(20,83,45,.8);font-weight:400;}.tp-reject{border:1px solid #fde68a;background:#fffbeb;border-radius:12px;padding:14px 16px;margin-top:12px;}.tp-reject .tp-kicker{color:rgba(120,53,15,.85);}.tp-reject p{margin:6px 0 0;font-size:13.5px;color:#78350f;line-height:1.55;}@media (prefers-reduced-motion: reduce){  .tp-panel.is-active{animation:none;}  .tp-mic .tp-ring{animation:none;transform:scale(1.2);}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}.hero-eyebrow{margin-bottom:72px;}@media (max-width:640px){.hero-eyebrow{margin-bottom:40px;}}.form-field{height:35px;padding-top:0;padding-bottom:0;line-height:35px;}.form-field:focus{box-shadow:0 0 0 3px rgba(79,137,251,.15);}.demo-booking-link:hover,.demo-success-booking:hover{color:#1e293b;}button[disabled]{opacity:.6;cursor:default;}/* Nav dropdowns: open on hover/focus with a short fade+slide; click still works on touch */.nav-dropdown-panel{opacity:0;visibility:hidden;transform:translateY(-6px);pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s;}.nav-dropdown-panel::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px;}.nav-dropdown:hover>.nav-dropdown-panel,.nav-dropdown:focus-within>.nav-dropdown-panel,.nav-dropdown.is-open>.nav-dropdown-panel{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}.nav-dropdown:hover>.nav-dropdown-btn .material-symbols-outlined,.nav-dropdown.is-open>.nav-dropdown-btn .material-symbols-outlined{transform:rotate(180deg);}@media (prefers-reduced-motion:reduce){.nav-dropdown-panel{transition:none;}}</style><link rel="stylesheet" href="styles-tailwind.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -62,7 +62,7 @@
         <a class="block px-3.5 py-2.5 rounded-xl text-[14px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="loesung-bau" data-i18n="nav.baugewerbe">Baugewerbe</a>
       </div>
     </div>
-    <a class="text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" data-path="preise" href="preise.html" data-i18n="nav.preise">Pilotprogramm</a>
+    <a class="text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" data-path="preise" href="preise.html" data-i18n="nav.preise">Pläne</a>
     <div class="relative nav-dropdown">
       <button class="nav-dropdown-btn flex items-center gap-1 text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" type="button"><span data-i18n="nav.sicherheitswissen">Sicherheitswissen</span> <span class="material-symbols-outlined text-[18px] text-slate-400 transition-transform">expand_more</span></button>
       <div class="nav-dropdown-panel absolute top-full left-0 mt-1 w-64 bg-white rounded-2xl border border-slate-200/80 shadow-lg p-2 z-50">
@@ -112,7 +112,7 @@
           <a class="px-3 py-2 rounded-lg text-[14px] text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="#" data-path="loesung-bau" data-i18n="nav.baugewerbe">Baugewerbe</a>
         </div>
       </div>
-      <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="preise.html" data-path="preise" data-i18n="nav.preise">Pilotprogramm</a>
+      <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="preise.html" data-path="preise" data-i18n="nav.preise">Pläne</a>
       <div class="mobile-accordion">
         <button type="button" class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50">
           <span data-i18n="nav.sicherheitswissen">Sicherheitswissen</span>
@@ -144,11 +144,8 @@
 <!-- 1. HERO SECTION (Personio style) -->
 <section class="relative pt-12 pb-14 sm:pt-16 sm:pb-20 max-w-[80rem] mx-auto px-6 sm:px-8 w-full"><div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[850px] lg:w-[1000px] h-[450px] sm:h-[600px] bg-gradient-to-tr from-[#2563eb]/15 via-[#60a5fa]/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
 <div class="flex flex-col items-center text-center max-w-5xl mx-auto">
-<!-- G2-style Badge -->
-<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] mb-8">
-<span class="w-5 h-5 rounded-full bg-[#4f89fb] flex items-center justify-center text-white text-[11px] font-black">G</span>
-<span class="text-[13px] font-semibold text-slate-800" data-i18n="hero.badge">EHS &amp; Beinaheunfall-Plattform</span>
-</div>
+<!-- Kleine Einordnungszeile über der Überschrift -->
+<p class="hero-eyebrow text-[13.5px] sm:text-[15px] font-semibold text-slate-500 tracking-tight" data-i18n="hero.badge">Beinaheunfälle als Teil Ihrer Präventionsstrategie</p>
 <!-- Extremely bold, tight Personio-style Hero Headline -->
 <h1 class="font-headline text-[42px] sm:text-[62px] lg:text-[76px] font-[900] tracking-[-0.035em] text-[#0b0f19] leading-[1.05] max-w-5xl text-center" data-i18n="hero.title">
       Beinaheunfälle erfassen,<br>
@@ -171,166 +168,249 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
 </div>
 </div>
 </section>
-<!-- 2. INTERACTIVE MODULE TAB SWITCHER (Pills like Image 2 & 3) -->
-<section class="max-w-[80rem] mx-auto px-6 sm:px-8 pb-4 w-full">
-<div class="module-tabs flex items-center justify-center gap-2.5 sm:gap-3 flex-wrap">
-<!-- Pill 1 -->
-<button class="module-tab-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-slate-50 text-slate-700 text-[14px] font-semibold border border-slate-200/80 shadow-xs transition-all hover:shadow-sm" type="button" data-tab="sofort-meldung">
-<span class="tab-dot w-2 h-2 rounded-full bg-[#2563eb] hidden"></span>
-<span class="material-symbols-outlined text-[19px] text-[#2563eb]">qr_code_scanner</span>
-      <span data-i18n="tabs.sofort_meldung">Sofort-Meldung</span>
-    </button>
-<!-- Pill 2 -->
-<button class="module-tab-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-slate-50 text-slate-700 text-[14px] font-semibold border border-slate-200/80 shadow-xs transition-all hover:shadow-sm" type="button" data-tab="ki-triage">
-<span class="tab-dot w-2 h-2 rounded-full bg-[#2563eb] hidden"></span>
-<span class="material-symbols-outlined text-[19px] text-[#2563eb]">psychology</span>
-      <span data-i18n="tabs.ki_triage">KI-Vorschlag &amp; Risiko</span>
-    </button>
-<!-- Pill 3 (Active tutelaris Dark Pill with tutelaris Blue Accent) -->
-<button class="module-tab-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0b0f19] text-white text-[14px] font-semibold shadow-md transition-all border border-slate-800" type="button" data-tab="capa" aria-current="true">
-<span class="tab-dot w-2 h-2 rounded-full bg-[#2563eb]"></span>
-<span class="material-symbols-outlined text-[19px] text-[#2563eb]">checklist</span>
-      <span data-i18n="tabs.capa">Maßnahmen</span>
-    </button>
-<!-- Pill 4 -->
-<button class="module-tab-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-slate-50 text-slate-700 text-[14px] font-semibold border border-slate-200/80 shadow-xs transition-all hover:shadow-sm" type="button" data-tab="datenanalyse">
-<span class="tab-dot w-2 h-2 rounded-full bg-[#2563eb] hidden"></span>
-<span class="material-symbols-outlined text-[19px] text-[#2563eb]">insights</span>
-      <span data-i18n="tabs.datenanalyse">Datenanalyse</span>
-    </button>
-<!-- Pill 5 -->
-<button class="module-tab-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-slate-50 text-slate-700 text-[14px] font-semibold border border-slate-200/80 shadow-xs transition-all hover:shadow-sm" type="button" data-tab="audit">
-<span class="tab-dot w-2 h-2 rounded-full bg-[#2563eb] hidden"></span>
-<span class="material-symbols-outlined text-[19px] text-[#2563eb]">verified_user</span>
-      <span data-i18n="tabs.audit">Audit &amp; DGUV</span>
-    </button>
+<!-- 2. FUNKTIONEN MIT TABS -->
+<section id="funktionen" class="max-w-[80rem] mx-auto px-6 sm:px-8 pt-4 pb-24 w-full scroll-mt-24" aria-labelledby="funktionen-titel">
+<h2 id="funktionen-titel" class="sr-only">Funktionen</h2>
+<div class="module-tabs flex items-center justify-center gap-2.5 sm:gap-3 flex-wrap" role="tablist" aria-label="Funktionen">
+<button class="module-tab-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-semibold transition-all bg-[#0b0f19] text-white shadow-md border border-slate-800" type="button" role="tab" id="tab-sofort-meldung" aria-controls="panel-sofort-meldung" aria-selected="true" tabindex="0" data-tab="sofort-meldung"><span class="tab-dot w-2 h-2 rounded-full bg-[#4f89fb]"></span><span class="material-symbols-outlined text-[19px] text-[#4f89fb]">qr_code_scanner</span><span>Sofort-Meldung</span></button>
+<button class="module-tab-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-semibold transition-all bg-white hover:bg-slate-50 text-slate-700 border border-slate-200/80 shadow-xs hover:shadow-sm" type="button" role="tab" id="tab-ki-vorschlag" aria-controls="panel-ki-vorschlag" aria-selected="false" tabindex="-1" data-tab="ki-vorschlag"><span class="tab-dot w-2 h-2 rounded-full bg-[#4f89fb] hidden"></span><span class="material-symbols-outlined text-[19px] text-[#4f89fb]">psychology</span><span>KI-Vorschlag & Risiko</span></button>
+<button class="module-tab-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-semibold transition-all bg-white hover:bg-slate-50 text-slate-700 border border-slate-200/80 shadow-xs hover:shadow-sm" type="button" role="tab" id="tab-massnahmen" aria-controls="panel-massnahmen" aria-selected="false" tabindex="-1" data-tab="massnahmen"><span class="tab-dot w-2 h-2 rounded-full bg-[#4f89fb] hidden"></span><span class="material-symbols-outlined text-[19px] text-[#4f89fb]">checklist</span><span>Maßnahmen</span></button>
+<button class="module-tab-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-semibold transition-all bg-white hover:bg-slate-50 text-slate-700 border border-slate-200/80 shadow-xs hover:shadow-sm" type="button" role="tab" id="tab-datenanalyse" aria-controls="panel-datenanalyse" aria-selected="false" tabindex="-1" data-tab="datenanalyse"><span class="tab-dot w-2 h-2 rounded-full bg-[#4f89fb] hidden"></span><span class="material-symbols-outlined text-[19px] text-[#4f89fb]">insights</span><span>Datenanalyse</span></button>
+<button class="module-tab-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-semibold transition-all bg-white hover:bg-slate-50 text-slate-700 border border-slate-200/80 shadow-xs hover:shadow-sm" type="button" role="tab" id="tab-sicherheitskultur" aria-controls="panel-sicherheitskultur" aria-selected="false" tabindex="-1" data-tab="sicherheitskultur"><span class="tab-dot w-2 h-2 rounded-full bg-[#4f89fb] hidden"></span><span class="material-symbols-outlined text-[19px] text-[#4f89fb]">volunteer_activism</span><span>Sicherheitskultur</span></button>
 </div>
-</section>
-<!-- 3. LIVE WORKFLOW SHOWCASE (matches reference design) -->
-<section id="produkt-showcase" class="max-w-[80rem] mx-auto px-4 sm:px-8 pb-20 w-full scroll-mt-24">
-<div class="rounded-[32px] p-6 sm:p-10 lg:p-12 bg-[#EEF1FC] border border-[#4f89fb]/25 shadow-[0_25px_70px_rgba(79,137,251,0.20)]">
-<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-8">
+<div class="tp-wrap mt-12">
+<div class="tp-panel is-active" id="panel-sofort-meldung" role="tabpanel" aria-labelledby="tab-sofort-meldung">
+<div class="tp-grid">
 <div>
-<span class="text-[12.5px] font-bold uppercase tracking-wider text-[#4f89fb] block mb-3" data-i18n="showcase.eyebrow">Interaktiver Ablauf in Echtzeit</span>
-<h2 class="font-headline text-[30px] sm:text-[38px] font-extrabold text-[#0b0f19] tracking-tight leading-[1.1] max-w-xl" data-i18n="showcase.title">
-          Von der Sprachnachricht zur belegten Maßnahme
-        </h2>
+<p class="tp-eyebrow">Für die Beschäftigten</p>
+<h3 class="tp-title">Erzählen statt ausfüllen.</h3>
+<p class="tp-lead">Über den QR-Code an Anlage, Tor oder Fahrzeug geht es ohne Anmeldung direkt in die Meldung. Sprechen oder tippen — beides landet in derselben Auswertung.</p>
+<ul class="tp-points">
+<li><span class="tp-dot"></span><span><b>Höchstens drei Minuten</b> Aufnahme, mit Timer und Aussteuerung, die warnt, wenn es zu leise ist.</span></li>
+<li><span class="tp-dot"></span><span><b>Die Audiodatei wird nicht gespeichert</b>, nur der Text weiterverarbeitet.</span></li>
+<li><span class="tp-dot"></span><span><b>Wer nicht sprechen will, tippt</b> ein bis zwei Sätze in eigenen Worten.</span></li>
+</ul>
+<p class="tp-note">Nachbau der Meldeansicht. Läuft im Browser, ohne App-Installation.</p>
 </div>
-<p class="text-[15px] text-slate-600 leading-relaxed max-w-sm lg:pt-1" data-i18n="showcase.subtitle">
-        Erzählen statt ausfüllen: Aus zwei gesprochenen Sätzen entsteht eine vollständige Meldung. Namen werden automatisch entfernt, die KI schlägt die Einordnung vor – entschieden wird von der Fachkraft.
-      </p>
-</div>
-<!-- White Card Row of 3 Steps -->
-<div class="bg-white rounded-[24px] shadow-[0_16px_48px_rgba(79,137,251,0.22)] border-2 border-[#4f89fb]/30 overflow-hidden">
-<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-<!-- Step 1 -->
-<div class="p-6 sm:p-7 flex flex-col">
-<div class="flex items-center justify-between mb-5">
-<span class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-slate-500"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span><span data-i18n="showcase.step1.label">Schritt 01 • Meldung aus der Werkstatt</span></span>
-<span class="text-[12px] font-medium text-slate-400" data-i18n="showcase.step1.time">09:42:18 Uhr</span>
-</div>
-<div class="flex items-center gap-3 mb-4">
-<div class="w-10 h-10 rounded-xl bg-[#4f89fb] flex items-center justify-center text-white shrink-0"><span class="material-symbols-outlined text-[20px]">mic</span></div>
+<div class="tp-stage">
+<div class="tp-phone">
+<div class="tp-steps"><span>Erzählen</span><span class="tp-num">Schritt 1 von 3</span></div>
+<div class="tp-progress"><i></i></div>
+<div class="tp-app" style="margin-top:14px;">
+<div class="tp-switch"><span class="is-on">Sprechen</span><span>Schreiben</span></div>
+<div class="tp-rec">
+<div class="tp-mic"><span class="tp-ring" aria-hidden="true"></span><span class="tp-core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1"/><path d="M12 18v4"/><path d="M8 22h8"/></svg></span></div>
 <div>
-<h3 class="font-headline text-[17px] font-bold text-slate-900 leading-tight">Sprachmeldung</h3>
-<span class="text-[12.5px] text-slate-500" data-i18n="showcase.step1.subtitle">Werkstatt • Frühschicht</span>
+<p class="tp-time tp-num">0:47</p>
+<p class="tp-sub" style="margin-top:4px;">Aufnahme läuft … noch 2:13</p>
+</div>
+<div class="tp-bar"><i></i></div>
+<div class="tp-btns" style="margin-top:0;justify-content:center;">
+<span class="tp-btn tp-btn-primary">Fertig</span><span class="tp-btn tp-btn-secondary">Abbrechen</span>
 </div>
 </div>
-<div class="bg-[#F8F9FC] rounded-2xl p-4 border border-slate-100 flex-1">
-<div class="flex items-center justify-between mb-2.5">
-<span class="text-[11.5px] font-semibold text-slate-500" data-i18n="showcase.step1.memo_label">Sprachnachricht (0:17)</span>
-<span class="text-[11px] font-bold text-[#4f89fb]" data-i18n="showcase.step1.anon_badge">Namen entfernt</span>
-</div>
-<div class="flex items-end gap-0.5 h-6 mb-3">
-<span class="w-1 h-2 bg-[#4f89fb]/40 rounded-full"></span><span class="w-1 h-4 bg-[#4f89fb]/60 rounded-full"></span><span class="w-1 h-6 bg-[#4f89fb] rounded-full"></span><span class="w-1 h-3 bg-[#4f89fb]/50 rounded-full"></span><span class="w-1 h-5 bg-[#4f89fb]/70 rounded-full"></span><span class="w-1 h-2 bg-[#4f89fb]/40 rounded-full"></span><span class="w-1 h-4 bg-[#4f89fb]/60 rounded-full"></span>
-</div>
-<p class="text-[13px] text-slate-700 leading-relaxed italic" data-i18n="showcase.step1.quote">„In der Werkstatt lag eine Mehrfachsteckdose am Boden, das Kabel war aufgescheuert. Ich habe das erst gesehen, als ich den Stecker einstecken wollte.“</p>
-</div>
-<div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-100 text-[12px]">
-<span class="inline-flex items-center gap-1 text-slate-500"><span class="material-symbols-outlined text-[15px]">lock</span><span data-i18n="showcase.step1.no_meta">Keine Metadaten</span></span>
-<span class="font-semibold text-[#4f89fb]" data-i18n="showcase.step1.status">Meldung erfasst</span>
+<p class="tp-note" style="margin-top:4px;font-size:11.5px;">Namen werden automatisch entfernt. Die Meldung dient der Prävention, nicht der Schuldzuweisung.</p>
 </div>
 </div>
-<!-- Step 2 (highlighted) -->
-<div class="p-6 sm:p-7 flex flex-col bg-[#F3F6FE]">
-<div class="flex items-center justify-between mb-5">
-<span class="inline-flex items-center gap-1.5 text-[11.5px] font-bold px-2.5 py-1 rounded-full bg-[#0b0f19] text-white"><span class="material-symbols-outlined text-[14px]">bolt</span><span data-i18n="showcase.step2.label">Schritt 02 • KI-Sicherheitsanalyse</span></span>
-<span class="text-[12px] font-medium text-slate-400" data-i18n="showcase.step2.latency">Vorschlag der KI</span>
 </div>
-<div class="flex items-center gap-3 mb-4">
-<div class="w-10 h-10 rounded-xl bg-[#4f89fb] flex items-center justify-center text-white shrink-0"><span class="material-symbols-outlined text-[20px]">hub</span></div>
+</div>
+</div>
+<div class="tp-panel" id="panel-ki-vorschlag" role="tabpanel" aria-labelledby="tab-ki-vorschlag" hidden>
+<div class="tp-grid">
 <div>
-<h3 class="font-headline text-[17px] font-bold text-slate-900 leading-tight" data-i18n="showcase.step2.title">Einordnung &amp; Musterabgleich</h3>
-<span class="text-[12.5px] text-slate-500" data-i18n="showcase.step2.subtitle">Strukturierte Felder aus dem Freitext</span>
+<p class="tp-eyebrow">Aus Freitext wird Struktur</p>
+<h3 class="tp-title">Die KI schlägt vor, die Fachkraft entscheidet.</h3>
+<p class="tp-lead">Aus den gesprochenen Sätzen entsteht eine vollständige Meldung: Kurzbezeichnung, Hergang, Betriebsteil, Zeitpunkt, Tätigkeit, Arbeitsmittel, Risikopotenzial. Korrigieren ist leichter als antworten.</p>
+<ul class="tp-points">
+<li><span class="tp-dot"></span><span><b>Höchstens zwei Rückfragen</b>, beantwortbar durch Antippen von Tags — statt eines Formulars mit acht Pflichtfeldern.</span></li>
+<li><span class="tp-dot"></span><span><b>Namen werden automatisch entfernt</b>, aus jedem Feld, auch aus dem Freitext.</span></li>
+<li><span class="tp-dot"></span><span><b>Die Ursache wird systemisch formuliert</b> — nicht „unaufmerksam", sondern „kein fester Platz für Verlängerungen".</span></li>
+</ul>
+<p class="tp-note">Die Einordnung ist ein Vorschlag. Geprüft wird sie von der Fachkraft für Arbeitssicherheit.</p>
+</div>
+<div class="tp-stage">
+<div class="tp-app">
+<p class="tp-kicker">Noch 2 Fragen</p>
+<p class="tp-h" style="font-size:16px;">Gab es besondere Bedingungen?</p>
+<p class="tp-sub">Mehrfachauswahl möglich</p>
+<div class="tp-tags">
+<span class="tp-tag">Nässe</span>
+<span class="tp-tag">Dunkelheit</span>
+<span class="tp-tag">Lärm</span>
+<span class="tp-tag is-on">Zeitdruck</span>
+<span class="tp-tag">Nichts davon</span>
+</div>
+<div class="tp-btns"><span class="tp-btn tp-btn-primary">Übernehmen</span></div>
+</div>
+<div class="tp-app tp-scroll">
+<p class="tp-h">Bitte kurz prüfen</p>
+<p class="tp-sub">Alles Wichtige ist schon ausgefüllt. Ändern Sie nur, was nicht stimmt.</p>
+<div style="margin-top:14px;display:flex;flex-direction:column;gap:12px;">
+<div><p class="tp-lbl">Kurzbezeichnung</p><div class="tp-field">Beinahe-Stolpern über Mehrfachsteckdose in der Werkstatt</div></div>
+<div><p class="tp-lbl">Was ist passiert?</p><div class="tp-field tp-multi">In der Werkstatt lag eine Mehrfachsteckdose am Boden, das Kabel war an einer Stelle aufgescheuert. Person&nbsp;A ist beim Holen von Werkzeug fast darauf getreten und konnte gerade noch ausweichen.</div></div>
+<div class="tp-row tp-2">
+<div><p class="tp-lbl">Betriebsteil</p><div class="tp-field tp-select"><span>Werkstatt / Fuhrpark</span><span class="tp-caret">▾</span></div></div>
+<div><p class="tp-lbl">Örtlichkeit</p><div class="tp-field">Werkstatt, an der Hebebühne</div></div>
+<div><p class="tp-lbl">Wann</p><div class="tp-field tp-num">15.09.2026, 06:40</div></div>
+<div><p class="tp-lbl">Risikopotenzial</p><div class="tp-field tp-select"><span>Hoch</span><span class="tp-caret">▾</span></div></div>
+</div>
+<div class="tp-soft">
+<p class="tp-kicker">Automatisch erkannt · Elektrische Sicherheit</p>
+<p style="margin:0;font-size:13px;color:#344054;line-height:1.55;">Kein fester Platz für Verlängerungen und Mehrfachsteckdosen; beschädigte Leitungen werden erst bei der jährlichen Prüfung auffällig.</p>
+<p style="margin:8px 0 0;font-size:11.5px;color:#667085;">Diese Einordnung prüft die Fachkraft für Arbeitssicherheit.</p>
 </div>
 </div>
-<div class="bg-white rounded-2xl p-4 border border-slate-100 flex-1">
-<div class="flex items-center justify-between mb-3">
-<span class="text-[11.5px] font-semibold text-slate-500" data-i18n="showcase.step2.risk_label">Risikopotenzial</span>
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-red-50 text-red-600" data-i18n="showcase.step2.risk_badge">Hoch – Fachkraft prüft</span>
-</div>
-<div class="flex items-start gap-2 bg-amber-50/60 border border-amber-100 rounded-xl p-3">
-<span class="material-symbols-outlined text-amber-500 text-[18px] shrink-0">warning</span>
-<p class="text-[12.5px] text-slate-700 leading-snug" data-i18n="showcase.step2.pattern"><span class="font-semibold">Muster erkannt</span> Drei Meldungen mit derselben Ursache. Ab der dritten wird daraus ein Muster – aufklappbar bis zur Einzelmeldung.</p>
+<div class="tp-btns"><span class="tp-btn tp-btn-primary">Anonym melden</span><span class="tp-btn tp-btn-secondary">Verwerfen</span></div>
+<span class="tp-fade" aria-hidden="true"></span>
 </div>
 </div>
-<div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-100 text-[12px]">
-<span class="text-slate-500" data-i18n="showcase.step2.pii_label">Namen und Metadaten</span>
-<span class="inline-flex items-center gap-1 font-semibold text-[#4f89fb]"><span class="material-symbols-outlined text-[15px]">check_circle</span><span data-i18n="showcase.step2.pii_status">Bereinigt</span></span>
 </div>
 </div>
-<!-- Step 3 -->
-<div class="p-6 sm:p-7 flex flex-col">
-<div class="flex items-center justify-between mb-5">
-<span class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-slate-500"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span><span data-i18n="showcase.step3.label">Schritt 03 • Maßnahme und Rückmeldung</span></span>
-<span class="text-[12px] font-bold text-[#4f89fb]" data-i18n="showcase.step3.hazard_status">Kreis geschlossen</span>
-</div>
-<div class="flex items-center gap-3 mb-4">
-<div class="w-10 h-10 rounded-xl bg-[#4f89fb] flex items-center justify-center text-white shrink-0"><span class="material-symbols-outlined text-[20px]">verified</span></div>
+<div class="tp-panel" id="panel-massnahmen" role="tabpanel" aria-labelledby="tab-massnahmen" hidden>
+<div class="tp-grid">
 <div>
-<h3 class="font-headline text-[17px] font-bold text-slate-900 leading-tight" data-i18n="showcase.step3.title">Maßnahme umgesetzt</h3>
-<span class="text-[12.5px] text-slate-500" data-i18n="showcase.step3.subtitle">Wirksamkeit geprüft • Prüfprotokoll erstellt</span>
+<p class="tp-eyebrow">Für die Fachkraft</p>
+<h3 class="tp-title">Der Kreis schließt sich — auch bei einem Nein.</h3>
+<p class="tp-lead">Zu einer Meldung oder einem ganzen Muster entsteht eine Maßnahme mit Verantwortlichem, Frist und Status. Ein eigenes Feld ist die Rückmeldung an die Melder.</p>
+<ul class="tp-points">
+<li><span class="tp-dot"></span><span><b>Ein Satz in einfacher Sprache</b>, getrennt von der fachlichen Beschreibung — genau das lesen die Melder.</span></li>
+<li><span class="tp-dot"></span><span><b>Eine Maßnahme antwortet allen</b>, die dasselbe gemeldet haben, ohne dass jemand identifizierbar wird.</span></li>
+<li><span class="tp-dot"></span><span><b>Auch ein Nein wird begründet.</b> Schweigen ist der häufigste Grund, nicht wieder zu melden.</span></li>
+</ul>
+<p class="tp-note">Status geplant → umgesetzt → Wirksamkeit geprüft, jeweils mit Verantwortlichem und Frist.</p>
+</div>
+<div class="tp-stage">
+<div class="tp-app">
+<p class="tp-h">Maßnahme</p>
+<p class="tp-sub">Was hier entschieden wird, sehen alle Melder dieses Musters — ohne dass ihre Identität sichtbar wird.</p>
+<div style="border:1px solid #e4e7ec;border-radius:10px;padding:12px 14px;margin-top:14px;">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;justify-content:space-between;">
+<p style="margin:0;font-size:14px;font-weight:600;color:#101828;">Feste Kabelaufhängung über den Arbeitsplätzen</p>
+<span class="tp-chip">geplant</span>
+</div>
+<p style="margin:6px 0 0;font-size:13px;color:#475467;line-height:1.55;">Über jedem Arbeitsplatz wird eine Deckenrolle montiert, damit keine Verlängerung mehr über den Boden läuft.</p>
+<p style="margin:8px 0 0;font-size:11.5px;color:#667085;">Leitung Werkstatt · Frist 31.10.2026 · gilt für Werkstatt / Fuhrpark</p>
+</div>
+<div style="margin-top:14px;">
+<p class="tp-lbl">Rückmeldung an die Melder</p>
+<div class="tp-field tp-multi">Über jedem Werkstattplatz hängt jetzt eine Deckenrolle — es liegt kein Kabel mehr im Laufweg.</div>
+<p style="margin:6px 0 0;font-size:11.5px;color:#667085;">Ein Satz in einfacher Sprache — das ist der Text, den die Melder lesen.</p>
+</div>
+<div class="tp-soft" style="margin-top:14px;display:flex;flex-direction:column;gap:8px;">
+<span style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#344054;"><span style="flex:0 0 auto;width:13px;height:13px;border-radius:999px;border:4px solid #2f6fd4;margin-top:3px;"></span><span>Gilt für das ganze Muster <b>Elektrische Sicherheit</b> — alle Melder dieses Themas bekommen die Rückmeldung</span></span>
+<span style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#667085;"><span style="flex:0 0 auto;width:13px;height:13px;border-radius:999px;border:1px solid #d0d5dd;background:#fff;margin-top:3px;"></span><span>Gilt nur für diese eine Meldung</span></span>
+</div>
+<div class="tp-btns"><span class="tp-btn tp-btn-primary">Maßnahme speichern</span><span class="tp-btn tp-btn-secondary">Keine Maßnahme — mit Begründung</span></div>
+</div>
+<div class="tp-reject">
+<p class="tp-kicker">Keine Maßnahme · 15.09.2026</p>
+<p>Der Bereich wird im Zuge des Umbaus im Herbst ohnehin neu gestaltet; eine Zwischenlösung würde mehr Verkehr erzeugen.</p>
 </div>
 </div>
-<div class="bg-[#F8F9FC] rounded-2xl p-4 border border-slate-100 flex-1 flex flex-col gap-3">
-<div class="flex items-center justify-between">
-<span class="text-[11.5px] font-semibold text-slate-500" data-i18n="showcase.step3.ticket_label">Export für Ihr System</span>
-<span class="text-[11px] font-mono text-slate-400">PDF · CSV · JSON · Excel</span>
-</div>
-<div class="space-y-2">
-<div class="flex items-start gap-2"><span class="material-symbols-outlined text-emerald-600 text-[16px] mt-0.5">check</span><span class="text-[12.5px] text-slate-700" data-i18n="showcase.step3.item1">Kabel ersetzt, Steckdose fest montiert</span></div>
-<div class="flex items-start gap-2"><span class="material-symbols-outlined text-emerald-600 text-[16px] mt-0.5">check</span><span class="text-[12.5px] text-slate-700" data-i18n="showcase.step3.item2">Prüfintervall für Verlängerungen festgelegt</span></div>
-<div class="flex items-start gap-2"><span class="material-symbols-outlined text-emerald-600 text-[16px] mt-0.5">check</span><span class="text-[12.5px] text-slate-700" data-i18n="showcase.step3.item3">Rückmeldung an alle Melder dieses Musters</span></div>
-</div>
-<div class="mt-auto flex items-center justify-between bg-white rounded-xl border border-slate-100 p-3">
-<span class="text-[11.5px] text-slate-500 leading-tight" data-i18n="showcase.step3.savings_label">Wirkungsverlauf<br>bis zur Wirksamkeit</span>
-<span class="text-[19px] font-extrabold text-slate-900" data-i18n="showcase.step3.savings_value">6 Stationen</span>
 </div>
 </div>
-<div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-100 text-[12px]">
-<span class="text-slate-500" data-i18n="showcase.step3.footer_left">Fachkraft und Betriebsrat sehen denselben Stand</span>
-<span class="font-semibold text-[#4f89fb]" data-i18n="showcase.step3.footer_right">Abgeschlossen</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Bottom Stat Bar -->
-<div class="mt-6 bg-white rounded-[20px] border border-slate-200/70 shadow-xs p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-5">
-<div class="flex items-center gap-4">
-<div class="w-11 h-11 rounded-full bg-[#EEF1FC] flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[#4f89fb] text-[22px]">cached</span></div>
+<div class="tp-panel" id="panel-datenanalyse" role="tabpanel" aria-labelledby="tab-datenanalyse" hidden>
+<div class="tp-grid">
 <div>
-<span class="font-headline text-[16px] font-bold text-slate-900 block" data-i18n="showcase.stat.title">Auch ein Nein wird begründet</span>
-<span class="text-[13px] text-slate-500" data-i18n="showcase.stat.subtitle">Entscheidet die Fachkraft gegen eine Maßnahme, bekommen die Melder die Begründung zu sehen.</span>
+<p class="tp-eyebrow">Aus Einzelfällen werden Muster</p>
+<h3 class="tp-title">Ab drei Meldungen mit derselben Ursache.</h3>
+<p class="tp-lead">Darunter ist es ein Einzelfall, und genau das steht dann auch dort. Jede Musterkarte nennt Schwerpunkt, häufigste Bedingung und Risikoanteil — und lässt sich bis zur Einzelmeldung aufklappen.</p>
+<ul class="tp-points">
+<li><span class="tp-dot"></span><span><b>Die Mustererkennung ist gerechnet, keine KI</b> — nachvollziehbar und jederzeit aufklappbar.</span></li>
+<li><span class="tp-dot"></span><span><b>Die Ursache kommt aus dem Freitext</b>, nicht aus einer Auswahlliste des Melders.</span></li>
+<li><span class="tp-dot"></span><span><b>Das Wortfeld</b> zeigt Begriffe über alle Hergangsschilderungen hinweg — Kabel, Gitterrost, Laufweg.</span></li>
+</ul>
+<p class="tp-note">Eine steigende Kurve zeigt zunächst bessere Meldebereitschaft, nicht mehr Gefährdung.</p>
+</div>
+<div class="tp-stage">
+<div class="tp-app">
+<div class="tp-tiles">
+<div class="tp-tile"><div class="tp-tl">Meldungen gesamt</div><div class="tp-tv tp-num">31</div><div class="tp-th">Beinaheunfälle im Bestand</div></div>
+<div class="tp-tile"><div class="tp-tl">Letzte 90 Tage</div><div class="tp-tv tp-num">14</div><div class="tp-th">neu erfasst</div></div>
+<div class="tp-tile"><div class="tp-tl">Hohes Risikopotenzial</div><div class="tp-tv tp-num" style="color:#d03b3b;">7</div><div class="tp-th">bei ungünstigem Verlauf</div></div>
+<div class="tp-tile"><div class="tp-tl">In wiederkehrenden Mustern</div><div class="tp-tv tp-num" style="color:#2f6fd4;">81 %</div><div class="tp-th">25 von 31 Meldungen</div></div>
 </div>
 </div>
-<div class="flex items-center gap-8 shrink-0">
-<div class="text-center sm:text-right">
-<span class="font-headline text-[22px] font-extrabold text-[#4f89fb] block leading-none">1 : 29 : 300</span>
-<span class="text-[12px] text-slate-500" data-i18n="showcase.stat.metric1_label">Heinrich-Pyramide: auf einen schweren Unfall kommen 29 leichte und 300 Beinaheunfälle</span>
+<div class="tp-app">
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+<div style="display:flex;align-items:center;gap:10px;min-width:0;">
+<span class="tp-rank">1</span><p class="tp-h">Rutsch- und Stolpergefahr</p>
 </div>
-<div class="text-center sm:text-right">
-<span class="font-headline text-[22px] font-extrabold text-[#4f89fb] block leading-none" data-i18n="showcase.stat.metric2_value">unter 2 Min</span>
-<span class="text-[12px] text-slate-500" data-i18n="showcase.stat.metric2_label">Dauer einer Meldung – sprechen, prüfen, absenden</span>
+<span style="font-size:13px;font-weight:600;color:#101828;white-space:nowrap;" class="tp-num">8 Meldungen</span>
+</div>
+<p style="margin:10px 0 0;font-size:13px;color:#475467;line-height:1.6;">8 der 31 Meldungen lassen sich auf rutsch- und stolpergefahr zurückführen, davon 5 im Bereich Kläranlage (63 %), überwiegend unter der Bedingung „Nässe", 2 davon mit hohem Risikopotenzial.</p>
+<div class="tp-tags" style="gap:6px;">
+<span class="tp-chip">Schwerpunkt: Kläranlage</span>
+<span class="tp-chip">Bedingung: Nässe</span>
+<span class="tp-badge tp-badge-high"><span class="tp-bdot" style="background:#d03b3b;"></span>Hoch</span>
+</div>
+<p style="margin:12px 0 0;font-size:13px;font-weight:600;color:#2f6fd4;">Belege anzeigen (8)</p>
+</div>
+<div class="tp-app">
+<p class="tp-h">Ursachenkategorien</p>
+<p class="tp-sub" style="margin-bottom:12px;">Automatisch aus der Freitextschilderung abgeleitet, nicht vom Melder ausgewählt.</p>
+<div class="tp-barrow"><span>Rutsch- und Stolpergefahr</span><span class="tp-num">8</span><span class="tp-bartrack"><i style="width:100%;background:#2154a3;"></i></span></div>
+<div class="tp-barrow"><span>Elektrische Sicherheit</span><span class="tp-num">6</span><span class="tp-bartrack"><i style="width:75%;background:#2f6fd4;"></i></span></div>
+<div class="tp-barrow"><span>Ordnung, Lagerung, Verkehrswege</span><span class="tp-num">5</span><span class="tp-bartrack"><i style="width:62%;background:#4d8cf0;"></i></span></div>
+<div class="tp-barrow"><span>Innerbetrieblicher Verkehr</span><span class="tp-num">4</span><span class="tp-bartrack"><i style="width:50%;background:#6ba1f4;"></i></span></div>
+<div class="tp-barrow"><span>PSA nicht getragen / nicht verfügbar</span><span class="tp-num">4</span><span class="tp-bartrack"><i style="width:50%;background:#8fb8f7;"></i></span></div>
+</div>
+<div class="tp-app">
+<p class="tp-h">Begriffe aus den Freitexten</p>
+<p class="tp-sub" style="margin-bottom:12px;">Die Zahl nennt, in wie vielen Meldungen der Begriff vorkommt.</p>
+<div class="tp-terms">
+<span class="tp-term"><b>kabel</b><small class="tp-num">9</small></span>
+<span class="tp-term"><b>gitterrost</b><small class="tp-num">8</small></span>
+<span class="tp-term"><b>laufweg</b><small class="tp-num">7</small></span>
+<span class="tp-term"><b>steckdos</b><small class="tp-num">6</small></span>
+<span class="tp-term"><b>geländer</b><small class="tp-num">6</small></span>
+<span class="tp-term"><b>schacht</b><small class="tp-num">5</small></span>
+<span class="tp-term"><b>leiter</b><small class="tp-num">5</small></span>
+<span class="tp-term"><b>gaswarngerät</b><small class="tp-num">4</small></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tp-panel" id="panel-sicherheitskultur" role="tabpanel" aria-labelledby="tab-sicherheitskultur" hidden>
+<div class="tp-grid">
+<div>
+<p class="tp-eyebrow">Warum wieder gemeldet wird</p>
+<h3 class="tp-title">Melden muss sich lohnen.</h3>
+<p class="tp-lead">Nicht durch Prämien, sondern weil sichtbar wird, dass sich durch den eigenen Hinweis etwas verändert hat. Direkt nach dem Absenden, und später noch einmal, wenn etwas daraus geworden ist.</p>
+<ul class="tp-points">
+<li><span class="tp-dot"></span><span><b>Der Wirkungsverlauf über sechs Stationen</b> zeigt auch, wo es gerade hängt. Ein ehrlicher Zwischenstand hält Vertrauen.</span></li>
+<li><span class="tp-dot"></span><span><b>„Daraus wurde: …"</b> — der Satz der Fachkraft kommt beim Melder an, ohne dessen Identität preiszugeben.</span></li>
+<li><span class="tp-dot"></span><span><b>Keine Ranglisten, keine Punkte für Einzelne.</b> Belohnt wird das Melden und das Umsetzen, nie eine niedrige Unfallzahl.</span></li>
+</ul>
+<p class="tp-note">Alle Angaben stammen aus echten Daten der Anwendung, nichts ist geschätzt.</p>
+</div>
+<div class="tp-stage">
+<div class="tp-thanks">
+<span class="tp-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26" aria-hidden="true"><path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3Z"/><path d="M7 11l4.2-7.4a1.5 1.5 0 0 1 2.8.9L13 9h4.6a2 2 0 0 1 2 2.4l-1.3 6A2 2 0 0 1 16.3 19H7"/></svg></span>
+<div>
+<h4>Danke — damit wird gehandelt!</h4>
+<p class="tp-pattern"><span class="tp-pdots" aria-hidden="true"><i></i><i></i><i></i></span>
+<span><b>3</b> Meldungen zu <b>Elektrische Sicherheit</b> — damit ein Muster.</span></p>
+<p style="margin:8px 0 0;font-size:11.5px;color:rgba(20,83,45,.7);">Anonym gespeichert.</p>
+</div>
+</div>
+<div class="tp-app" style="margin-top:12px;">
+<p class="tp-kicker">So geht es weiter</p>
+<ol class="tp-trail">
+<li><span class="tp-line"><span class="tp-tdot is-done"></span><span class="tp-tline is-done"></span></span><span class="tp-tbody"><p class="">Eingegangen<span style="margin-left:8px;font-size:11.5px;font-weight:400;color:#98a2b3;" class="tp-num">15.09.2026</span></p></span></li>
+<li><span class="tp-line"><span class="tp-tdot is-now"></span><span class="tp-tline"></span></span><span class="tp-tbody"><p class="is-now">Von der Fachkraft gesehen</p></span></li>
+<li><span class="tp-line"><span class="tp-tdot is-done"></span><span class="tp-tline is-done"></span></span><span class="tp-tbody"><p class="">Als Muster erkannt</p><small>3 gleichartige Meldungen</small></span></li>
+<li><span class="tp-line"><span class="tp-tdot"></span><span class="tp-tline"></span></span><span class="tp-tbody is-open"><p class="">Entscheidung steht aus</p></span></li>
+<li><span class="tp-line"><span class="tp-tdot"></span><span class="tp-tline"></span></span><span class="tp-tbody is-open"><p class="">Umgesetzt</p></span></li>
+<li><span class="tp-line"><span class="tp-tdot"></span></span><span class="tp-tbody is-open"><p class="">Wirksamkeit geprüft</p></span></li>
+</ol>
+</div>
+<div class="tp-result">
+<p class="tp-kicker">Aus Ihrer Meldung wurde</p>
+<p>Über jedem Werkstattplatz hängt jetzt eine Deckenrolle — es liegt kein Kabel mehr im Laufweg.</p>
+<small>Ihre Meldung war eine von 3, aus denen diese Änderung entstand.</small>
+</div>
 </div>
 </div>
 </div>
@@ -614,7 +694,7 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
 </div>
 </div>
 </section>
-</div></main><footer class="w-full bg-white border-t border-slate-200/80 pt-16 pb-12"><div class="max-w-[80rem] mx-auto px-6 sm:px-8"><div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 pb-14 border-b border-slate-100"><div class="col-span-2 md:col-span-3 lg:col-span-2 flex flex-col gap-4 pr-6"><div class="flex items-center gap-2.5"><img alt="tutelaris" class="h-5 w-auto object-contain" src="tutelaris-logo-black.png"></div><p class="text-[14px] text-slate-500 max-w-sm leading-relaxed" data-i18n="footer.tagline">Das intuitive Betriebssystem für EHS, Beinaheunfall-Meldungen und proaktiven Arbeitsschutz in modernen Unternehmen.</p><div class="flex flex-wrap items-center gap-2 pt-1"><a class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-50 text-slate-700 text-[12px] font-medium border border-slate-200/60 hover:bg-slate-100 transition-colors" href="https://www.linkedin.com/company/tutelaris/" target="_blank" rel="noopener" aria-label="tutelaris auf LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.225 0H1.771C.792 0 0 .77 0 1.723v20.547C0 23.23.792 24 1.771 24h20.451C23.2 24 24 23.23 24 22.27V1.723C24 .77 23.2 0 22.222 0h.003zM6.905 20.452H3.77V9h3.135v11.452zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.368-1.852 3.6 0 4.266 2.37 4.266 5.456v6.287z"/></svg>LinkedIn</a><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-50 text-slate-700 text-[12px] font-medium border border-slate-200/60"><span class="material-symbols-outlined text-[15px] text-emerald-600">lock</span><span data-i18n="footer.badge_dsgvo">DSGVO-konform</span></span></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_produkt">Produkt</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="beinaheunfall-management" href="#produkt-showcase" data-i18n="nav.beinaheunfaelle">Beinaheunfälle</a><a class="hover:text-slate-900 transition-colors" data-path="unfaelle-melden" href="#vorteile" data-i18n="nav.unfaelle_melden">Unfälle Melden</a><a class="hover:text-slate-900 transition-colors" data-path="verbandsbuch" href="#verbandsbuch-modul" data-i18n="nav.verbandsbuch">Verbandsbuch</a><a class="hover:text-slate-900 transition-colors" data-path="preise" href="preise.html" data-i18n="footer.preismodelle">Pilotprogramm</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_compliance">Compliance</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="compliance-iso-45001" href="iso-45001.html" data-i18n="footer.iso45001">ISO 45001 Audit-Ready</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-arbschg" href="arbeitsschutzgesetz.html" data-i18n="footer.arbschg">Arbeitsschutzgesetz (ArbSchG)</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-dguv" href="dguv-vorschriften.html" data-i18n="footer.dguv">DGUV Vorschriften</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-datenschutz" href="datenschutz.html" data-i18n="footer.datenschutz_dsgvo">Datenschutz &amp; DSGVO</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_unternehmen">Unternehmen</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="unternehmen" href="ueber-uns.html" data-i18n="nav.ueber_uns">Über uns</a><a class="hover:text-slate-900 transition-colors" data-path="impressum" href="impressum.html" data-i18n="footer.impressum">Impressum</a><a class="hover:text-slate-900 transition-colors" data-path="agb" href="agb.html" data-i18n="footer.agb">AGB</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_ressourcen">Ressourcen</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="ehs-leitfaeden" href="ehs-leitfaeden.html" data-i18n="nav.ehs_leitfaeden">EHS Leitfäden</a><a class="hover:text-slate-900 transition-colors" data-path="checklisten-vorlagen" href="checklisten-vorlagen.html" data-i18n="nav.checklisten_vorlagen">Checklisten Vorlagen</a></div></div></div><div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-slate-500"><div class="" data-i18n="footer.copyright">© 2026 tutelaris. Alle Rechte vorbehalten.</div><div class="flex items-center gap-5"><a class="hover:text-slate-900 transition-colors" href="impressum.html" data-i18n="footer.impressum">Impressum</a><a class="hover:text-slate-900 transition-colors" href="datenschutz.html" data-i18n="footer.datenschutz_link">Datenschutz</a><a class="hover:text-slate-900 transition-colors" href="agb.html" data-i18n="footer.agb">AGB</a><a class="hover:text-slate-900 transition-colors" href="sicherheit.html" data-i18n="footer.sicherheit">Sicherheit</a></div></div></div></footer>
+</div></main><footer class="w-full bg-white border-t border-slate-200/80 pt-16 pb-12"><div class="max-w-[80rem] mx-auto px-6 sm:px-8"><div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 pb-14 border-b border-slate-100"><div class="col-span-2 md:col-span-3 lg:col-span-2 flex flex-col gap-4 pr-6"><div class="flex items-center gap-2.5"><img alt="tutelaris" class="h-5 w-auto object-contain" src="tutelaris-logo-black.png"></div><p class="text-[14px] text-slate-500 max-w-sm leading-relaxed" data-i18n="footer.tagline">Das intuitive Betriebssystem für EHS, Beinaheunfall-Meldungen und proaktiven Arbeitsschutz in modernen Unternehmen.</p><div class="flex flex-wrap items-center gap-2 pt-1"><a class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-50 text-slate-700 text-[12px] font-medium border border-slate-200/60 hover:bg-slate-100 transition-colors" href="https://www.linkedin.com/company/tutelaris/" target="_blank" rel="noopener" aria-label="tutelaris auf LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.225 0H1.771C.792 0 0 .77 0 1.723v20.547C0 23.23.792 24 1.771 24h20.451C23.2 24 24 23.23 24 22.27V1.723C24 .77 23.2 0 22.222 0h.003zM6.905 20.452H3.77V9h3.135v11.452zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.368-1.852 3.6 0 4.266 2.37 4.266 5.456v6.287z"/></svg>LinkedIn</a><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-50 text-slate-700 text-[12px] font-medium border border-slate-200/60"><span class="material-symbols-outlined text-[15px] text-emerald-600">lock</span><span data-i18n="footer.badge_dsgvo">DSGVO-konform</span></span></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_produkt">Produkt</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="beinaheunfall-management" href="#produkt-showcase" data-i18n="nav.beinaheunfaelle">Beinaheunfälle</a><a class="hover:text-slate-900 transition-colors" data-path="unfaelle-melden" href="#vorteile" data-i18n="nav.unfaelle_melden">Unfälle Melden</a><a class="hover:text-slate-900 transition-colors" data-path="verbandsbuch" href="#verbandsbuch-modul" data-i18n="nav.verbandsbuch">Verbandsbuch</a><a class="hover:text-slate-900 transition-colors" data-path="preise" href="preise.html" data-i18n="footer.preismodelle">Pläne</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_compliance">Compliance</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="compliance-iso-45001" href="iso-45001.html" data-i18n="footer.iso45001">ISO 45001 Audit-Ready</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-arbschg" href="arbeitsschutzgesetz.html" data-i18n="footer.arbschg">Arbeitsschutzgesetz (ArbSchG)</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-dguv" href="dguv-vorschriften.html" data-i18n="footer.dguv">DGUV Vorschriften</a><a class="hover:text-slate-900 transition-colors" data-path="compliance-datenschutz" href="datenschutz.html" data-i18n="footer.datenschutz_dsgvo">Datenschutz &amp; DSGVO</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_unternehmen">Unternehmen</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="unternehmen" href="ueber-uns.html" data-i18n="nav.ueber_uns">Über uns</a><a class="hover:text-slate-900 transition-colors" data-path="impressum" href="impressum.html" data-i18n="footer.impressum">Impressum</a><a class="hover:text-slate-900 transition-colors" data-path="agb" href="agb.html" data-i18n="footer.agb">AGB</a></div></div><div class="flex flex-col gap-3"><span class="text-[14px] font-bold text-slate-900" data-i18n="footer.col_ressourcen">Ressourcen</span><div class="flex flex-col gap-2.5 text-[14px] text-slate-600"><a class="hover:text-slate-900 transition-colors" data-path="ehs-leitfaeden" href="ehs-leitfaeden.html" data-i18n="nav.ehs_leitfaeden">EHS Leitfäden</a><a class="hover:text-slate-900 transition-colors" data-path="checklisten-vorlagen" href="checklisten-vorlagen.html" data-i18n="nav.checklisten_vorlagen">Checklisten Vorlagen</a></div></div></div><div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-slate-500"><div class="" data-i18n="footer.copyright">© 2026 tutelaris. Alle Rechte vorbehalten.</div><div class="flex items-center gap-5"><a class="hover:text-slate-900 transition-colors" href="impressum.html" data-i18n="footer.impressum">Impressum</a><a class="hover:text-slate-900 transition-colors" href="datenschutz.html" data-i18n="footer.datenschutz_link">Datenschutz</a><a class="hover:text-slate-900 transition-colors" href="agb.html" data-i18n="footer.agb">AGB</a><a class="hover:text-slate-900 transition-colors" href="sicherheit.html" data-i18n="footer.sicherheit">Sicherheit</a></div></div></div></footer>
 
 <!-- DEMO BOOKING MODAL -->
 <div id="demo-modal" class="fixed inset-0 z-[100] hidden">
@@ -995,7 +1075,7 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
     "en": "ISO 45001 Audit-Ready"
   },
   "footer.preismodelle": {
-    "de": "Pilotprogramm",
+    "de": "Pläne",
     "en": "Pricing Plans"
   },
   "footer.sicherheit": {
@@ -1007,8 +1087,8 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
     "en": "The intuitive operating system for EHS, near-miss reporting, and proactive workplace safety in modern companies."
   },
   "hero.badge": {
-    "de": "EHS &amp; Beinaheunfall-Plattform",
-    "en": "EHS &amp; Near-Miss Platform"
+    "de": "Beinaheunfälle als Teil Ihrer Präventionsstrategie",
+    "en": "Near misses as part of your prevention strategy"
   },
   "hero.baugewerbe": {
     "de": "Baugewerbe",
@@ -1175,7 +1255,7 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
     "en": "Open menu"
   },
   "nav.preise": {
-    "de": "Pilotprogramm",
+    "de": "Pläne",
     "en": "Pricing"
   },
   "nav.produktion": {
@@ -1578,20 +1658,36 @@ Beschäftigte melden Beinaheunfälle in unter zwei Minuten – gesprochen oder g
   }
 
   // ---- Module tab pills ----
-  document.querySelectorAll('.module-tab-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.module-tab-btn').forEach(function (b) {
-        b.classList.remove('bg-[#0b0f19]', 'text-white', 'shadow-md', 'border-slate-800');
-        b.classList.add('bg-white', 'text-slate-700', 'border-slate-200/80', 'shadow-xs');
-        b.removeAttribute('aria-current');
-        var dot = b.querySelector('.tab-dot');
-        if (dot) dot.classList.add('hidden');
-      });
-      btn.classList.remove('bg-white', 'text-slate-700', 'border-slate-200/80', 'shadow-xs');
-      btn.classList.add('bg-[#0b0f19]', 'text-white', 'shadow-md', 'border-slate-800');
-      btn.setAttribute('aria-current', 'true');
-      var dot = btn.querySelector('.tab-dot');
-      if (dot) dot.classList.remove('hidden');
+  // ---- Funktionen-Tabs: schalten die Ansicht darunter ----
+  var tabButtons = Array.prototype.slice.call(document.querySelectorAll('.module-tab-btn'));
+  var AKTIV = ['bg-[#0b0f19]', 'text-white', 'shadow-md', 'border-slate-800'];
+  var RUHE = ['bg-white', 'hover:bg-slate-50', 'text-slate-700', 'border-slate-200/80', 'shadow-xs', 'hover:shadow-sm'];
+
+  function zeigeTab(btn, fokus) {
+    tabButtons.forEach(function (b) {
+      var an = b === btn;
+      b.classList.remove.apply(b.classList, an ? RUHE : AKTIV);
+      b.classList.add.apply(b.classList, an ? AKTIV : RUHE);
+      b.setAttribute('aria-selected', String(an));
+      b.tabIndex = an ? 0 : -1;
+      var dot = b.querySelector('.tab-dot');
+      if (dot) dot.classList.toggle('hidden', !an);
+      var panel = document.getElementById('panel-' + b.dataset.tab);
+      if (panel) {
+        panel.classList.toggle('is-active', an);
+        if (an) { panel.removeAttribute('hidden'); } else { panel.setAttribute('hidden', ''); }
+      }
+    });
+    if (fokus) btn.focus();
+  }
+
+  tabButtons.forEach(function (btn, i) {
+    btn.addEventListener('click', function () { zeigeTab(btn, false); });
+    btn.addEventListener('keydown', function (e) {
+      var schritt = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!schritt) return;
+      e.preventDefault();
+      zeigeTab(tabButtons[(i + schritt + tabButtons.length) % tabButtons.length], true);
     });
   });
 
