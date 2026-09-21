@@ -154,6 +154,9 @@ for pfad in sorted(glob.glob(f'{WT}/*.html')):
         en_seite = entferne_i18n_technik(en_seite)
         en_seite = bgetem_weg(en_seite)
         en_seite = en_seite.replace(TOKEN_DE, TOKEN_EN)
+        for feld in ['og:image', 'twitter:image', 'og:url', 'og:site_name']:
+            en_seite = re.sub(rf'(<meta (?:property|name)="{feld}" content=")' + DE_BASIS + '/',
+                              r'\1' + EN_BASIS + '/', en_seite)
         en_seite = en_seite.replace('<html lang="de">', '<html lang="en">')
         en_url_de = f'{DE_BASIS}/' + ('' if datei == 'index.html' else datei)
         en_seite = umschalter_tauschen(en_seite, UMSCHALTER_EN_DESKTOP, UMSCHALTER_EN_MOBIL, en_url_de)
