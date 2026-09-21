@@ -25,6 +25,11 @@ BESCHREIBUNG = {
 # Rechtstexte bleiben deutsch und liegen weiter auf tutelaris.de
 NUR_DEUTSCH = {'impressum.html', 'datenschutz.html', 'agb.html'}
 
+# Cloudflare Web Analytics zählt je Domain getrennt
+TOKEN_DE = '1246a84b5b4448b0a9fd1e7e5de724f2'
+TOKEN_EN = '5e985a0e0274410aad3a7441aac2fa57'
+
+
 UMSCHALTER_EN_DESKTOP = '''<div class="hidden sm:block">
       <a class="flex items-center gap-1 text-[14px] font-medium text-slate-700 hover:text-slate-900" href="{de_url}" hreflang="de" title="Auf Deutsch lesen">EN <span class="material-symbols-outlined text-[18px] text-slate-400">translate</span></a>
     </div>
@@ -148,6 +153,7 @@ for pfad in sorted(glob.glob(f'{WT}/*.html')):
         en_seite = uebersetze(s, d)
         en_seite = entferne_i18n_technik(en_seite)
         en_seite = bgetem_weg(en_seite)
+        en_seite = en_seite.replace(TOKEN_DE, TOKEN_EN)
         en_seite = en_seite.replace('<html lang="de">', '<html lang="en">')
         en_url_de = f'{DE_BASIS}/' + ('' if datei == 'index.html' else datei)
         en_seite = umschalter_tauschen(en_seite, UMSCHALTER_EN_DESKTOP, UMSCHALTER_EN_MOBIL, en_url_de)
