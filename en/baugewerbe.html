@@ -73,9 +73,14 @@
     <a class="text-[15px] font-medium text-slate-700 hover:text-slate-900 py-2" data-path="unternehmen" href="ueber-uns.html">About Us</a>
   </nav></div>
   <div class="flex items-center gap-5">
-    <div class="hidden sm:block">
-      <a class="flex items-center gap-1 text-[14px] font-medium text-slate-700 hover:text-slate-900" href="https://tutelaris.de/baugewerbe.html" hreflang="de" title="Auf Deutsch lesen">DE <span class="material-symbols-outlined text-[18px] text-slate-400">translate</span></a>
+    <div class="relative nav-dropdown hidden sm:block">
+      <button class="nav-dropdown-btn flex items-center gap-1 px-3 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-sm text-[14px] font-bold text-slate-900 hover:bg-slate-50" type="button" aria-haspopup="true">EN <span class="material-symbols-outlined text-[18px] text-slate-500 transition-transform">expand_more</span></button>
+      <div class="nav-dropdown-panel absolute top-full right-0 mt-2 w-44 bg-white rounded-2xl border border-slate-200/80 shadow-lg p-1.5 z-50">
+        <span class="flex items-center gap-2 px-3 py-2 rounded-lg text-[14px] font-bold text-[#4f89fb] bg-blue-50/70" aria-current="true">EN · English</span>
+        <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-[14px] font-semibold text-slate-800 hover:bg-slate-50" href="https://tutelaris.de/baugewerbe.html" hreflang="de">DE · Deutsch</a>
+      </div>
     </div>
+    
     
     <a class="hidden sm:inline-flex text-[15px] font-medium text-slate-700 hover:text-slate-900 px-2 py-1" data-path="login" href="#">Log in</a>
     <a class="demo-open-btn inline-flex items-center justify-center bg-[#4f89fb] hover:bg-[#3d75e6] text-white font-medium text-[14.5px] px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all h-10" data-path="demo-anfragen" href="https://meetings-na2.hubspot.com/andrei-piatrouski" target="_blank" rel="noopener">Book a Demo</a>
@@ -120,10 +125,14 @@
       <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="ueber-uns.html" data-path="unternehmen">About Us</a>
       <div class="border-t border-slate-100 my-2"></div>
       <a class="px-2 py-2.5 rounded-lg text-[15px] font-medium text-slate-700 hover:bg-slate-50" href="#" data-path="login">Log in</a>
-      <div class="flex items-center justify-between px-2 py-2.5">
-        <span class="text-[14px] font-medium text-slate-700">Language</span>
-        <a class="px-3 py-1.5 rounded-full text-[13px] font-semibold text-slate-700 bg-slate-100" href="https://tutelaris.de/baugewerbe.html" hreflang="de">Deutsch</a>
+      <div class="px-2 py-2.5">
+        <span class="text-[13px] font-semibold uppercase tracking-wide text-slate-400">Language</span>
+        <div class="mt-2 flex flex-col gap-1">
+          <span class="flex items-center gap-2 px-3 py-2 rounded-lg text-[14px] font-bold text-[#4f89fb] bg-blue-50/70" aria-current="true">EN · English</span>
+          <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-[14px] font-semibold text-slate-800 hover:bg-slate-50" href="https://tutelaris.de/baugewerbe.html" hreflang="de">DE · Deutsch</a>
+        </div>
       </div>
+      
       
       <a class="demo-open-btn mt-2 inline-flex items-center justify-center bg-[#4f89fb] hover:bg-[#3d75e6] text-white font-medium text-[15px] px-5 py-3 rounded-full shadow-sm transition-all" data-path="demo-anfragen" href="https://meetings-na2.hubspot.com/andrei-piatrouski" target="_blank" rel="noopener">Book a Demo</a>
     </div>
