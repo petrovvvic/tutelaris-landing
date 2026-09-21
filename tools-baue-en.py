@@ -93,6 +93,17 @@ def uebersetze(s, d):
     return s
 
 
+def bgetem_weg(s):
+    """BG ETEM erscheint nur in der deutschen Fassung: für Leser in den USA
+    sagt eine deutsche Berufsgenossenschaft nichts."""
+    i = s.find('<a href="https://etem.bgetem.de')
+    if i >= 0:
+        s = s[:i] + s[s.index('</a>', i) + 4:]
+    i = s.find('<!-- 6. PRESS MENTION -->')
+    if i >= 0:
+        s = s[:i] + s[s.index('</section>', i) + len('</section>'):]
+    return s
+
 def entferne_i18n_technik(s):
     """Nimmt Tabelle, Umschaltlogik und die data-i18n-Marker heraus."""
     s = re.sub(r'\n  // Language selector \(DE/EN\)\n  var translations = \{.*?\};\n', '\n', s, flags=re.S)
@@ -136,6 +147,7 @@ for pfad in sorted(glob.glob(f'{WT}/*.html')):
     if d and datei not in NUR_DEUTSCH:
         en_seite = uebersetze(s, d)
         en_seite = entferne_i18n_technik(en_seite)
+        en_seite = bgetem_weg(en_seite)
         en_seite = en_seite.replace('<html lang="de">', '<html lang="en">')
         en_url_de = f'{DE_BASIS}/' + ('' if datei == 'index.html' else datei)
         en_seite = umschalter_tauschen(en_seite, UMSCHALTER_EN_DESKTOP, UMSCHALTER_EN_MOBIL, en_url_de)
