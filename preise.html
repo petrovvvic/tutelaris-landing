@@ -26,7 +26,7 @@
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..24,400..600,0..1,0" rel="stylesheet">
-    <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}/* Der Hero beginnt direkt unter dem festen Kopf: Der Verlauf trägt den Abstand, damit zwischen Navigation und Verlauf keine Kante entsteht. */.hero-top{padding-top:var(--header-h,120px);}/* Einzeilige Formularfelder: feste Höhe 35px */.form-field{height:35px;padding-top:0;padding-bottom:0;line-height:35px;}.form-field:focus{box-shadow:0 0 0 3px rgba(79,137,251,.15);}.demo-booking-link:hover,.demo-success-booking:hover{color:#1e293b;}button[disabled]{opacity:.6;cursor:default;}/* Nav dropdowns: open on hover/focus with a short fade+slide; click still works on touch */.nav-dropdown-panel{opacity:0;visibility:hidden;transform:translateY(-6px);pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s;}.nav-dropdown-panel::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px;}.nav-dropdown:hover>.nav-dropdown-panel,.nav-dropdown:focus-within>.nav-dropdown-panel,.nav-dropdown.is-open>.nav-dropdown-panel{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}.nav-dropdown:hover>.nav-dropdown-btn .material-symbols-outlined,.nav-dropdown.is-open>.nav-dropdown-btn .material-symbols-outlined{transform:rotate(180deg);}@media (prefers-reduced-motion:reduce){.nav-dropdown-panel{transition:none;}}</style><link rel="stylesheet" href="styles-tailwind.css">
+    <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}/* Ablauf des Pilots: Nummer links, Text daneben */.schritte{display:grid;gap:36px;}@media(min-width:640px){.schritte{grid-template-columns:1fr 1fr;column-gap:48px;row-gap:40px;}}.schritt{position:relative;padding-left:60px;}.schritt-nr{position:absolute;left:0;top:-2px;width:40px;height:40px;border-radius:999px;background:#4f89fb;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;line-height:1;}/* Der Hero beginnt direkt unter dem festen Kopf: Der Verlauf trägt den Abstand, damit zwischen Navigation und Verlauf keine Kante entsteht. */.hero-top{padding-top:var(--header-h,120px);}/* Einzeilige Formularfelder: feste Höhe 35px */.form-field{height:35px;padding-top:0;padding-bottom:0;line-height:35px;}.form-field:focus{box-shadow:0 0 0 3px rgba(79,137,251,.15);}.demo-booking-link:hover,.demo-success-booking:hover{color:#1e293b;}button[disabled]{opacity:.6;cursor:default;}/* Nav dropdowns: open on hover/focus with a short fade+slide; click still works on touch */.nav-dropdown-panel{opacity:0;visibility:hidden;transform:translateY(-6px);pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s;}.nav-dropdown-panel::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px;}.nav-dropdown:hover>.nav-dropdown-panel,.nav-dropdown:focus-within>.nav-dropdown-panel,.nav-dropdown.is-open>.nav-dropdown-panel{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}.nav-dropdown:hover>.nav-dropdown-btn .material-symbols-outlined,.nav-dropdown.is-open>.nav-dropdown-btn .material-symbols-outlined{transform:rotate(180deg);}@media (prefers-reduced-motion:reduce){.nav-dropdown-panel{transition:none;}}</style><link rel="stylesheet" href="styles-tailwind.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -191,24 +191,24 @@
 <h2 class="font-headline text-[30px] sm:text-[38px] font-extrabold text-[#0b0f19] tracking-tight leading-tight">So läuft der Pilot</h2>
 <p class="text-[16px] text-slate-600 mt-3 leading-relaxed">Kein IT-Projekt, keine Schulungswoche. Vom ersten Gespräch bis zur ersten Meldung vergehen in der Regel wenige Tage.</p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-10">
-<div class="relative pl-14">
-<span class="absolute left-0 top-0 grid h-10 w-10 place-items-center rounded-full bg-[#4f89fb] text-white font-headline font-bold text-[16px]">1</span>
+<div class="schritte">
+<div class="schritt">
+<span class="schritt-nr">1</span>
 <h3 class="font-headline text-[18px] font-extrabold text-slate-900 mb-1.5">Gespräch, 30 Minuten</h3>
 <p class="text-[14.5px] text-slate-600 leading-relaxed">Wir schauen uns an, wie Vorfälle bei Ihnen heute erfasst werden, und wählen gemeinsam ein bis zwei Bereiche aus. Danach wissen Sie, ob sich ein Pilot für Sie lohnt.</p>
 </div>
-<div class="relative pl-14">
-<span class="absolute left-0 top-0 grid h-10 w-10 place-items-center rounded-full bg-[#4f89fb] text-white font-headline font-bold text-[16px]">2</span>
+<div class="schritt">
+<span class="schritt-nr">2</span>
 <h3 class="font-headline text-[18px] font-extrabold text-slate-900 mb-1.5">Einrichtung, ein Werktag</h3>
 <p class="text-[14.5px] text-slate-600 leading-relaxed">Wir legen Ihre Betriebsteile an und erzeugen die QR-Codes zum Ausdrucken. Sie hängen sie dort auf, wo gearbeitet wird: an der Anlage, am Tor, im Fahrzeug.</p>
 </div>
-<div class="relative pl-14">
-<span class="absolute left-0 top-0 grid h-10 w-10 place-items-center rounded-full bg-[#4f89fb] text-white font-headline font-bold text-[16px]">3</span>
+<div class="schritt">
+<span class="schritt-nr">3</span>
 <h3 class="font-headline text-[18px] font-extrabold text-slate-900 mb-1.5">Drei Monate im Alltag</h3>
 <p class="text-[14.5px] text-slate-600 leading-relaxed">Die Belegschaft meldet, die Fachkraft wertet aus und entscheidet über Maßnahmen. Wir melden uns alle zwei Wochen und fragen, was hakt.</p>
 </div>
-<div class="relative pl-14">
-<span class="absolute left-0 top-0 grid h-10 w-10 place-items-center rounded-full bg-[#4f89fb] text-white font-headline font-bold text-[16px]">4</span>
+<div class="schritt">
+<span class="schritt-nr">4</span>
 <h3 class="font-headline text-[18px] font-extrabold text-slate-900 mb-1.5">Auswertung zum Schluss</h3>
 <p class="text-[14.5px] text-slate-600 leading-relaxed">Wir gehen gemeinsam durch, was gemeldet wurde, welche Muster sichtbar geworden sind und was sich verändert hat. Ob es danach weitergeht, entscheiden Sie dann.</p>
 </div>
