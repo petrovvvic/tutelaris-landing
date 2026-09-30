@@ -1,14 +1,8 @@
-/*
- * Cookie-/Datenschutz-Hinweis nach TTDSG § 25 und Art. 6, 7 DSGVO.
- * Alle Inhalte dieser Website (Text, selbst gehostete Schriftarten, Icons,
- * Bilder) laden unabhängig von der Cookie-Auswahl. Die Auswahl in diesem
- * Banner betrifft ausschließlich optionale Marketing-/Werbe-Cookies, die
- * aktuell nicht eingesetzt werden.
- */
+/* Optional analytics loads only after an explicit, versioned choice. */
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'tutelaris_consent_v1';
+  var STORAGE_KEY = 'tutelaris_consent_v2';
   var MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000; // 12 Monate, danach erneute Abfrage
   var lang = (document.documentElement.lang || 'de').toLowerCase().indexOf('en') === 0 ? 'en' : 'de';
   var privacyHref = lang === 'en' ? 'https://tutelaris.de/datenschutz.html' : 'datenschutz.html';
@@ -16,36 +10,36 @@
   var T = {
     de: {
       bannerTitle: 'Cookie- & Datenschutzeinstellungen',
-      bannerBody: 'Wir speichern auf dieser Website nur, was technisch notwendig ist – etwa Ihre Cookie-Auswahl selbst. Es findet kein Tracking und keine Analyse Ihres Verhaltens statt.',
+      bannerBody: 'Mit Ihrer Einwilligung nutzen wir Google Analytics, um Seitenbesuche und Demo-Anfragen auszuwerten. Ohne Einwilligung bleibt die Analyse deaktiviert. Alle Inhalte funktionieren unabhängig davon.',
       privacyLink: 'Datenschutzerklärung',
       btnNecessary: 'Nur Notwendige',
       btnSettings: 'Einstellungen',
       btnAcceptAll: 'Alle akzeptieren',
       modalTitle: 'Datenschutz-Einstellungen',
-      modalIntro: 'Alle Inhalte dieser Website funktionieren unabhängig von Ihrer Auswahl hier. Die folgende Einstellung betrifft ausschließlich optionale Marketing- und Werbe-Cookies.',
+      modalIntro: 'Die optionale Analyse hilft uns, die Website zu verbessern. Sie können Ihre Einwilligung jederzeit hier widerrufen.',
       catNecessaryTitle: 'Technisch notwendig',
       catNecessaryBadge: 'Immer aktiv',
       catNecessaryDesc: 'Wird benötigt, damit die Website funktioniert und Ihre Cookie-Auswahl gespeichert werden kann. Kann nicht deaktiviert werden.',
-      catFontsTitle: 'Marketing & Werbung',
-      catFontsDesc: 'Aktuell setzen wir keine Marketing- oder Werbe-Cookies ein. Sollte sich das ändern, fragen wir vorher über dieses Banner um Erlaubnis.',
+      catFontsTitle: 'Besucherstatistik & Conversions',
+      catFontsDesc: 'Google Analytics misst besuchte Seiten und Interaktionen wie Demo-Anfragen. Dabei werden Cookies gesetzt und Daten an Google übermittelt. Namen, E-Mail-Adressen und Formularinhalte senden wir nicht als Analyseereignisse. Werbefunktionen sind deaktiviert.',
       btnSave: 'Auswahl speichern',
       close: 'Schließen',
       footerLink: 'Cookie-Einstellungen'
     },
     en: {
       bannerTitle: 'Cookie & Privacy Settings',
-      bannerBody: 'On this website we only store what is technically necessary – for example, your cookie choice itself. We do not track or analyse your behaviour.',
+      bannerBody: 'With your permission, we use Google Analytics to measure visits and demo requests. Analytics stays off unless you agree. All website features work either way.',
       privacyLink: 'Privacy Policy',
       btnNecessary: 'Necessary only',
       btnSettings: 'Settings',
       btnAcceptAll: 'Accept all',
       modalTitle: 'Privacy Settings',
-      modalIntro: 'Every part of this website works regardless of your choice here. The setting below covers only optional marketing and advertising cookies.',
+      modalIntro: 'Optional analytics helps us improve the website. You can withdraw your permission here at any time.',
       catNecessaryTitle: 'Technically necessary',
       catNecessaryBadge: 'Always active',
       catNecessaryDesc: 'Required for the website to function and to remember your cookie choice. Cannot be turned off.',
-      catFontsTitle: 'Marketing & advertising',
-      catFontsDesc: 'We currently do not use any marketing or advertising cookies. If that changes, we will ask for your permission via this banner first.',
+      catFontsTitle: 'Visitor & conversion analytics',
+      catFontsDesc: 'Google Analytics measures page visits and interactions such as demo requests. It uses cookies and sends data to Google. We do not send names, email addresses or form contents as analytics events. Advertising features are disabled.',
       btnSave: 'Save choice',
       close: 'Close',
       footerLink: 'Cookie Settings'
@@ -57,21 +51,22 @@
       var raw = window.localStorage.getItem(STORAGE_KEY);
       if (!raw) return null;
       var data = JSON.parse(raw);
-      if (!data || data.v !== 1 || typeof data.marketing !== 'boolean' || !data.ts) return null;
-      if (Date.now() - new Date(data.ts).getTime() > MAX_AGE_MS) return null;
+      if (!data || data.v !== 2 || typeof data.analytics !== 'boolean' || !data.ts) return null;
+      var age = Date.now() - new Date(data.ts).getTime();
+      if (!Number.isFinite(age) || age < 0 || age > MAX_AGE_MS) return null;
       return data;
     } catch (e) {
       return null;
     }
   }
 
-  function writeConsent(marketing) {
+  function writeConsent(analytics) {
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
         necessary: true,
-        marketing: !!marketing,
+        analytics: !!analytics,
         ts: new Date().toISOString(),
-        v: 1
+        v: 2
       }));
     } catch (e) { /* Local Storage nicht verfügbar – Auswahl gilt nur für diesen Aufruf */ }
   }
@@ -79,7 +74,7 @@
   var STYLE = '' +
     '.tut-cc-banner,.tut-cc-modal{font-family:Inter,"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}' +
     '.tut-cc-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#fff;border-top:1px solid #e4e7ec;box-shadow:0 -8px 30px rgba(15,23,42,.10);padding:18px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;}' +
-    '.tut-cc-text{flex:1 1 380px;min-width:240px;}' +
+    '.tut-cc-text{flex:1 1 380px;min-width:0;}' +
     '.tut-cc-title{font-weight:800;font-size:14.5px;color:#0b0f19;margin:0 0 4px;}' +
     '.tut-cc-body{font-size:13px;line-height:1.55;color:#475467;margin:0;}' +
     '.tut-cc-links{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin:8px 0 0;}' +
@@ -102,9 +97,10 @@
     '.tut-cc-badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#2563eb;background:#eef4fe;border-radius:999px;padding:3px 10px;}' +
     '.tut-cc-cat-desc{font-size:13px;line-height:1.55;color:#667085;margin:0;}' +
     '.tut-cc-switch{position:relative;display:inline-block;width:42px;height:24px;flex:0 0 auto;}' +
-    '.tut-cc-switch input{opacity:0;width:0;height:0;}' +
+    '.tut-cc-switch input{position:absolute;inset:0;opacity:0;width:100%;height:100%;z-index:1;cursor:pointer;}' +
     '.tut-cc-slider{position:absolute;cursor:pointer;inset:0;background:#d0d5dd;border-radius:999px;transition:.15s;}' +
     '.tut-cc-slider:before{content:"";position:absolute;height:18px;width:18px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.15s;}' +
+    '.tut-cc-switch input:focus-visible + .tut-cc-slider{outline:2px solid #2563eb;outline-offset:3px;}' +
     '.tut-cc-switch input:checked + .tut-cc-slider{background:#4f89fb;}' +
     '.tut-cc-switch input:checked + .tut-cc-slider:before{transform:translateX(18px);}' +
     '.tut-cc-switch input:disabled + .tut-cc-slider{opacity:.6;cursor:default;}' +
@@ -133,15 +129,17 @@
     overlay = null;
   }
 
-  function finish(marketing) {
-    writeConsent(marketing);
+  function finish(analytics) {
+    writeConsent(analytics);
+    window.dispatchEvent(new CustomEvent('tutelaris:consent', { detail: { analytics: !!analytics } }));
     removeBanner();
     closeModal();
   }
 
   function openModal() {
+    if (overlay) return;
     var stored = readConsent();
-    var marketingOn = stored ? stored.marketing : false;
+    var analyticsOn = stored ? stored.analytics : false;
 
     overlay = document.createElement('div');
     overlay.className = 'tut-cc-overlay';
@@ -166,7 +164,7 @@
       '<p class="tut-cc-cat-desc">' + T.catNecessaryDesc + ' (' + T.catNecessaryBadge + ')</p></div>' +
       '<div class="tut-cc-cat">' +
       '<div class="tut-cc-cat-head"><span class="tut-cc-cat-title">' + T.catFontsTitle + '</span>' +
-      '<label class="tut-cc-switch"><input type="checkbox" id="tut-cc-marketing-toggle"' + (marketingOn ? ' checked' : '') + '><span class="tut-cc-slider"></span></label></div>' +
+      '<label class="tut-cc-switch"><input type="checkbox" aria-label="' + T.catFontsTitle + '" id="tut-cc-analytics-toggle"' + (analyticsOn ? ' checked' : '') + '><span class="tut-cc-slider"></span></label></div>' +
       '<p class="tut-cc-cat-desc">' + T.catFontsDesc + '</p></div>' +
       '<div class="tut-cc-modal-actions">' +
       '<button type="button" class="tut-cc-btn tut-cc-btn-secondary" data-act="save">' + T.btnSave + '</button>' +
@@ -179,7 +177,7 @@
 
     modal.querySelector('.tut-cc-modal-close').addEventListener('click', closeModal);
     modal.querySelector('[data-act="save"]').addEventListener('click', function () {
-      var checked = modal.querySelector('#tut-cc-marketing-toggle').checked;
+      var checked = modal.querySelector('#tut-cc-analytics-toggle').checked;
       finish(checked);
     });
     modal.querySelector('[data-act="all"]').addEventListener('click', function () {
@@ -226,7 +224,7 @@
     if (!consent) showBanner();
   }
 
-  window.tutCookieConsent = { openSettings: openModal };
+  window.tutCookieConsent = { openSettings: openModal, getConsent: readConsent };
 
   if (document.body) {
     init();

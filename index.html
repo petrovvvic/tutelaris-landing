@@ -35,6 +35,7 @@
     "description": "tutelaris ist die Anwendung, mit der Beschäftigte Beinaheunfälle in unter zwei Minuten anonym melden und Fachkräfte daraus Muster und Maßnahmen ableiten."
   }
   </script>
+<link rel="stylesheet" href="site-refinements.css">
 </head>
   <body class="bg-[#FAFAFD] font-body text-[#101828] antialiased selection:bg-blue-100 selection:text-blue-900">
     <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all">
@@ -1087,11 +1088,13 @@ Beschäftigte erzählen in dreißig Sekunden, was passiert ist – gesprochen od
         })
       }).then(function (res) {
         if (!res.ok) throw new Error('HubSpot antwortete mit ' + res.status);
+        window.tutAnalytics && window.tutAnalytics.track('generate_lead');
         var link = success.querySelector('.demo-success-booking');
         if (link) link.setAttribute('href', bookingUrl(email));
         form.classList.add('hidden');
         success.classList.remove('hidden');
       }).catch(function (err) {
+        window.tutAnalytics && window.tutAnalytics.track('demo_submit_error');
         console.error('[tutelaris] Formular konnte nicht gesendet werden:', err);
         if (formError) formError.classList.remove('hidden');
       }).then(function () {
@@ -1180,6 +1183,6 @@ Beschäftigte erzählen in dreißig Sekunden, was passiert ist – gesprochen od
 
 
 <script defer src="cookie-consent.js"></script>
-<!-- Cloudflare Web Analytics: ohne Cookies, daher ohne Einwilligungsbanner -->
-<script defer type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1246a84b5b4448b0a9fd1e7e5de724f2"}'></script>
+<script defer src="analytics.js"></script>
+
 </body></html>

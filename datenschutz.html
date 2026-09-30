@@ -35,6 +35,7 @@
     "description": "tutelaris ist die Plattform für Beinaheunfall-Management, digitales Verbandsbuch und Arbeitsschutz."
   }
   </script>
+<link rel="stylesheet" href="site-refinements.css">
 </head>
   <body class="bg-[#FAFAFD] font-body text-[#101828] antialiased selection:bg-blue-100 selection:text-blue-900">
     <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all">
@@ -147,10 +148,11 @@ E-Mail: <a class="text-[#4f89fb] hover:underline" href="mailto:andrei.piatrouski
 
 <section>
 <h2 class="font-headline text-[19px] font-bold text-[#0b0f19] mb-3">4. Cookies und ähnliche Technologien</h2>
-<p>Diese Website setzt keine Cookies zur Reichweitenmessung, für Werbung oder zur Wiedererkennung von Besuchern ein. Es werden keine Analyse- oder Tracking-Dienste eingebunden.</p>
-<p class="mt-3">Wir nutzen Cloudflare Web Analytics zur technischen Reichweitenmessung. Dieser Dienst kommt ohne Cookies und ohne sonstige dauerhafte Speicherung von Informationen auf Ihrem Endgerät aus; eine Einwilligung ist hierfür nach § 25 TTDSG nicht erforderlich.</p>
+<p>Mit Ihrer Einwilligung verwenden wir Google Analytics 4 (Google Ireland Limited) auf tutelaris.de und tutelarisapp.com. Wir messen Seitenbesuche, die Nutzung der Produktansichten sowie den Ablauf einer Demo-Anfrage: Öffnen, Beginn der Eingabe, erfolgreiche Übermittlung und Klick auf die Terminbuchung. Ein Buchungsklick ist keine bestätigte Terminbuchung.</p>
+<p class="mt-3">Google Analytics wird erst nach Ihrer Zustimmung zur Besucherstatistik geladen und kann Cookies setzen. Google erhält dabei Nutzungs- und Gerätedaten; eine Verarbeitung außerhalb der EU ist möglich. Namen, E-Mail-Adressen und Formularinhalte werden durch unsere Ereigniserfassung nicht an Google Analytics übermittelt. Seitenadressen werden ohne Suchparameter und URL-Fragmente übergeben. Werbefunktionen und Google Signals sind in unserer Einbindung deaktiviert. Die konfigurierte Cookie-Laufzeit beträgt zwölf Monate.</p>
+<p class="mt-3">Sie können die Analyse ablehnen oder Ihre Einwilligung jederzeit über „Cookie-Einstellungen“ widerrufen. Die Website und die Demo-Anfrage funktionieren auch ohne Analyse. Weitere Informationen: <a href="https://policies.google.com/privacy" class="underline">Datenschutzerklärung von Google</a>.</p>
 <p class="mt-3">Die auf dieser Website verwendeten Schriftarten „Inter“, „Plus Jakarta Sans“ und die Icon-Schrift „Material Symbols“ sind lokal auf unserem eigenen Server eingebunden. Es findet keine Verbindung zu Google oder einem anderen Schriftarten-Anbieter statt; es werden keine Daten an Dritte übermittelt.</p>
-<p class="mt-3">Über das Cookie-Banner können Sie zusätzlich der Nutzung von Marketing- und Werbe-Cookies zustimmen. Aktuell setzen wir keine solchen Cookies ein; sollte sich das künftig ändern, fragen wir vorher über dieses Banner um Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Ihre Auswahl selbst speichern wir technisch notwendig im Local Storage Ihres Browsers, damit Sie nicht bei jedem Besuch erneut gefragt werden (Art. 6 Abs. 1 lit. f DSGVO i. V. m. § 25 Abs. 2 Nr. 2 TTDSG). Diese Speicherung ist auf zwölf Monate befristet; danach fragen wir Sie erneut. Sie können Ihre Auswahl jederzeit mit Wirkung für die Zukunft über den Link „Cookie-Einstellungen“ im Footer dieser Seite ändern.</p>
+<p class="mt-3">Ihre Auswahl speichern wir für höchstens zwölf Monate im Local Storage Ihres Browsers (tutelaris_consent_v2). Frühere Entscheidungen zu Marketing-Cookies gelten nicht als Einwilligung in die neu eingeführte Analyse. Beim Widerruf deaktivieren wir die Ereigniserfassung und entfernen die von unserer Website erreichbaren Google-Analytics-Cookies.</p>
 </section>
 
 <section>
@@ -558,11 +560,13 @@ E-Mail: <a class="text-[#4f89fb] hover:underline" href="mailto:andrei.piatrouski
         })
       }).then(function (res) {
         if (!res.ok) throw new Error('HubSpot antwortete mit ' + res.status);
+        window.tutAnalytics && window.tutAnalytics.track('generate_lead');
         var link = success.querySelector('.demo-success-booking');
         if (link) link.setAttribute('href', bookingUrl(email));
         form.classList.add('hidden');
         success.classList.remove('hidden');
       }).catch(function (err) {
+        window.tutAnalytics && window.tutAnalytics.track('demo_submit_error');
         console.error('[tutelaris] Formular konnte nicht gesendet werden:', err);
         if (formError) formError.classList.remove('hidden');
       }).then(function () {
@@ -651,6 +655,6 @@ E-Mail: <a class="text-[#4f89fb] hover:underline" href="mailto:andrei.piatrouski
 
 
 <script defer src="cookie-consent.js"></script>
-<!-- Cloudflare Web Analytics: ohne Cookies, daher ohne Einwilligungsbanner -->
-<script defer type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1246a84b5b4448b0a9fd1e7e5de724f2"}'></script>
+<script defer src="analytics.js"></script>
+
 </body></html>
