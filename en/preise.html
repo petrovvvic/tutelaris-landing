@@ -250,16 +250,15 @@
 <div id="demo-modal" class="fixed inset-0 z-[100] hidden">
   <div class="demo-modal-backdrop absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
   <div class="relative min-h-full flex items-center justify-center p-4 sm:p-6">
-    <div class="demo-modal-panel relative w-full max-w-md bg-white rounded-[28px] shadow-2xl p-7 sm:p-8">
+    <div class="demo-modal-panel relative w-full max-w-md bg-white rounded-[28px] shadow-2xl p-6 sm:p-6">
       <button type="button" class="demo-modal-close absolute top-5 right-5 w-9 h-9 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors" aria-label="Schließen">
         <span class="material-symbols-outlined text-[20px]">close</span>
       </button>
-      <div class="w-11 h-11 rounded-xl overflow-hidden mb-4">
+      <div class="w-9 h-9 rounded-lg overflow-hidden mb-3">
         <img src="/tutelaris-logo.svg" alt="tutelaris" class="w-full h-full object-cover">
       </div>
-      <h3 class="font-headline text-[24px] font-extrabold text-[#0b0f19] tracking-tight mb-1.5">Book a Demo</h3>
-      <p class="text-[14px] text-slate-500 mb-6">Tell us briefly about yourself – we will get back to you within one working day.</p>
-      <form id="demo-modal-form" class="flex flex-col gap-4" novalidate>
+      <h3 class="font-headline text-[24px] font-extrabold text-[#0b0f19] tracking-tight mb-4">Book a Demo</h3>
+      <form id="demo-modal-form" class="flex flex-col gap-3" novalidate>
         <div>
           <label for="demo-field-email" class="block text-[13px] font-semibold text-slate-700 mb-1.5">Business email *</label>
           <input id="demo-field-email" name="email" type="email" required placeholder="name@company.com" class="w-full px-4 form-field text-[14.5px] text-slate-900 placeholder:text-slate-400 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-[#4f89fb] focus:ring-2 transition-all">
@@ -272,14 +271,14 @@
         </div>
         <div>
           <label for="demo-field-note" class="block text-[13px] font-semibold text-slate-700 mb-1.5">How are incidents recorded at your site today? <span class="text-slate-400 font-normal">(optional)</span></label>
-          <textarea id="demo-field-note" name="note" rows="3" placeholder="e.g. paper form, PDF on the intranet, spreadsheet, not at all" class="w-full px-4 py-2.75 text-[14.5px] text-slate-900 placeholder:text-slate-400 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-[#4f89fb] focus:ring-2 transition-all"></textarea>
+          <textarea id="demo-field-note" name="note" rows="2" placeholder="e.g. paper form, PDF on the intranet, spreadsheet, not at all" class="w-full px-4 py-2.75 text-[14.5px] text-slate-900 placeholder:text-slate-400 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-[#4f89fb] focus:ring-2 transition-all"></textarea>
         </div>
         <div>
           <label for="demo-field-name" class="block text-[13px] font-semibold text-slate-700 mb-1.5">Name <span class="text-slate-400 font-normal">(optional)</span></label>
           <input id="demo-field-name" name="name" type="text" placeholder="First and last name" class="w-full px-4 form-field text-[14.5px] text-slate-900 placeholder:text-slate-400 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-[#4f89fb] focus:ring-2 transition-all">
         </div>
         <p id="demo-form-error" class="hidden text-[12.5px] text-red-600 flex items-start gap-1.5"><span class="material-symbols-outlined text-[15px]">error</span><span>Sending failed. Please email anfragen@tutelaris.de or pick a time directly.</span></p>
-        <button type="submit" class="mt-2 w-full inline-flex items-center justify-center gap-2 bg-[#4f89fb] hover:bg-[#3d75e6] text-white font-semibold text-[15px] px-6 py-3 rounded-xl transition-colors">
+        <button type="submit" class="mt-1 w-full inline-flex items-center justify-center gap-2 bg-[#4f89fb] hover:bg-[#3d75e6] text-white font-semibold text-[15px] px-6 py-3 rounded-xl transition-colors">
           <span>Send request</span>
           <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
         </button>
