@@ -981,6 +981,12 @@ Beschäftigte erzählen in dreißig Sekunden, was passiert ist – gesprochen od
     });
   }
 
+  // Deep link aus der App-Anmeldung (?demo=1): Formular direkt öffnen
+  if (modal && /[?&]demo=1(&|$)/.test(location.search)) {
+    openDemoModal('');
+    try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {}
+  }
+
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();

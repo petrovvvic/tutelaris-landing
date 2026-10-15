@@ -922,6 +922,12 @@
     });
   }
 
+  // Deep link from the app login (?demo=1): open the form directly
+  if (modal && /[?&]demo=1(&|$)/.test(location.search)) {
+    openDemoModal('');
+    try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {}
+  }
+
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
